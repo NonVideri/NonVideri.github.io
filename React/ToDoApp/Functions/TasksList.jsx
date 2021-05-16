@@ -1,5 +1,6 @@
 import React from "react";
 
+// Render tasks as a list
 export default function TasksList({ allTasks, handleDelete }) {
   return (
     <ul>

@@ -5,7 +5,7 @@ export default class Clock extends React.Component {
     super(props);
     this.state = { date: new Date() };
   }
-  // Renders a clock
+  // Render clock
   render() {
     return (
       <div isPrecise='false'>
@@ -15,7 +15,7 @@ export default class Clock extends React.Component {
       </div>
     );
   }
-  // Starts a clock
+  // Start clock
   startInterval () {
     const oneSecond = 1000;
     this.intervalID = setInterval(() => {
@@ -30,9 +30,11 @@ export default class Clock extends React.Component {
     this.intervalID = setInterval(() => {
     this.setState({ date: new Date() }); }, delay);
   }
+  // Clock starts when mounted
   componentDidMount() {
     this.startInterval()
   }
+  // Component reloads after mode change
   componentDidUpdate(prevProps) {
     if (this.props.isPrecise ===
     prevProps.isPrecise) {
@@ -41,6 +43,7 @@ export default class Clock extends React.Component {
     clearInterval(this.intervalID);
     this.startInterval()
   }
+  // Clear clock when unmounted to save resources
   componentWillUnmount() {
     clearInterval(this.intervalID);
   }

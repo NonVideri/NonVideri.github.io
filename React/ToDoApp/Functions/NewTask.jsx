@@ -1,5 +1,6 @@
 import React from "react";
 
+// A form to submit new task with description
 export default function NewTask({ newTask, handleChange, handleSubmit }) {
   return (
     <form onSubmit={handleSubmit}>

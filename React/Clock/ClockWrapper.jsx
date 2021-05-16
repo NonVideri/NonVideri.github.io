@@ -7,6 +7,7 @@ export default class ClockWrapper extends React.Component {
       this.state = { precise: false }
       this.handleClick = this.handleClick.bind(this);
     }
+    // Toggle precise mode
     handleClick() {
       let newState =  this.state.precise === true ? false : true
       this.setState({ precise: newState })
