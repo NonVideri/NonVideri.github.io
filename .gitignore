@@ -1,0 +1,16 @@
+# dependencies
+package.json
+package-lock.json
+
+# compiling
+.babelrc
+babel.config.json
+node_modules/
+
+# testing
+index_simple.html
+index.jsx
+
+# uncompiled
+style.scss
+style.scss.map
