@@ -14,3 +14,10 @@ index.jsx
 # uncompiled
 style.scss
 style.scss.map
+
+# ignore
+!React/randomizer
+React/randomizer/*
+!React/randomizer/src
+React/randomizer/src/*
+!React/randomizer/src/Randomizer.js
