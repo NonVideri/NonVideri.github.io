@@ -16,8 +16,12 @@ style.scss
 style.scss.map
 
 # ignore
-!React/randomizer
-React/randomizer/*
-!React/randomizer/src
-React/randomizer/src/*
-!React/randomizer/src/Randomizer.js
+!React/
+React/*
+!React/src
+React/src/*
+!React/src/Randomizer.js
+!React/src/Clock.js
+!React/src/ClockWrapper.js
+!React/src/ToDoApp.js
+!React/src/Functions.js
