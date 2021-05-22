@@ -34,13 +34,12 @@ export default function ToDoApp() {
 
   return (
       <main>
-        <h1>Tasks</h1>
-        <NewTask
+        <NewTask className="appline"
           newTask={newTask}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
         />
-        <TasksList
+        <TasksList className="appline"
           allTasks={allTasks}
           handleDelete={handleDelete}
         />

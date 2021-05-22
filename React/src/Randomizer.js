@@ -32,7 +32,7 @@ export default function Randomizer() {
   }
   // Enter items to be randomized
   const handleChange = (event) => {
-    const fieldType = event.target.className
+    const fieldType = event.target.id
     const updatedInput = event.target.value
     setUserInput({ ...userInput, [fieldType]: updatedInput })
   }
@@ -75,42 +75,44 @@ export default function Randomizer() {
     // random pick button, refresh button, back button, option popup
     <div>
       {/* Buttons */}
-      <button class="btn" hidden={mode.submitted} onClick={() => toggleMode('numberRange')}>
+      <button className="btn" hidden={mode.submitted} onClick={() => toggleMode('numberRange')}>
         Mode: {mode.numberRange? 'Number Range' : 'Custom Items'}
       </button>
-      <button class="btn" hidden={mode.submitted} onClick={() => toggleMode('repeat')}>
+      <button className="btn" hidden={mode.submitted} onClick={() => toggleMode('repeat')}>
         Repeat Mode: {mode.repeat? 'Repeat' : 'No Repeat'}
       </button>
-      <button class="btn" hidden={mode.submitted} onClick={() => toggleMode('hidden')}>
+      <button className="btn" hidden={mode.submitted} onClick={() => toggleMode('hidden')}>
         Item List: {mode.hidden? 'Hidden' : 'Visible'}
       </button>
-      <button class="btn" hidden={mode.submitted} onClick={() => toggleMode('sound')}>
+      <button className="btn" hidden={mode.submitted} onClick={() => toggleMode('sound')}>
         Sound: {mode.sound? 'On' : 'Off'}
       </button>
       {/* Input form */}
       <form hidden={mode.submitted} type='range' onSubmit={handleSubmit}>
-        <p>
-          {mode.numberRange? 'Enter two integers (max 9999)' : 'Enter items separated by commas (",")'}
+        <p className="appline">
+          {mode.numberRange? 'Enter two integers (max 9999):' : 'Enter items separated by commas (","):'}
         </p>
-        <textarea className='custom' hidden={mode.numberRange} type='text' placeholder='Enter items here' onChange={handleChange}/>
-        <input className='number1' hidden={!mode.numberRange} type='number' placeholder='0' max='9999' onChange={handleChange}/>
-        <input className='number2' hidden={!mode.numberRange} type='number' placeholder='0' max='9999' onChange={handleChange}/>
-        <button class="btn" type='submit'>Submit</button>
+        <textarea id='custom' className="form-control" hidden={mode.numberRange} type='text' placeholder='Enter items here' onChange={handleChange}/>
+        <div className="input-group mb-3">
+        <input id='number1' className="form-control" hidden={!mode.numberRange} type='number' placeholder='0' max='9999' onChange={handleChange}/>
+        <input id='number2' className="form-control" hidden={!mode.numberRange} type='number' placeholder='0' max='9999' onChange={handleChange}/>
+        </div>
+        <button className="btn" type='submit'>Submit</button>
       </form>
       {/* Randomized results */}
       <div hidden={!mode.submitted}>
-        <button onClick={getItem} class="btn">
+        <button onClick={getItem} className="btn">
           Get Random {mode.numberRange? 'Number' : 'Item' }
         </button>
-        <button class="btn" onClick={() => toggleMode('submitted')}>
+        <button className="btn" onClick={() => toggleMode('submitted')}>
           Exit
         </button>
-        <div hidden={mode.repeat}>
+        <div hidden={mode.repeat} className="appline">
           <strong>Counter:</strong> {items.counter} out of {items.max}
         </div>
-        <div hidden={mode.hidden}>
-          <p><strong>Items left:</strong></p>
-          <p>{items.list.map((i) => i + " ")}</p>
+        <div hidden={mode.hidden} className="card">
+          <p className="card-header"><i>Items left:</i></p>
+          <p className="card-body">{items.list.map((i) => i + " ")}</p>
         </div>
       </div>
     </div>

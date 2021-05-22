@@ -14,9 +14,9 @@ export default class ClockWrapper extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="appline">
                 <Clock isPrecise={this.state.precise}/>
-                <button onClick={this.handleClick}>Toggle Precise Mode</button>
+                <button className="btn" onClick={this.handleClick}>Toggle Precise Mode</button>
             </div>
         )
     }
