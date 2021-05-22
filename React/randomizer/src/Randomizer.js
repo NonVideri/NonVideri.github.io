@@ -48,7 +48,7 @@ export default function Randomizer() {
       var num2 = parseInt(userInput.number2)
     }
     var randomizedList = !mode.numberRange?
-      userInput.custom.split(',') :
+      userInput.custom.split(',').map(string => string.trim()) :
       Array(Math.abs(num1 - num2)+1).fill().map((_, i) => i + (num1 < num2? num1 : num2))
     setItems({
       list: randomizedList,
@@ -75,16 +75,16 @@ export default function Randomizer() {
     // random pick button, refresh button, back button, option popup
     <div>
       {/* Buttons */}
-      <button hidden={mode.submitted} onClick={() => toggleMode('numberRange')}>
+      <button class="btn" hidden={mode.submitted} onClick={() => toggleMode('numberRange')}>
         Mode: {mode.numberRange? 'Number Range' : 'Custom Items'}
       </button>
-      <button hidden={mode.submitted} onClick={() => toggleMode('repeat')}>
+      <button class="btn" hidden={mode.submitted} onClick={() => toggleMode('repeat')}>
         Repeat Mode: {mode.repeat? 'Repeat' : 'No Repeat'}
       </button>
-      <button hidden={mode.submitted} onClick={() => toggleMode('hidden')}>
+      <button class="btn" hidden={mode.submitted} onClick={() => toggleMode('hidden')}>
         Item List: {mode.hidden? 'Hidden' : 'Visible'}
       </button>
-      <button hidden={mode.submitted} onClick={() => toggleMode('sound')}>
+      <button class="btn" hidden={mode.submitted} onClick={() => toggleMode('sound')}>
         Sound: {mode.sound? 'On' : 'Off'}
       </button>
       {/* Input form */}
@@ -95,20 +95,23 @@ export default function Randomizer() {
         <textarea className='custom' hidden={mode.numberRange} type='text' placeholder='Enter items here' onChange={handleChange}/>
         <input className='number1' hidden={!mode.numberRange} type='number' placeholder='0' max='9999' onChange={handleChange}/>
         <input className='number2' hidden={!mode.numberRange} type='number' placeholder='0' max='9999' onChange={handleChange}/>
-        <button type='submit'>Submit</button>
+        <button class="btn" type='submit'>Submit</button>
       </form>
       {/* Randomized results */}
       <div hidden={!mode.submitted}>
-        <button onClick={getItem}>
+        <button onClick={getItem} class="btn">
           Get Random {mode.numberRange? 'Number' : 'Item' }
         </button>
-        <p hidden={mode.repeat}>
-          Counter: {items.counter} out of {items.max}
-        </p>
-        <p hidden={mode.hidden}>
-          Items left:
-          {items.list.map((i) => <p>{i}</p>)}
-        </p>
+        <button class="btn" onClick={() => toggleMode('submitted')}>
+          Exit
+        </button>
+        <div hidden={mode.repeat}>
+          <strong>Counter:</strong> {items.counter} out of {items.max}
+        </div>
+        <div hidden={mode.hidden}>
+          <p><strong>Items left:</strong></p>
+          <p>{items.list.map((i) => i + " ")}</p>
+        </div>
       </div>
     </div>
   );
