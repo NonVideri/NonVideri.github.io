@@ -24,4 +24,4 @@ React/src/*
 !React/src/Clock.js
 !React/src/ClockWrapper.js
 !React/src/ToDoApp.js
-!React/src/Functions.js
+!React/src/Functions/
