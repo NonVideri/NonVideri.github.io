@@ -1,27 +1,12 @@
 # dependencies
 package.json
 package-lock.json
-
-# compiling
-.babelrc
-babel.config.json
 node_modules/
 
-# testing
-index_simple.html
-index.jsx
-
-# uncompiled
-style.scss
-style.scss.map
-
 # ignore
-!React/
 React/*
 !React/src
-React/src/*
-!React/src/Randomizer.js
-!React/src/Clock.js
-!React/src/ClockWrapper.js
-!React/src/ToDoApp.js
-!React/src/Functions/
+React/src/App.test.js
+React/src/index.js
+React/src/reportWebVitals.js
+React/src/setupTests.js

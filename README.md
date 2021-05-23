@@ -1,4 +1,5 @@
 # Projects
+To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
 ## React Projects
 
