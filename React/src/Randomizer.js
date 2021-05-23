@@ -75,36 +75,36 @@ export default function Randomizer() {
     // random pick button, refresh button, back button, option popup
     <div>
       {/* Buttons */}
-      <button className="btn" hidden={mode.submitted} onClick={() => toggleMode('numberRange')}>
+      <button className="btn btn-light" hidden={mode.submitted} onClick={() => toggleMode('numberRange')}>
         Mode: {mode.numberRange? 'Number Range' : 'Custom Items'}
       </button>
-      <button className="btn" hidden={mode.submitted} onClick={() => toggleMode('repeat')}>
+      <button className="btn btn-light" hidden={mode.submitted} onClick={() => toggleMode('repeat')}>
         Repeat Mode: {mode.repeat? 'Repeat' : 'No Repeat'}
       </button>
-      <button className="btn" hidden={mode.submitted} onClick={() => toggleMode('hidden')}>
+      <button className="btn btn-light" hidden={mode.submitted} onClick={() => toggleMode('hidden')}>
         Item List: {mode.hidden? 'Hidden' : 'Visible'}
       </button>
-      <button className="btn" hidden={mode.submitted} onClick={() => toggleMode('sound')}>
+      <button className="btn btn-light" hidden={mode.submitted} onClick={() => toggleMode('sound')}>
         Sound: {mode.sound? 'On' : 'Off'}
       </button>
       {/* Input form */}
       <form hidden={mode.submitted} type='range' onSubmit={handleSubmit}>
-        <p className="appline">
-          {mode.numberRange? 'Enter two integers (max 9999):' : 'Enter items separated by commas (","):'}
-        </p>
-        <textarea id='custom' className="form-control" hidden={mode.numberRange} type='text' placeholder='Enter items here' onChange={handleChange}/>
-        <div className="input-group mb-3">
-        <input id='number1' className="form-control" hidden={!mode.numberRange} type='number' placeholder='0' max='9999' onChange={handleChange}/>
-        <input id='number2' className="form-control" hidden={!mode.numberRange} type='number' placeholder='0' max='9999' onChange={handleChange}/>
+        <div className="input-group">
+          <span className="input-group-prepend input-group-text">
+            {mode.numberRange? 'Enter two integers (max 9999):' : 'Enter items separated by commas (","):'}
+          </span>
+          <textarea id='custom' className="form-control" hidden={mode.numberRange} type='text' placeholder='Enter items here' onChange={handleChange}/>
+          <input id='number1' className="form-control" hidden={!mode.numberRange} type='number' placeholder='0' max='9999' onChange={handleChange}/>
+          <input id='number2' className="form-control" hidden={!mode.numberRange} type='number' placeholder='0' max='9999' onChange={handleChange}/>
         </div>
-        <button className="btn" type='submit'>Submit</button>
+        <button className="btn btn-success" type='submit'>Submit</button>
       </form>
       {/* Randomized results */}
       <div hidden={!mode.submitted}>
-        <button onClick={getItem} className="btn">
+        <button onClick={getItem} className="btn btn-primary">
           Get Random {mode.numberRange? 'Number' : 'Item' }
         </button>
-        <button className="btn" onClick={() => toggleMode('submitted')}>
+        <button className="btn btn-danger" onClick={() => toggleMode('submitted')}>
           Exit
         </button>
         <div hidden={mode.repeat} className="appline">
