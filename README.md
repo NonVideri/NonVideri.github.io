@@ -24,6 +24,9 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 ### User Card
 - A simple exercise app for displaying user information.
 
+### Bank App
+- A simple exercise app for displaying balance and withdrawing money from account.
+
 ## Python Projects
 
 ### 100 Doors
