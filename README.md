@@ -21,6 +21,9 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 ### Contacts App
 - Uses Redux to transfer contact data.
 
+### Skypey
+- A simple version of a messaging app using Redux.
+
 ### User Card
 - A simple exercise app for displaying user information.
 
