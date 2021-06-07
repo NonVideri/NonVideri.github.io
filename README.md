@@ -21,6 +21,9 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 ### Contacts App
 - Uses Redux to transfer contact data.
 
+### User Card
+- A simple exercise app for displaying user information.
+
 ## Python Projects
 
 ### 100 Doors
