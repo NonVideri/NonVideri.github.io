@@ -1,8 +1,8 @@
 import _ from 'lodash'
 import './App.css'
-import Sidebar from './Sidebar'
-import Main from './Main'
-import store from './store'
+import Sidebar from '../components/Sidebar'
+import Main from '../components/Main'
+import store from '../store'
 
 const App = () => {
   const { contacts } = store.getState();
