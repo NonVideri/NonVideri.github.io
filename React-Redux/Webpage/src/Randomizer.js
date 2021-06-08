@@ -32,6 +32,10 @@ const store = createStore((state = initialState, action) => {
   }
 })
 
+// Functions changing the state here, to be passed as props to the buttons
+// The results will be passed to display elements
+// UNLESS I just use Redux
+
 const Randomizer = () => {
   return (
     // mode buttons, input form, number input form, submit button
