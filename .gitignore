@@ -4,9 +4,9 @@ package-lock.json
 node_modules/
 
 # ignore
-React/*
-!React/src
-React/src/App.test.js
-React/src/index.js
-React/src/reportWebVitals.js
-React/src/setupTests.js
+React-Redux/Webpage/*
+!React-Redux/Webpage/src
+React-Redux/Webpage/src/App.test.js
+React-Redux/Webpage/src/index.js
+React-Redux/Webpage/src/reportWebVitals.js
+React-Redux/Webpage/src/setupTests.js
