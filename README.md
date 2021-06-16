@@ -10,8 +10,12 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 - Designed to be used as a board game support app.
 - Uses Redux. (RandomizerOld is the simple version which uses only React.)
 
+### Recipes
+- A list of cooking recipes in Redux.
+
 ### Skypey
-- A simple version of a messaging app using Redux.
+- A simple messaging app demo using React-Redux.
+- Allows the user to view (mock) contacts, enter and send messages.
 
 ### Clock
 - A simple React clock.
