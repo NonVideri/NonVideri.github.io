@@ -9,6 +9,7 @@ export const loadData = () => {
   }
 }
 
+// Reducer
 const initialState = [];
 export default function allRecipesReducer (allRecipes = initialState, action) {
   switch (action.type) {
