@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux';
-import favoriteRecipes from '../features/favoriteRecipes/favoriteRecipes';
-import searchTerm from '../features/searchTerm/searchTerm';
-import allRecipes from '../features/allRecipes/allRecipes';
+import favoriteRecipes from '../features/favoriteRecipes/favoriteRecipesSlice';
+import searchTerm from '../features/searchTerm/searchTermSlice';
+import allRecipes from '../features/allRecipes/allRecipesSlice';
 
 const store = createStore(combineReducers({
   favoriteRecipes,
