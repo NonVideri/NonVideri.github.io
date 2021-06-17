@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import AllRecipes from '../features/allRecipes/AllRecipes.js';
 import SearchTerm from '../features/searchTerm/SearchTerm.js';
