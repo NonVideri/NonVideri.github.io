@@ -6,7 +6,7 @@ import { loadData } from './allRecipesSlice';
 import Recipe from '../../components/Recipe';
 import FavoriteButton from '../../components/FavoriteButton';
 
-const favoriteIcon = '../../img/favorite.svg';
+const favoriteIcon = 'img/favorite.svg';
 
 export default function AllRecipes(props) {
   const { allRecipes, dispatch } = props;

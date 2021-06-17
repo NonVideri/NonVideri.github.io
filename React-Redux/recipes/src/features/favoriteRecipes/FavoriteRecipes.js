@@ -5,7 +5,7 @@ import { removeRecipe } from './favoriteRecipesSlice.js';
 import Recipe from "../../components/Recipe";
 import FavoriteButton from "../../components/FavoriteButton";
 
-const unfavoriteIcon = '../../img/unfavorite.svg';
+const unfavoriteIcon = 'img/unfavorite.svg';
 
 export default function FavoriteRecipes(props) {
   const { favoriteRecipes, dispatch } = props;
