@@ -3,8 +3,8 @@ import React, { useEffect } from 'react';
 import { addRecipe } from '../favoriteRecipes/favoriteRecipesSlice.js';
 import { loadData } from './allRecipesSlice';
 
-import FavoriteButton from '../../components/FavoriteButton';
 import Recipe from '../../components/Recipe';
+import FavoriteButton from '../../components/FavoriteButton';
 
 const favoriteIcon = '../../img/favorite.svg';
 
