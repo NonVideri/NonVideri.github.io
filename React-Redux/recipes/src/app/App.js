@@ -39,5 +39,3 @@ export default function App(props) {
     </main>
   );
 }
-
-export default App;
