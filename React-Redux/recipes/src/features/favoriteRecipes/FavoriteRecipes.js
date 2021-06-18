@@ -1,17 +1,18 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { removeRecipe } from './favoriteRecipesSlice.js';
+import { removeRecipe, selectFilteredFavoriteRecipes } from './favoriteRecipesSlice.js';
 
 import Recipe from "../../components/Recipe";
 import FavoriteButton from "../../components/FavoriteButton";
 
 const unfavoriteIcon = 'img/unfavorite.svg';
 
-export default function FavoriteRecipes(props) {
-  const { favoriteRecipes, dispatch } = props;
+export default function FavoriteRecipes() {
+  const favoriteRecipes = useSelector(selectFilteredFavoriteRecipes);
+  const dispatch = useDispatch();
 
   const onRemoveRecipeHandler = (recipe) => {
-    // Dispatch a removeRecipe() action.
     dispatch(removeRecipe(recipe));
   };
 

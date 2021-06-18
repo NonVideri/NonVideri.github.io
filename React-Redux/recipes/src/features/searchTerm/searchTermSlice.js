@@ -14,6 +14,9 @@ export function clearSearchTerm() {
   }
 }
 
+// Selectors
+export const selectSearchTerm = (state) => state.searchTerm;
+
 // Reducer
 const initialState = '';
 export default function searchTermReducer (state = initialState, action) {

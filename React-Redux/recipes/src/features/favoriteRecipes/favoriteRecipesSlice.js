@@ -1,4 +1,5 @@
 import { ADD_RECIPE, REMOVE_RECIPE } from "../../action-types";
+import { selectSearchTerm } from '../searchTerm/searchTermSlice.js';
 
 // Action creators
 export function addRecipe(recipe) {
@@ -13,6 +14,15 @@ export function removeRecipe(recipe) {
     type: REMOVE_RECIPE,
     payload: recipe
   }
+}
+
+// Selectors
+export const selectFavoriteRecipes = (state) => state.favoriteRecipes;
+
+export const selectFilteredFavoriteRecipes = (state) => {
+  let favoriteRecipes = selectFavoriteRecipes(state);
+  let searchTerm = selectSearchTerm(state);
+  return favoriteRecipes.filter(recipe => recipe.name.toLowerCase().includes(searchTerm.toLowerCase()))
 }
 
 // Reducer 

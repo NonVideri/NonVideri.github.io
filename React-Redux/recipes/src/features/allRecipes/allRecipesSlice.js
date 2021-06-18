@@ -1,5 +1,6 @@
 import allRecipesData from '../../data.js'
 import { LOAD_DATA, ADD_RECIPE, REMOVE_RECIPE } from '../../action-types'
+import { selectSearchTerm } from '../searchTerm/searchTermSlice.js';
 
 // Action creators
 export const loadData = () => {
@@ -7,6 +8,15 @@ export const loadData = () => {
     type: LOAD_DATA,
     payload: allRecipesData
   }
+}
+
+// Selectors
+export const selectAllRecipes = (state) => state.allRecipes;
+
+export const selectFilteredAllRecipes = (state) => {
+  let allRecipes = selectAllRecipes(state);
+  let searchTerm = selectSearchTerm(state);
+  return allRecipes.filter(recipe => recipe.name.toLowerCase().includes(searchTerm.toLowerCase()))
 }
 
 // Reducer
