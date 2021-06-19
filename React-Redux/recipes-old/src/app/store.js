@@ -1,12 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { createStore, combineReducers } from 'redux';
 import favoriteRecipes from '../features/favoriteRecipes/favoriteRecipesSlice';
 import searchTerm from '../features/searchTerm/searchTermSlice';
 import allRecipes from '../features/allRecipes/allRecipesSlice';
 
-export default configureStore({
-  reducer: {
-    favoriteRecipes,
-    searchTerm,
-    allRecipes
-}});
+const store = createStore(combineReducers({
+  favoriteRecipes,
+  searchTerm,
+  allRecipes
+}));
 
+export default store;
