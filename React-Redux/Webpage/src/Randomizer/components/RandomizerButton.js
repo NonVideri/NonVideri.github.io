@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { toggleMode } from '../RandomizerActions'
+import { toggleMode } from '../actions'
 
 function RandomizerButton (props) {
   return (
