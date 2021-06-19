@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import AddPersonForm from './AddPersonForm';
-import PeopleList from './PeopleList'
+import AddPersonForm from './components/AddPersonForm';
+import PeopleList from './components/PeopleList'
 
 export default function ContactManager(props) {
   const [contacts, setContacts] = useState(props.data);

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import NewTask from "./Functions/NewTask";
-import TasksList from "./Functions/TasksList";
+import NewTask from "./components/NewTask";
+import TasksList from "./components/TasksList";
 
 export default function ToDoApp() {
   const [newTask, setNewTask] = useState({})

@@ -3,19 +3,22 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
 ## React & Redux Projects
 
+### Recipes
+- A list of cooking recipes in React-Redux.
+- Allows the user to add and remove recipes from favorites.
+- Implements searching functionality.
+- Uses redux-toolkit. (recipes-old is the older version which doesn't use redux-toolkit.)
+
+### Skypey
+- A simple messaging app demo using React-Redux.
+- Allows the user to view (mock) contacts, enter and send messages.
+
 ### Randomizer
 - Randomly picks from number ranges (Number Range Mode) or comma-separated sets of data (Custom Items Mode).
 - Has two sub-modes: Repeat or No-Repeat.
 - Allows the user to hide the list and toggle item picking sounds.
 - Designed to be used as a board game support app.
 - Uses Redux. (RandomizerOld is the simple version which uses only React.)
-
-### Recipes
-- A list of cooking recipes in Redux.
-
-### Skypey
-- A simple messaging app demo using React-Redux.
-- Allows the user to view (mock) contacts, enter and send messages.
 
 ### Clock
 - A simple React clock.

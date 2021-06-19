@@ -16,5 +16,6 @@ export default function ClockTimezone () {
       {TIMEZONES.map((z, i) =>
       <option value={i}>GMT{z}</option>
       )}
-    </select>)
+    </select>
+  )
 }

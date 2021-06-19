@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { toggleMode } from './randomizerActions'
+import { toggleMode } from '../actions'
 
 function RandomizerResults(props) {
   const itemSound = new Audio('https://dl.dropboxusercontent.com/s/e85v3w9rv9yr38t/item.wav')

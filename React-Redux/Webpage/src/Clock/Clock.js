@@ -1,8 +1,8 @@
 import React from 'react';
-import ClockMechanism from './ClockMechanism';
-import ClockTimezone from './ClockTimezone';
+import ClockMechanism from './components/ClockMechanism';
+import ClockTimezone from './components/ClockTimezone';
 
-export default class ClockWrapper extends React.Component {
+export default class Clock extends React.Component {
     constructor(props) {
       super(props);
       this.state = { precise: false }
@@ -10,7 +10,7 @@ export default class ClockWrapper extends React.Component {
     }
     // Toggle precise mode
     handleClick() {
-      let newState =  this.state.precise === true ? false : true
+      let newState = this.state.precise === true ? false : true
       this.setState({ precise: newState })
     }
     render() {

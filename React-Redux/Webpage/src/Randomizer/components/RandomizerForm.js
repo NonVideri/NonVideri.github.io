@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { toggleMode, submit } from './randomizerActions'
+import { toggleMode, submit } from '../actions'
   
 function RandomizerForm(props) {
   const submitSound = new Audio('https://dl.dropboxusercontent.com/s/bvfvda83ls5fbwe/items_randomized.mp3')
