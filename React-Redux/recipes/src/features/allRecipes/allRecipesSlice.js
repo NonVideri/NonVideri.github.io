@@ -1,14 +1,19 @@
-import allRecipesData from '../../data.js'
-import { LOAD_DATA, ADD_RECIPE, REMOVE_RECIPE } from '../../action-types'
-import { selectSearchTerm } from '../searchTerm/searchTermSlice.js';
+import { createSlice } from '@reduxjs/toolkit';
+import allRecipesData from '../../data.js';
+import { selectSearchTerm } from '../searchTerm/searchTermSlice';
+import { addFavorite, removeFavorite } from '../favoriteRecipes/favoriteRecipesSlice';
 
-// Action creators
-export const loadData = () => {
-  return {
-    type: LOAD_DATA,
-    payload: allRecipesData
-  }
-}
+// Slice
+export const allRecipesSlice = createSlice({
+  name: 'allRecipes',
+  initialState: [],
+  reducers: {
+    loadData: () => allRecipesData },
+  extraReducers: (builder) => {
+    builder
+      .addCase(addFavorite, (state, action) => state.filter(recipe => recipe.id !== action.payload.id))
+      .addCase(removeFavorite, (state, action) => [...state, action.payload]) }
+});
 
 // Selectors
 export const selectAllRecipes = (state) => state.allRecipes;
@@ -19,19 +24,6 @@ export const selectFilteredAllRecipes = (state) => {
   return allRecipes.filter(recipe => recipe.name.toLowerCase().includes(searchTerm.toLowerCase()))
 }
 
-// Reducer
-const initialState = [];
-export default function allRecipesReducer (allRecipes = initialState, action) {
-  switch (action.type) {
-    // Loads recipes data
-    case LOAD_DATA:
-      return action.payload;
-    // Adding recipe to Favorites removes it from All Recipes and vice versa
-    case ADD_RECIPE:
-      return allRecipes.filter(recipe => recipe.id !== action.payload.id);
-    case REMOVE_RECIPE:
-      return [...allRecipes, action.payload]
-    default:
-      return allRecipes;
-  }
-}
+// Exports
+export const { loadData } = allRecipesSlice.actions;
+export default allRecipesSlice.reducer;

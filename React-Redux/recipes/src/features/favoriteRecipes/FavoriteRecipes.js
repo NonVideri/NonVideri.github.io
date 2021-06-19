@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { removeRecipe, selectFilteredFavoriteRecipes } from './favoriteRecipesSlice.js';
+import { removeFavorite, selectFilteredFavoriteRecipes } from './favoriteRecipesSlice.js';
 
 import Recipe from "../../components/Recipe";
 import FavoriteButton from "../../components/FavoriteButton";
@@ -12,8 +12,8 @@ export default function FavoriteRecipes() {
   const favoriteRecipes = useSelector(selectFilteredFavoriteRecipes);
   const dispatch = useDispatch();
 
-  const onRemoveRecipeHandler = (recipe) => {
-    dispatch(removeRecipe(recipe));
+  const onRemoveFavoriteHandler = (recipe) => {
+    dispatch(removeFavorite(recipe));
   };
 
   return (
@@ -21,7 +21,7 @@ export default function FavoriteRecipes() {
       {favoriteRecipes.map((recipe) => (
         <Recipe recipe={recipe} key={recipe.id}>
           <FavoriteButton
-            onClickHandler={() => onRemoveRecipeHandler(recipe)}
+            onClickHandler={() => onRemoveFavoriteHandler(recipe)}
             icon={unfavoriteIcon}
           >
             Remove Favorite

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { addRecipe } from '../favoriteRecipes/favoriteRecipesSlice.js';
+import { addFavorite } from '../favoriteRecipes/favoriteRecipesSlice.js';
 import { loadData, selectFilteredAllRecipes } from './allRecipesSlice';
 
 import Recipe from '../../components/Recipe';
@@ -18,8 +18,8 @@ export default function AllRecipes() {
   }
   useEffect(onFirstRender, [dispatch])
 
-  const onAddRecipeHandler = (recipe) => {
-    dispatch(addRecipe(recipe));
+  const onAddFavoriteHandler = (recipe) => {
+    dispatch(addFavorite(recipe));
   };
 
   return (
@@ -27,7 +27,7 @@ export default function AllRecipes() {
       {allRecipes.map((recipe) => (
         <Recipe recipe={recipe} key={recipe.id}>
           <FavoriteButton
-            onClickHandler={() => onAddRecipeHandler(recipe)}
+            onClickHandler={() => onAddFavoriteHandler(recipe)}
             icon={favoriteIcon}
           >
             Add to Favorites

@@ -1,20 +1,5 @@
-import { ADD_RECIPE, REMOVE_RECIPE } from "../../action-types";
+import { createSlice } from '@reduxjs/toolkit';
 import { selectSearchTerm } from '../searchTerm/searchTermSlice.js';
-
-// Action creators
-export function addRecipe(recipe) {
-  return {
-    type: ADD_RECIPE,
-    payload: recipe
-  }
-}
-
-export function removeRecipe(recipe) {
-  return {
-    type: REMOVE_RECIPE,
-    payload: recipe
-  }
-}
 
 // Selectors
 export const selectFavoriteRecipes = (state) => state.favoriteRecipes;
@@ -25,15 +10,16 @@ export const selectFilteredFavoriteRecipes = (state) => {
   return favoriteRecipes.filter(recipe => recipe.name.toLowerCase().includes(searchTerm.toLowerCase()))
 }
 
-// Reducer 
-const initialState = [];
-export default function favoriteRecipesReducer (favoriteRecipes = initialState, action) {
-  switch (action.type) {
-    case ADD_RECIPE:
-      return [...favoriteRecipes, action.payload]
-    case REMOVE_RECIPE:
-      return favoriteRecipes.filter(recipe => recipe.id !== action.payload.id)
-    default:
-      return favoriteRecipes;
-  }
-}
+// Slice
+export const favoriteRecipesSlice = createSlice({
+  name: 'favoriteRecipes',
+  initialState: [],
+  reducers: {
+    addFavorite: (state, action) => [...state, action.payload],
+    removeFavorite: (state, action) => state.filter(recipe => recipe.id !== action.payload.id)
+  },
+});
+
+// Exports
+export const { addFavorite, removeFavorite } = favoriteRecipesSlice.actions;
+export default favoriteRecipesSlice.reducer;
