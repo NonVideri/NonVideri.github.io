@@ -10,12 +10,12 @@ export default function Clock() {
   
   // Change timezones
   const handleChange = (newTimezone) => {
-    setState({...state, timezone: newTimezone })
+    setState(state => {return {...state, timezone: newTimezone }})
   }
 
   // Toggle precise mode
   const handleClick = () => {
-    setState({...state, precise: !state.precise })
+    setState(state => {return {...state, precise: !state.precise }})
   }
   return (
     <div>
