@@ -1,27 +1,29 @@
-import React from 'react';
-import ClockMechanism from './components/ClockMechanism';
-import ClockTimezone from './components/ClockTimezone';
+import React, { useState } from 'react';
+import Display from './components/Display';
+import Timezone from './components/Timezone';
 
-export default class Clock extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = { precise: false }
-      this.handleClick = this.handleClick.bind(this);
-    }
-    // Toggle precise mode
-    handleClick() {
-      let newState = this.state.precise === true ? false : true
-      this.setState({ precise: newState })
-    }
-    render() {
-        return (
-            <div>
-                <span className="card-group">
-                  <ClockMechanism className="card" isPrecise={this.state.precise}/>
-                  {/* <ClockTimezone className="card" /> */}
-                </span>
-                <button className="btn btn-primary" onClick={this.handleClick}>Toggle Precise Mode</button>
-            </div>
-        )
-    }
+export default function Clock() {
+  const [state, setState] = useState({
+    precise: false,
+    timezone: null
+  })
+  
+  // Change timezones
+  const handleChange = (newTimezone) => {
+    setState({...state, timezone: newTimezone })
+  }
+
+  // Toggle precise mode
+  const handleClick = () => {
+    setState({...state, precise: !state.precise })
+  }
+  return (
+    <div>
+      <span className="card-group">
+        <Display className="card" timezone={state.timezone} isPrecise={state.precise}/>
+        <Timezone className="card" setTimezone={handleChange} />
+      </span>
+      <button className="btn btn-primary" onClick={handleClick}>Toggle Precise Mode</button>
+    </div>
+  )
 }
