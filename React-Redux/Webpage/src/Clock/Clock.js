@@ -5,7 +5,7 @@ import Timezone from './components/Timezone';
 export default function Clock() {
   const [state, setState] = useState({
     precise: false,
-    timezone: null
+    timezone: 'local'
   })
   
   // Change timezones

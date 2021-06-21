@@ -20,12 +20,12 @@ export default function ClockDisplay (props) {
     } else {
       delay = oneSecond;
     }
-    if (timezone !== null) {
+    if (timezone !== 'local') {
       intervalID = setInterval(() => {
       setTime(getTimeZoneTimeObj(timezone))}, delay);
     } else {
       intervalID = setInterval(() => {
-      setTime(new Date)}, delay);
+      setTime(new Date())}, delay);
     }
   };
 
