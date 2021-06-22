@@ -13,7 +13,7 @@ export default function Results(props) {
   // Get a random item
   const getItem = () => {
     let array = items.list
-    let random = Math.floor(Math.random() * (items.list.length-1))
+    let random = Math.floor(Math.random() * (items.list.length))
     let item = array[random]
     if (!modes.repeat) {
       dispatch(pickItem(random))
