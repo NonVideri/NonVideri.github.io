@@ -4,12 +4,6 @@ export default function ClockDisplay (props) {
   const { timezone, isPrecise } = props;
   const [time, setTime] = useState(new Date());
   var intervalID;
-  
-  //const getTimeZoneTimeObj = (timezone) => {
-  //  let localdate = new Date()
-  //  let timeZoneDate = new Date(localdate.getTime() + ((localdate.getTimezoneOffset()- timezone)*60*60*1000))
-  //  return timeZoneDate
-  // }
 
   // Start clock
   const startInterval = () => {
@@ -22,11 +16,6 @@ export default function ClockDisplay (props) {
     }
     intervalID = setInterval(() => {
     setTime(new Date())}, delay);
-    //if (timezone !== 'local') {
-    //  intervalID = setInterval(() => {
-    //  setTime(getTimeZoneTimeObj(timezone))}, delay);
-    //} else {
-    //}
   };
 
   // Clock starts when mounted
