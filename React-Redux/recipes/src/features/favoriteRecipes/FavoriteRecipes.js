@@ -1,20 +1,26 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { removeFavorite, selectFilteredFavoriteRecipes } from './favoriteRecipesSlice.js';
 
 import Recipe from "../../components/Recipe";
 import FavoriteButton from "../../components/FavoriteButton";
+import Spinner from "../../components/Spinner"
 
 const unfavoriteIcon = 'img/unfavorite.svg';
 
 export default function FavoriteRecipes() {
-  const favoriteRecipes = useSelector(selectFilteredFavoriteRecipes);
   const dispatch = useDispatch();
+  const favoriteRecipes = useSelector(selectFilteredFavoriteRecipes);
+  const { isLoading } = useSelector((state) => state.allRecipes);
 
   const onRemoveFavoriteHandler = (recipe) => {
     dispatch(removeFavorite(recipe));
   };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="recipes-container">

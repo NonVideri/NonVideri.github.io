@@ -8,6 +8,7 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 - Allows the user to add and remove recipes from favorites.
 - Implements searching functionality.
 - Uses redux-toolkit. (recipes-old is the older version which doesn't use redux-toolkit.)
+- Uses msw to simulate getting recipe data from a server.
 
 ### Skypey
 - A simple messaging app demo using React-Redux.

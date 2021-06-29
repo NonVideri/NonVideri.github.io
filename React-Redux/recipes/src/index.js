@@ -8,6 +8,9 @@ import './index.css'
 import App from './app/App';
 import store from './app/store.js';
 
+const { worker } = require("./mocks/browser");
+worker.start();
+
 const render = () => {
   ReactDOM.render(
     <React.StrictMode>
