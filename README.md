@@ -3,6 +3,11 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
 ## React & Redux Projects
 
+### Comments
+- Displays a list of fake comments fetched from JSONPlaceholder server.
+- Allows user to search by author's e-mail address.
+- Implements the responsive design guidelines.
+
 ### Recipes
 - A list of cooking recipes in React-Redux.
 - Allows the user to add and remove recipes from favorites.
@@ -11,8 +16,10 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 - Uses msw to simulate getting recipe data from a server.
 
 ### Skypey
-- A simple messaging app demo using React-Redux.
-- Allows the user to view (mock) contacts, enter and send messages.
+- A simple demo of a messenger app using React-Redux.
+- Allows the user to view (mock) contacts.
+- Messages are displayed in the main view.
+- Allows user to enter and send messages.
 
 ### Randomizer
 - Randomly picks from number ranges (Number Range Mode) or comma-separated sets of data (Custom Items Mode).
