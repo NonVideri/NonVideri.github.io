@@ -3,7 +3,7 @@ import React from 'react';
 export default function ClockTimezone (props) {
   const TIMEZONES = {
     'local': 'local',
-    'UTC+0': 'Etc/GMT+0',
+    'UTC+0': 'Etc/GMT-0',
     'UTC+1': 'Etc/GMT-1',
     'UTC+2': 'Etc/GMT-2',
     'UTC+3': 'Etc/GMT-3',
