@@ -6,8 +6,12 @@ import { addFavorite, removeFavorite } from '../favoriteRecipes/favoriteRecipesS
 export const loadRecipes = createAsyncThunk(
   "allRecipes/loadRecipes",
   async () => {
-    const data = await fetch("api/recipes?limit=10");
+    console.log('await start')
+    const data = await fetch("api/recipes");
+    console.log('await first end')
+    console.log(data)
     const json = await data.json();
+    console.log('await end')
     return json;
   }
 );
