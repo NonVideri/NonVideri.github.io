@@ -1,30 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import Search from './features/Search';
 import Comments from './features/Comments';
 
-const getComments = async () => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/comments');
-  if (response.ok) {
-    const jsonresponse = await response.json();
-    return jsonresponse
+const splitIntoThreads = (comments) => {
+  let postIds = [];
+  let thread = [];
+  let threads = [];
+  for (let comment of comments) {
+    if (!postIds.includes(comment.postId)) {
+      postIds.push(comment.postId);
+    }
   }
-  throw new Error('Request failed!');
+  console.log(postIds)
+  for (let postId of postIds) {
+    for (let comment of comments) {
+      if (comment.postId === postId) {
+        thread.push(comment);
+      }
+    }
+    threads.push(thread);
+    console.log(thread)
+    thread = [];
+  }
+  return threads
 }
 
 export default function App() {
   const [mode, setMode] = useState({
-    hasError: false
+    hasError: false,
+    hasLoaded: false,
+    comments: []
   });
-  let comments = {};
 
-  try {
-    comments = getComments();
-  } catch(error) {
-    console.log(error)
-    setMode({hasError: true})
-  }
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/comments')
+    .then(
+      response => {
+      // console.log('before json')
+      const jsonresponse = response.json()
+      /*console.log('after json')
+      console.log(response)
+      console.log(jsonresponse)*/
+      return jsonresponse
+      }, (error) => {
+      setMode({...mode, hasError: true})
+      console.log(error);})
+    .then(
+      (comments) => {
+        console.log(comments)
+        let threads = splitIntoThreads(comments)
+        console.log(threads)
+        setMode({...mode, comments: threads, hasLoaded: true})},
+      (error) => {
+        setMode({...mode, hasError: true})
+        console.log(error);})
+  }, [])
 
   if (mode.hasError) {
     return <h2>Error loading data!</h2>
@@ -33,7 +65,7 @@ export default function App() {
   return (
     <div className="App">
       <Search/>
-      <Comments comments={comments}/>
+      <Comments comments={mode.comments} />
     </div>
   );
 }

@@ -13,33 +13,18 @@ const Comment = ({comment, numeration}) => {
   );
 }
 
-const splitIntoThreads = (comments) => {
-  let postIds = [];
-  let thread = [];
-  let threads = [];
-  for (let comment in comments) {
-    if (!postIds.includes(comment.postId)) {
-      postIds.push(comment.postId);
-    }
-  }
-  for (let postId in postIds) {
-    for (let comment in comments) {
-      if (comment.postId === postId) {
-        thread.push(comment);
-      }
-    }
-    threads.push(thread);
-    thread = [];
-  }
-  return threads
-}
-
 export default function Comments(props) {
-  let threads = splitIntoThreads(props.comments);
+  let threads = props.comments;
+
+  if (!props.comments && threads === undefined) {
+    return null;
+  }
+
   return (
+    threads === undefined ? null :
     <div className="Comments">
       {threads.map(thread => (thread.map((comment, i) =>
-        <Comment comment={comment} numeration={`comment${i}`} key={comment.id} />
+        <Comment comment={comment} numeration={`comment-number${i+1}`} key={comment.id} />
       )))}
     </div>
   );
