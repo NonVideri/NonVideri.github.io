@@ -3,6 +3,9 @@ package.json
 package-lock.json
 node_modules/
 
+# testing
+build/
+
 # ignore
 React-Redux/Webpage/*
 !React-Redux/Webpage/src
