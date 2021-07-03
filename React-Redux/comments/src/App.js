@@ -1,38 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 
 import Search from './features/Search';
 import Comments from './features/Comments';
 
-const splitIntoThreads = (comments) => {
-  let postIds = [];
-  let thread = [];
-  let threads = [];
-  for (let comment of comments) {
-    if (!postIds.includes(comment.postId)) {
-      postIds.push(comment.postId);
-    }
-  }
-  console.log(postIds)
-  for (let postId of postIds) {
-    for (let comment of comments) {
-      if (comment.postId === postId) {
-        thread.push(comment);
-      }
-    }
-    threads.push(thread);
-    console.log(thread)
-    thread = [];
-  }
-  return threads
-}
-
 export default function App() {
-  const [mode, setMode] = useState({
+  const originalComments = useRef([]);
+  const [state, setState] = useState({
     hasError: false,
     hasLoaded: false,
     comments: []
   });
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/comments')
@@ -45,28 +24,63 @@ export default function App() {
       console.log(jsonresponse)*/
       return jsonresponse
       }, (error) => {
-      setMode({...mode, hasError: true})
+      setState({...state, hasError: true})
       console.log(error);})
     .then(
       (comments) => {
-        console.log(comments)
-        let threads = splitIntoThreads(comments)
-        console.log(threads)
-        setMode({...mode, comments: threads, hasLoaded: true})},
+        let numberedComments = numberComments(comments)
+        originalComments.current = numberedComments;
+        setState({...state, comments: numberedComments, hasLoaded: true})},
       (error) => {
-        setMode({...mode, hasError: true})
+        setState({...state, hasError: true})
         console.log(error);})
   }, [])
 
-  if (mode.hasError) {
+  useEffect(() => {
+    let filteredComments = filterComments(originalComments.current)
+    setState({...state, comments: filteredComments})
+  }, [search])
+
+  const filterComments = (comments) => {
+    let filteredComments = comments.filter(comment => comment.email.toLowerCase().includes(search.toLowerCase()))
+    return filteredComments
+  }
+
+  const onSearchChangeHandler = (e) => {
+    const userInput = e.target.value;
+    setSearch(userInput)
+  };
+
+  if (state.hasError) {
     return <h2>Error loading data!</h2>
   }
 
   return (
     <div className="App">
-      <Search/>
-      <Comments comments={mode.comments} />
+      <Search value={search} handler={onSearchChangeHandler}/>
+      <Comments comments={state.comments} />
     </div>
   );
 }
 
+const numberComments = (comments) => {
+  let postIds = [];
+
+  for (let comment of comments) {
+    if (!postIds.includes(comment.postId)) {
+      postIds.push(comment.postId);
+    }
+  }
+
+  let numberedComments = comments;
+
+  for (let comment of numberedComments) {
+    if (postIds.includes(comment.postId)) {
+      comment.first = true;
+      postIds = postIds.filter((id) => id !== comment.postId)
+    }
+  }
+  console.log(numberedComments)
+
+  return numberedComments
+}

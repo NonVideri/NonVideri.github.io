@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Comment = ({comment, numeration}) => {
+const Comment = ({comment, first}) => {
   const { name, email, body } = comment;
   return (
-    <div className={numeration}>
+    <div className={first ? 'comment-number-one' : 'comment-number-next'}>
       <header className='comment-header'>
         Name: {name} <br/>
         E-mail: {email}
@@ -14,18 +14,18 @@ const Comment = ({comment, numeration}) => {
 }
 
 export default function Comments(props) {
-  let threads = props.comments;
+  let comments = props.comments;
 
-  if (!props.comments && threads === undefined) {
+  if (!props.comments && comments === undefined) {
     return null;
   }
 
   return (
-    threads === undefined ? null :
+    comments === undefined ? null :
     <div className="Comments">
-      {threads.map(thread => (thread.map((comment, i) =>
-        <Comment comment={comment} numeration={`comment-number${i+1}`} key={comment.id} />
-      )))}
+      {comments.map((comment) =>
+        <Comment comment={comment} first={comment.first} key={comment.id} />
+      )}
     </div>
   );
 }
