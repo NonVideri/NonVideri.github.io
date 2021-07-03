@@ -1,3 +1,13 @@
+#search {
+  width: 100%;
+  padding: 9px 25px 9px 40px;
+  border-radius: 16.5px;
+  border: solid 1px #141c3a;
+  background-color: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+}
+
 .Comments {
   flex: 1 1 0;
   display: flex;
