@@ -28,6 +28,11 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 - Designed to be used as a board game support app.
 - Uses Redux. (RandomizerOld is the simple version which uses only React.)
 
+### Thoughts
+- A simple app in React used to write thoughts appearing in your head.
+- Thoughts disappear after 15 seconds, but can be deleted faster with a button.
+- Uses Jest and RTL for testing.
+
 ### Clock
 - A simple React clock.
 - Has two modes: Normal and Precise.
