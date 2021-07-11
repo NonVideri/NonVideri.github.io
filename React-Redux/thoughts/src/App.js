@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+
+import './App.css'
+
 import { AddThoughtForm } from './components/AddThoughtForm';
 import { Thought } from './components/Thought';
 import { generateId, getNewExpirationTime } from './utilities';
