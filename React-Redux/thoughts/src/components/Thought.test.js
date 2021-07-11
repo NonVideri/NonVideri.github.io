@@ -35,3 +35,13 @@ test('Clicking the x button should remove a thought', () => {
   const removedThought = screen.queryByText('This is a place for your negative thoughts.')
   expect(removedThought).toBeNull()
 });
+
+test('Should add a new thought' , () => {
+  render(<App/>);
+  const input = screen.getByRole('textbox');
+  const submit = screen.getByText('Add');
+  userEvent.type(input, 'I need other people to be happy.')
+  userEvent.click(submit)
+  const thought = screen.getByText('I need other people to be happy.');
+  expect(thought).toBeInTheDocument();
+});
