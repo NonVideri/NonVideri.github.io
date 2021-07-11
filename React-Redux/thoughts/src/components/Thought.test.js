@@ -1,6 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event';
 
 import { Thought } from './Thought.js';
 
@@ -21,7 +22,16 @@ test('Should have button enabled' , () => {
   render(<Thought 
   thought={{text:'Hello'}}
   removeThought={()=>{}}/>)
-  // Test status of button here
+
   const button = screen.getByRole('button')
   expect(button).toBeEnabled()
+});
+
+test('Clicking the x button should remove a thought', () => {
+  render(<App/>);
+  // Get only the first button
+  const button = screen.getAllByText('×')[0]
+  userEvent.click(button)
+  const removedThought = screen.queryByText('This is a place for your negative thoughts.')
+  expect(removedThought).toBeNull()
 });

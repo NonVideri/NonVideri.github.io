@@ -10,12 +10,12 @@ export default function App() {
   const [thoughts, setThoughts] = useState([
     {
       id: generateId(),
-      text: 'This is a place for your passing thoughts.',
+      text: 'This is a place for your negative thoughts.',
       expiresAt: getNewExpirationTime(),
     },
     {
       id: generateId(),
-      text: "They'll be removed after 15 seconds.",
+      text: "They will disappear forever after 15 seconds.",
       expiresAt: getNewExpirationTime(),
     },
   ]);
