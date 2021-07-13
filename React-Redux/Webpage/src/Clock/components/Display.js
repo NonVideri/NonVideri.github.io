@@ -32,7 +32,7 @@ export default function ClockDisplay(props) {
   }, [isPrecise, timezone]);
   // Render
   return (
-    <div>
+    <div className="clock-display">
       {isPrecise
         ? time.toISOString()
         : timezone === 'local'

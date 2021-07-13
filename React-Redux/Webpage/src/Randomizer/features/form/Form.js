@@ -42,37 +42,39 @@ export default function Form(props) {
   return (
     <form type="range" onSubmit={handleSubmit}>
       <div className="input-group">
-        <span className="input-group-prepend input-group-text">
-          {modes.numberRange
-            ? 'Enter two integers (max 9999):'
-            : 'Enter items separated by commas (","):'}
-        </span>
-        <textarea
-          id="custom"
-          className="form-control"
-          hidden={modes.numberRange}
-          type="text"
-          placeholder="Enter items here"
-          onChange={handleChange}
-        />
-        <input
-          id="number1"
-          className="form-control"
-          hidden={!modes.numberRange}
-          type="number"
-          placeholder="0"
-          max="9999"
-          onChange={handleChange}
-        />
-        <input
-          id="number2"
-          className="form-control"
-          hidden={!modes.numberRange}
-          type="number"
-          placeholder="0"
-          max="9999"
-          onChange={handleChange}
-        />
+        <div className="d-flex flex-column flex-md-row">
+          <span className="input-group-prepend input-group-text">
+            {modes.numberRange
+              ? 'Enter two integers (max 9999):'
+              : 'Enter items separated by commas (","):'}
+          </span>
+          <textarea
+            id="custom"
+            className="form-control"
+            hidden={modes.numberRange}
+            type="text"
+            placeholder="Enter items here"
+            onChange={handleChange}
+          />
+          <input
+            id="number1"
+            className="form-control"
+            hidden={!modes.numberRange}
+            type="number"
+            placeholder="0"
+            max="9999"
+            onChange={handleChange}
+          />
+          <input
+            id="number2"
+            className="form-control"
+            hidden={!modes.numberRange}
+            type="number"
+            placeholder="0"
+            max="9999"
+            onChange={handleChange}
+          />
+        </div>
       </div>
       <button className="btn btn-success" type="submit">
         Submit

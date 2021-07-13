@@ -1,3 +1,4 @@
+import './Clock.css';
 import React, { useState } from 'react';
 import Display from './components/Display';
 import Timezone from './components/Timezone';
@@ -23,7 +24,7 @@ export default function Clock() {
   };
   return (
     <div>
-      <span className="card-group">
+      <span className="card-group d-flex flex-column">
         <Display
           className="card"
           timezone={state.timezone}
