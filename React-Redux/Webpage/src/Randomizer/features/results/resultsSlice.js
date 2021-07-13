@@ -6,7 +6,7 @@ export const resultsSlice = createSlice({
   initialState: {
     list: [],
     counter: 0,
-    max: 0
+    max: 0,
   },
   reducers: {
     submitItems: (state, action) => {
@@ -14,18 +14,18 @@ export const resultsSlice = createSlice({
         ...state,
         list: action.payload,
         counter: 0,
-        max: action.payload.length
-      }
+        max: action.payload.length,
+      };
     },
     pickItem: (state, action) => {
-      state.list.splice(action.payload, 1)
-      state.counter += 1
-    }
-  }
-})
+      state.list.splice(action.payload, 1);
+      state.counter += 1;
+    },
+  },
+});
 
 // Selectors
-export const selectResults = (state) => state.results;
+export const selectResults = state => state.results;
 
 // Exports
 export const { submitItems, pickItem } = resultsSlice.actions;

@@ -9,12 +9,14 @@ export const formSlice = createSlice({
     number2: 0,
   },
   reducers: {
-    setForm: (state, action) => {return {...state, ...action.payload}}
-  }
-})
+    setForm: (state, action) => {
+      return { ...state, ...action.payload };
+    },
+  },
+});
 
 // Selectors
-export const selectForm = (state) => state.form;
+export const selectForm = state => state.form;
 
 // Exports
 export const { setForm } = formSlice.actions;

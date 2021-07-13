@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // A form to submit new task with description
 export default function NewTask({ newTask, handleChange, handleSubmit }) {
@@ -8,7 +8,7 @@ export default function NewTask({ newTask, handleChange, handleSubmit }) {
         className="form-control"
         name="title"
         placeholder="New task"
-        value={newTask.title || ""}
+        value={newTask.title || ''}
         onChange={handleChange}
       />
       {!newTask.title ? null : (
@@ -17,10 +17,12 @@ export default function NewTask({ newTask, handleChange, handleSubmit }) {
             className="form-control"
             name="description"
             placeholder="Details..."
-            value={newTask.description || ""}
+            value={newTask.description || ''}
             onChange={handleChange}
           />
-          <button className="btn btn-info" type="submit">Add Task</button>
+          <button className="btn btn-info" type="submit">
+            Add Task
+          </button>
         </>
       )}
     </form>

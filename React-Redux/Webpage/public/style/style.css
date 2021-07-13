@@ -12,7 +12,8 @@ html {
   scroll-behavior: smooth;
 }
 
-body, html {
+body,
+html {
   background-color: #000000;
   color: #dce0e0;
   font-size: 18px;
@@ -59,13 +60,10 @@ section {
 
 .navigation ul li {
   display: inline-block;
-  margin: 0 10px;
-}
-
-.navigation ul li a {
+  margin: 0 8px;
   color: DarkGreen;
   font-family: "Spectral", serif;
-  font-size: 12px;
+  font-size: 16px;
   transition: all 0.5s;
   text-decoration: none;
 }
@@ -87,7 +85,7 @@ section {
   display: flex;
   flex-direction: column;
   padding: 0 24px;
-  background-image: url("bg.jpg");
+  background-image: url("https://i.imgur.com/gQO48Eh.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 40%;
@@ -170,6 +168,7 @@ section {
 
 #about-img {
   margin: 0 auto;
+  padding-left: 0;
   display: block;
   width: 100%;
   height: auto;
@@ -211,7 +210,7 @@ section {
 }
 
 .statement {
-  background-image: url("./notes.jpg");
+  background-image: url("https://i.imgur.com/Iie96jJ.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom 25% center;
@@ -283,7 +282,8 @@ section {
   font-size: 18px;
 }
 
-.gallery-item:hover:before, .gallery-item:hover figcaption {
+.gallery-item:hover:before,
+.gallery-item:hover figcaption {
   display: block;
 }
 

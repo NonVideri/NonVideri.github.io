@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function ClockTimezone (props) {
+export default function ClockTimezone(props) {
   const TIMEZONES = {
-    'local': 'local',
+    local: 'local',
     'UTC+0': 'Etc/GMT-0',
     'UTC+1': 'Etc/GMT-1',
     'UTC+2': 'Etc/GMT-2',
@@ -26,19 +26,25 @@ export default function ClockTimezone (props) {
     'UTC-4': 'Etc/GMT+4',
     'UTC-3': 'Etc/GMT+3',
     'UTC-2': 'Etc/GMT+2',
-    'UTC-1': 'Etc/GMT+1'
-  }
-  
-  const handleChange = (e) => {
+    'UTC-1': 'Etc/GMT+1',
+  };
+
+  const handleChange = e => {
     let newTimezone = e.target.options[e.target.selectedIndex].dataset.timezone;
-    props.setTimezone(newTimezone)
-  }
+    props.setTimezone(newTimezone);
+  };
   return (
-    <select className="form-select" aria-label="Default select example" onChange={handleChange}>
+    <select
+      className="form-select"
+      aria-label="Default select example"
+      onChange={handleChange}
+    >
       <option selected>Select a timezone</option>
-      {Object.keys(TIMEZONES).map((zone) =>
-        <option data-timezone={TIMEZONES[zone]}>{zone === 'local' ? 'Local time' : zone}</option>
-      )}
+      {Object.keys(TIMEZONES).map(zone => (
+        <option data-timezone={TIMEZONES[zone]}>
+          {zone === 'local' ? 'Local time' : zone}
+        </option>
+      ))}
     </select>
-  )
+  );
 }

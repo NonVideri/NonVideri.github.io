@@ -1,9 +1,7 @@
 import React from 'react';
 
 export default function PeopleList(props) {
-    const arr = props.data;
-    const listItems = arr.map((val, index) =>
-      <li key={index}>{val}</li>
-    );
-    return <ul>{listItems}</ul>;
-  }
+  const arr = props.data;
+  const listItems = arr.map((val, index) => <li key={index}>{val}</li>);
+  return <ul>{listItems}</ul>;
+}

@@ -21,7 +21,8 @@ html {
   scroll-behavior: smooth;
 }
 
-body, html {
+body,
+html {
   background-color: $color-background;
   color: $color-main;
   font-size: 18px;
@@ -68,13 +69,10 @@ section {
 
 .navigation ul li {
   display: inline-block;
-  margin: 0 10px;
-}
-
-.navigation ul li a {
+  margin: 0 8px;
   color: $color-titles;
   font-family: $font-main;
-  font-size: 12px;
+  font-size: 16px;
   transition: $transition;
   text-decoration: none;
 }
@@ -96,7 +94,7 @@ section {
   display: flex;
   flex-direction: column;
   padding: 0 24px;
-  background-image: url("bg.jpg");
+  background-image: url('https://i.imgur.com/gQO48Eh.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 40%;
@@ -157,7 +155,7 @@ section {
 .section-title:after {
   position: relative;
   display: block;
-  content: "";
+  content: '';
   width: 200px;
   height: 5px;
   background: $color-main;
@@ -179,6 +177,7 @@ section {
 
 #about-img {
   margin: 0 auto;
+  padding-left: 0;
   display: block;
   width: 100%;
   height: auto;
@@ -220,7 +219,7 @@ section {
 }
 
 .statement {
-  background-image: url("./notes.jpg");
+  background-image: url('https://i.imgur.com/Iie96jJ.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom 25% center;
@@ -272,7 +271,7 @@ section {
 .gallery-item:before {
   position: absolute;
   display: none;
-  content: "";
+  content: '';
   left: 0;
   top: 0;
   width: 100%;
@@ -292,7 +291,8 @@ section {
   font-size: 18px;
 }
 
-.gallery-item:hover:before, .gallery-item:hover figcaption {
+.gallery-item:hover:before,
+.gallery-item:hover figcaption {
   display: block;
 }
 

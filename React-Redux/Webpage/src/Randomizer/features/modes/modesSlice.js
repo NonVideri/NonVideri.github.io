@@ -8,18 +8,18 @@ export const modesSlice = createSlice({
     repeat: false,
     hidden: false,
     sound: true,
-    submitted: false
+    submitted: false,
   },
   reducers: {
     toggleMode: (state, action) => {
-      let changedMode = state[action.payload] ? false : true
-      return {...state, [action.payload]: changedMode}
-    }
-  }
+      let changedMode = state[action.payload] ? false : true;
+      return { ...state, [action.payload]: changedMode };
+    },
+  },
 });
 
 // Selectors
-export const selectModes = (state) => state.modes;
+export const selectModes = state => state.modes;
 
 // Exports
 export const { toggleMode } = modesSlice.actions;

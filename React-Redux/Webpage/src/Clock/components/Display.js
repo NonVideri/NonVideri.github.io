@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function ClockDisplay (props) {
+export default function ClockDisplay(props) {
   const { timezone, isPrecise } = props;
   const [time, setTime] = useState(new Date());
   var intervalID;
@@ -15,7 +15,8 @@ export default function ClockDisplay (props) {
       delay = oneSecond;
     }
     intervalID = setInterval(() => {
-    setTime(new Date())}, delay);
+      setTime(new Date());
+    }, delay);
   };
 
   // Clock starts when mounted
@@ -23,20 +24,20 @@ export default function ClockDisplay (props) {
   // Component reloads after mode change
   // Clear clock when unmounted to save resources
   useEffect(() => {
-    clearInterval(intervalID)
-    startInterval()
+    clearInterval(intervalID);
+    startInterval();
     return () => {
-      clearInterval(intervalID)
-    }
-  }, [isPrecise, timezone])
+      clearInterval(intervalID);
+    };
+  }, [isPrecise, timezone]);
   // Render
   return (
     <div>
       {isPrecise
-        ? time.toISOString() :
-          timezone === 'local' ?
-          time.toLocaleTimeString('en-US') :
-          time.toLocaleTimeString('en-US', {timeZone: timezone})}
+        ? time.toISOString()
+        : timezone === 'local'
+        ? time.toLocaleTimeString('en-US')
+        : time.toLocaleTimeString('en-US', { timeZone: timezone })}
     </div>
   );
 }
