@@ -7,9 +7,4 @@ node_modules/
 build/
 
 # ignore
-React-Redux/Webpage/*
-!React-Redux/Webpage/src
-React-Redux/Webpage/src/App.test.js
-React-Redux/Webpage/src/index.js
-React-Redux/Webpage/src/reportWebVitals.js
-React-Redux/Webpage/src/setupTests.js
+React-Redux/Webpage/public/content/

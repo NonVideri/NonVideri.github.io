@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event';
 
 import { Thought } from './Thought.js';
@@ -44,4 +44,17 @@ test('Should add a new thought' , () => {
   userEvent.click(submit)
   const thought = screen.getByText('I need other people to be happy.');
   expect(thought).toBeInTheDocument();
+});
+
+test('Should show Thought to be removed', async () => {
+  render(<App/>);
+  const input = screen.getByRole('input');
+  const submit = screen.getByRole('submit')
+  userEvent.type(input, 'Life is unfair.');
+  userEvent.click(submit)
+
+  await waitFor(() => {
+  const thought = screen.queryByText('Life is unfair.');
+  expect(thought).toBeNull();
+  })
 });
