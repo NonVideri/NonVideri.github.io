@@ -3,6 +3,9 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
 ## React & Redux Projects
 
+### Notflix
+- See the second repository.
+
 ### Comments
 - Displays a list of fake comments fetched from JSONPlaceholder server.
 - Allows user to search by author's e-mail address.
@@ -20,6 +23,11 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 - Allows the user to view (mock) contacts.
 - Messages are displayed in the main view.
 - Allows user to enter and send messages.
+
+### Webpage
+- My personal webpage written entirely in React.
+- Uses Bootstrap and Sass for style.
+- Showcases some small React/Redux apps: Randomizer, Clock and ToDoApp.
 
 ### Randomizer
 - Randomly picks from number ranges (Number Range Mode) or comma-separated sets of data (Custom Items Mode).

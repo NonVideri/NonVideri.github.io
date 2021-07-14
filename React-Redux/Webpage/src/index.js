@@ -1,11 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals';
-import Randomizer from './Randomizer/Randomizer';
+import React from "react";
+import ReactDOM from "react-dom";
+
+import "./style.css";
+import reportWebVitals from "./reportWebVitals";
+
+import Navigation from "./components/Navigation";
+import Splash from "./components/Splash";
+import About from "./components/About";
+import Statement from "./components/Statement";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Gallery from "./components/Gallery";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+/* import Randomizer from './Randomizer/Randomizer';
 import Clock from './Clock/Clock';
-import ToDoApp from './ToDoApp/ToDoApp';
+import ToDoApp from './ToDoApp/ToDoApp'; */
 // import ContactManager from './ContactManager/ContactManager';
 
+ReactDOM.render(
+  <React.StrictMode>
+    <Navigation />
+    <Splash />
+    <About />
+    <Statement />
+    <Skills />
+    <Projects />
+    <Gallery />
+    <Contact />
+    <Footer />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+
+/*
 ReactDOM.render(
   <React.StrictMode>
     <Randomizer />
@@ -27,7 +55,7 @@ ReactDOM.render(
   document.getElementById('clock')
 );
 
-/* ReactDOM.render(
+ReactDOM.render(
   <React.StrictMode>
     <ContactManager data={[]} />
   </React.StrictMode>,

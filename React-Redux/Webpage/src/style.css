@@ -1,14 +1,5 @@
 /* sass --watch style.scss style.css */
-@import url('https://fonts.googleapis.com/css2?family=Karla&family=Spectral&display=swap');
-$color-main: #dce0e0;
-$color-background: #000000;
-$color-boxes: #131313;
-$color-titles: DarkGreen;
-$color-muted: #6b6b6b;
-$font-main: 'Spectral', serif;
-$font-text: 'Karla', sans-serif;
-$transition: all 0.5s;
-
+@import url("https://fonts.googleapis.com/css2?family=Karla&family=Spectral&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -23,22 +14,22 @@ html {
 
 body,
 html {
-  background-color: $color-background;
-  color: $color-main;
+  background-color: black;
+  color: #dce0e0;
   font-size: 18px;
   line-height: 1.6;
   margin: 0;
   height: 100%;
-  font-family: $font-text;
+  font-family: "Karla", sans-serif;
 }
 
 a {
-  color: $color-titles;
+  color: #006600;
 }
 
 a:hover {
-  color: lighten($color-titles, 25%);
-  transition: $transition;
+  color: #00e600;
+  transition: all 0.5s;
 }
 
 img {
@@ -53,7 +44,7 @@ section {
 }
 
 .navigation {
-  background-color: $color-background;
+  background-color: black;
   padding: 12px 0;
   text-align: center;
   position: fixed;
@@ -70,17 +61,17 @@ section {
 .navigation ul li {
   display: inline-block;
   margin: 0 8px;
-  color: $color-titles;
-  font-family: $font-main;
+  color: #006600;
+  font-family: "Spectral", serif;
   font-size: 16px;
-  transition: $transition;
+  transition: all 0.5s;
   text-decoration: none;
 }
 
 .navigation ul li a:hover {
-  background-color: lighten($color-background, 30%);
-  color: lighten($color-titles, 25%);
-  transition: $transition;
+  background-color: #4d4d4d;
+  color: #00e600;
+  transition: all 0.5s;
 }
 
 .container {
@@ -94,7 +85,7 @@ section {
   display: flex;
   flex-direction: column;
   padding: 0 24px;
-  background-image: url('https://i.imgur.com/gQO48Eh.jpg');
+  background-image: url("https://i.imgur.com/gQO48Eh.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 40%;
@@ -110,19 +101,19 @@ section {
 .main-title {
   margin: 0;
   font-weight: normal;
-  color: $color-main;
+  color: #dce0e0;
   font-size: 60px;
-  font-family: $font-main;
+  font-family: "Spectral", serif;
 }
 
 .main-subtitle {
   margin: 12px 0 60px 0;
   font-weight: normal;
-  color: $color-main;
+  color: #dce0e0;
   font-size: 28px;
   font-variant: small-caps;
   font-weight: bold;
-  font-family: $font-main;
+  font-family: "Spectral", serif;
 }
 
 .btn {
@@ -133,32 +124,32 @@ section {
   padding: 18px 24px 18px 24px;
   font-size: 14px;
   margin: 12px 12px 12px 0px;
-  background-color: $color-main;
-  color: $color-background;
+  background-color: #dce0e0;
+  color: black;
   transition: all 0.5s;
 }
 
 #main-btn:hover {
-  background-color: $color-boxes;
-  color: $color-main;
+  background-color: #121212;
+  color: #dce0e0;
 }
 
 .section-title {
   position: relative;
   margin: 0 0 60px 0;
   text-align: center;
-  color: $color-titles;
-  font-family: $font-main;
+  color: #006600;
+  font-family: "Spectral", serif;
   font-weight: bold;
 }
 
 .section-title:after {
   position: relative;
   display: block;
-  content: '';
+  content: "";
   width: 200px;
   height: 5px;
-  background: $color-main;
+  background: #dce0e0;
   left: 50%;
   bottom: -16px;
   margin-left: -100px;
@@ -167,11 +158,11 @@ section {
 .section-intro {
   margin: 0 0 40px;
   text-align: center;
-  color: $color-titles;
+  color: #006600;
 }
 
 .about {
-  background-color: $color-boxes;
+  background-color: #121212;
   padding: 0;
 }
 
@@ -195,7 +186,7 @@ section {
 
 .skills {
   padding: 60px 0 80px;
-  background-color: $color-boxes;
+  background-color: #121212;
 }
 
 .col-sm-4 {
@@ -204,7 +195,7 @@ section {
 
 .feature-title {
   margin: 24px 0 0 0;
-  font-family: $font-main;
+  font-family: "Spectral", serif;
 }
 
 .feature-description {
@@ -215,23 +206,23 @@ section {
 .project {
   margin: 14px 0;
   padding: 14px 0;
-  font-family: $font-main;
+  font-family: "Spectral", serif;
 }
 
 .statement {
-  background-image: url('https://i.imgur.com/Iie96jJ.jpg');
+  background-image: url("https://i.imgur.com/Iie96jJ.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom 25% center;
   background-attachment: fixed;
   padding: 20px 0;
-  color: $color-muted;
+  color: #6b6b6b;
 }
 
 .quote blockquote {
   padding: 12px 20px;
   margin: 0;
-  font-family: $font-main;
+  font-family: "Spectral", serif;
   font-weight: 500;
   font-size: 22px;
   text-align: center;
@@ -244,7 +235,7 @@ section {
 
 .gallery {
   padding: 60px 0 10px 0;
-  background-color: $color-boxes;
+  background-color: #121212;
 }
 
 .gallery-wrapper {
@@ -271,12 +262,12 @@ section {
 .gallery-item:before {
   position: absolute;
   display: none;
-  content: '';
+  content: "";
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: $color-background;
+  background-color: black;
   opacity: 0.6;
 }
 
@@ -286,8 +277,8 @@ section {
   width: 100%;
   top: 50%;
   transform: translateY(-50%);
-  color: $color-main;
-  font-family: $font-main;
+  color: #dce0e0;
+  font-family: "Spectral", serif;
   font-size: 18px;
 }
 
@@ -307,23 +298,23 @@ section {
 
 .social-links li {
   display: inline-block;
-  border: 1px solid $color-main;
+  border: 1px solid #dce0e0;
   width: 30px;
   height: 30px;
   line-height: 30px;
-  transition: $transition;
+  transition: all 0.5s;
 }
 
 .social-links li a {
   display: block;
   width: 100%;
   height: 100%;
-  color: $color-titles;
-  transition: $transition;
+  color: #006600;
+  transition: all 0.5s;
 }
 
 .page-footer {
-  background-color: $color-boxes;
+  background-color: #121212;
   font-size: 12px;
   padding: 12px 0;
 }
@@ -378,3 +369,5 @@ section {
     position: static;
   }
 }
+
+/*# sourceMappingURL=style.css.map */
