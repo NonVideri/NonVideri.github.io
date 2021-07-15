@@ -13,10 +13,6 @@ import Projects from "./components/Projects";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-/* import Randomizer from './Randomizer/Randomizer';
-import Clock from './Clock/Clock';
-import ToDoApp from './ToDoApp/ToDoApp'; */
-// import ContactManager from './ContactManager/ContactManager';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -32,35 +28,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
-
-/*
-ReactDOM.render(
-  <React.StrictMode>
-    <Randomizer />
-  </React.StrictMode>,
-  document.getElementById('randomizer')
-);
-
-ReactDOM.render(
-  <React.StrictMode>
-    <ToDoApp />
-  </React.StrictMode>,
-  document.getElementById('todoapp')
-);
-
-ReactDOM.render(
-  <React.StrictMode>
-    <Clock />
-  </React.StrictMode>,
-  document.getElementById('clock')
-);
-
-ReactDOM.render(
-  <React.StrictMode>
-    <ContactManager data={[]} />
-  </React.StrictMode>,
-  document.getElementById('contactapp')
-); */
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
