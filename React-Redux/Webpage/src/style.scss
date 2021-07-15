@@ -4,10 +4,10 @@
 
 * {
   box-sizing: border-box;
-}
 
-*:focus {
-  box-shadow: none;
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 html {
@@ -53,10 +53,10 @@ section {
   font-family: $font-main;
   font-weight: bold;
 
-  & :after {
+  &:after {
     position: absolute;
     display: block;
-    content: "";
+    content: " ";
     width: 200px;
     height: 5px;
     background: $color-main;
@@ -157,7 +157,7 @@ section {
   color: $color-background;
   transition: all 0.5s;
 
-  & :hover {
+  &:hover {
     background-color: $color-boxes;
     color: $color-main;
   }
@@ -260,7 +260,7 @@ section {
     object-fit: cover;
   }
 
-  & :before {
+  &:before {
     position: absolute;
     display: none;
     content: "";
@@ -283,19 +283,14 @@ section {
     font-size: 18px;
   }
 
-  & :hover:before,
-  :hover figcaption {
+  &:hover:before,
+  &:hover figcaption {
     display: block;
   }
 }
 
 .contact {
   text-align: center;
-}
-
-.social-links {
-  list-style-type: none;
-  padding: 0;
 
   & li {
     display: inline-block;
