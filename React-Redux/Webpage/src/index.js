@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import "./style.css";
+import "./style.scss";
 import reportWebVitals from "./reportWebVitals";
 
 import Navigation from "./components/Navigation";

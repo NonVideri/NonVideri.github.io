@@ -27,11 +27,11 @@ html {
 
 a {
   color: $color-titles;
-}
 
-a:hover {
-  color: lighten($color-titles, 25%);
-  transition: $transition;
+  &:hover {
+    color: lighten($color-titles, 25%);
+    transition: $transition;
+  }
 }
 
 img {
@@ -45,6 +45,33 @@ section {
   margin: 10px;
 }
 
+.section-title {
+  position: relative;
+  margin: 0 0 60px 0;
+  text-align: center;
+  color: $color-titles;
+  font-family: $font-main;
+  font-weight: bold;
+
+  & :after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 200px;
+    height: 5px;
+    background: $color-main;
+    left: 50%;
+    bottom: -16px;
+    margin-left: -100px;
+  }
+}
+
+.section-intro {
+  margin: 0 0 40px;
+  text-align: center;
+  color: $color-titles;
+}
+
 .navigation {
   background-color: $color-background;
   padding: 12px 0;
@@ -53,27 +80,27 @@ section {
   top: 0;
   width: 100%;
   z-index: 9999;
-}
 
-.navigation ul {
-  margin: 0;
-  padding: 0;
-}
+  & ul {
+    margin: 0;
+    padding: 0;
 
-.navigation ul li {
-  display: inline-block;
-  margin: 0 8px;
-  color: $color-titles;
-  font-family: $font-main;
-  font-size: 16px;
-  transition: $transition;
-  text-decoration: none;
-}
+    & li {
+      display: inline-block;
+      margin: 0 8px;
+      color: $color-titles;
+      font-family: $font-main;
+      font-size: 16px;
+      transition: $transition;
+      text-decoration: none;
 
-.navigation ul li a:hover {
-  background-color: lighten($color-background, 30%);
-  color: lighten($color-titles, 25%);
-  transition: $transition;
+      & a:hover {
+        background-color: lighten($color-background, 30%);
+        color: lighten($color-titles, 25%);
+        transition: $transition;
+      }
+    }
+  }
 }
 
 .container {
@@ -129,38 +156,11 @@ section {
   background-color: $color-main;
   color: $color-background;
   transition: all 0.5s;
-}
 
-#main-btn:hover {
-  background-color: $color-boxes;
-  color: $color-main;
-}
-
-.section-title {
-  position: relative;
-  margin: 0 0 60px 0;
-  text-align: center;
-  color: $color-titles;
-  font-family: $font-main;
-  font-weight: bold;
-}
-
-.section-title:after {
-  position: relative;
-  display: block;
-  content: "";
-  width: 200px;
-  height: 5px;
-  background: $color-main;
-  left: 50%;
-  bottom: -16px;
-  margin-left: -100px;
-}
-
-.section-intro {
-  margin: 0 0 40px;
-  text-align: center;
-  color: $color-titles;
+  & :hover {
+    background-color: $color-boxes;
+    color: $color-main;
+  }
 }
 
 .about {
@@ -252,41 +252,41 @@ section {
   flex: 0 0 25%;
   max-width: 25%;
   text-align: center;
-}
 
-.gallery-item img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  & img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-.gallery-item:before {
-  position: absolute;
-  display: none;
-  content: "";
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $color-background;
-  opacity: 0.6;
-}
+  & :before {
+    position: absolute;
+    display: none;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-background;
+    opacity: 0.6;
+  }
 
-.gallery-item figcaption {
-  position: absolute;
-  display: none;
-  width: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  color: $color-main;
-  font-family: $font-main;
-  font-size: 18px;
-}
+  & figcaption {
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-main;
+    font-family: $font-main;
+    font-size: 18px;
+  }
 
-.gallery-item:hover:before,
-.gallery-item:hover figcaption {
-  display: block;
+  & :hover:before,
+  :hover figcaption {
+    display: block;
+  }
 }
 
 .contact {
@@ -296,37 +296,37 @@ section {
 .social-links {
   list-style-type: none;
   padding: 0;
-}
 
-.social-links li {
-  display: inline-block;
-  border: 1px solid $color-main;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  transition: $transition;
-}
+  & li {
+    display: inline-block;
+    border: 1px solid $color-main;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    transition: $transition;
 
-.social-links li a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  color: $color-titles;
-  transition: $transition;
+    & a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: $color-titles;
+      transition: $transition;
+    }
+  }
 }
 
 .page-footer {
   background-color: $color-boxes;
   font-size: 12px;
   padding: 12px 0;
-}
 
-.page-footer .container {
-  text-align: center;
-}
+  & .container {
+    text-align: center;
+  }
 
-.page-footer p {
-  margin: 0;
+  & p {
+    margin: 0;
+  }
 }
 
 @media (max-width: 767px) {
@@ -349,6 +349,7 @@ section {
     position: static;
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .features-wrapper {
     display: block;
