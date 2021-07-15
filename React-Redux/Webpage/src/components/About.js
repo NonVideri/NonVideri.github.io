@@ -3,7 +3,12 @@ export default function About() {
     <section className="about" id="about">
       <div className="container-fluid">
         <div className="row">
-          <img className="col-sm-5" id="about-img" src="img/KM-webpage.jpg" />
+          <img
+            className="col-sm-5"
+            id="about-img"
+            src="img/KM-webpage.jpg"
+            alt=""
+          />
           <div className="col-sm-7" id="about-text">
             <h2 className="section-title">About me</h2>
             <article>
