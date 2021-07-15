@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer class="page-footer">
-      <div class="container">
+    <footer className="page-footer">
+      <div className="container">
         <p>© Krzysztof Moszyński</p>
       </div>
     </footer>

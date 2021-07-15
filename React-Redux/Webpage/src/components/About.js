@@ -1,11 +1,11 @@
 export default function About() {
   return (
-    <section class="about" id="about">
-      <div class="container-fluid">
-        <div class="row">
-          <img class="col-sm-5" id="about-img" src="img/KM-webpage.jpg" />
-          <div class="col-sm-7" id="about-text">
-            <h2 class="section-title">About me</h2>
+    <section className="about" id="about">
+      <div className="container-fluid">
+        <div className="row">
+          <img className="col-sm-5" id="about-img" src="img/KM-webpage.jpg" />
+          <div className="col-sm-7" id="about-text">
+            <h2 className="section-title">About me</h2>
             <article>
               <p>
                 Since childhood, I have always been fascinated by systems. It

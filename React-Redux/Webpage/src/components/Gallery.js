@@ -1,30 +1,30 @@
 export default function Gallery() {
   return (
-    <section class="gallery" id="gallery">
-      <h2 class="section-title">Gallery</h2>
-      <div class="gallery-wrapper">
-        <figure class="gallery-item">
+    <section className="gallery" id="gallery">
+      <h2 className="section-title">Gallery</h2>
+      <div className="gallery-wrapper">
+        <figure className="gallery-item">
           <img src="img/teaching.jpg" />
           <figcaption>
             Teaching Economics to high schoolers
             <br /> is a lot of fun!
           </figcaption>
         </figure>
-        <figure class="gallery-item">
+        <figure className="gallery-item">
           <img src="img/interpreting.jpg" />
           <figcaption>
             Interpreting medical Japanese
             <br /> with neurosurgeon prof. Morita
           </figcaption>
         </figure>
-        <figure class="gallery-item">
+        <figure className="gallery-item">
           <img src="img/peace.jpg" />
           <figcaption>
             My presentation on building peace
             <br /> at Warsaw Stock Exchange
           </figcaption>
         </figure>
-        <figure class="gallery-item">
+        <figure className="gallery-item">
           <img src="img/training.jpg" />
           <figcaption>
             Training future Economics teachers

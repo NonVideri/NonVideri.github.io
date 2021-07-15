@@ -1,7 +1,7 @@
 export default function Navigation() {
   return (
-    <nav class="navigation">
-      <div class="container">
+    <nav className="navigation">
+      <div className="container">
         <ul>
           <li>
             <a href="#about">Introduction</a>
