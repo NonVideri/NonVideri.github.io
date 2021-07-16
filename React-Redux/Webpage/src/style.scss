@@ -1,6 +1,8 @@
 /* sass --watch style.scss style.css */
 @import url("https://fonts.googleapis.com/css2?family=Karla&family=Spectral&display=swap");
 @import "variables";
+@import "components/Splash/splash";
+@import "components/Navigation/navigation";
 
 * {
   box-sizing: border-box;
@@ -72,77 +74,10 @@ section {
   color: $color-titles;
 }
 
-.navigation {
-  background-color: $color-background;
-  padding: 12px 0;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 9999;
-
-  & ul {
-    margin: 0;
-    padding: 0;
-
-    & li {
-      display: inline-block;
-      margin: 0 8px;
-      color: $color-titles;
-      font-family: $font-main;
-      font-size: 16px;
-      transition: $transition;
-      text-decoration: none;
-
-      & a:hover {
-        background-color: lighten($color-background, 30%);
-        color: lighten($color-titles, 25%);
-        transition: $transition;
-      }
-    }
-  }
-}
-
 .container {
   max-width: 980px;
   margin: 0 auto;
   padding: 0 20px;
-}
-
-.splash {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 0 24px;
-  background-image: url("https://i.imgur.com/gQO48Eh.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center 40%;
-  background-attachment: fixed;
-  height: 500px;
-}
-
-.page-intro {
-  margin: auto;
-  text-align: center;
-}
-
-.main-title {
-  margin: 0;
-  font-weight: normal;
-  color: $color-main;
-  font-size: 60px;
-  font-family: $font-main;
-}
-
-.main-subtitle {
-  margin: 12px 0 60px 0;
-  font-weight: normal;
-  color: $color-main;
-  font-size: 28px;
-  font-variant: small-caps;
-  font-weight: bold;
-  font-family: $font-main;
 }
 
 .btn {

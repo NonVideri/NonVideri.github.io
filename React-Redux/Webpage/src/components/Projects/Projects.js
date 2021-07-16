@@ -1,6 +1,6 @@
-import Randomizer from "../Randomizer/Randomizer";
-import Clock from "../Clock/Clock";
-import ToDoApp from "../ToDoApp/ToDoApp";
+import Randomizer from "./Randomizer/Randomizer";
+import Clock from "./Clock/Clock";
+import ToDoApp from "./ToDoApp/ToDoApp";
 
 export default function Projects() {
   return (
