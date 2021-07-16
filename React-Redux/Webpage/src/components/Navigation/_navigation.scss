@@ -1,0 +1,32 @@
+@import "../../variables";
+
+.navigation {
+    background-color: $color-background;
+    padding: 12px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            margin: 0 8px;
+            color: $color-titles;
+            font-family: $font-main;
+            font-size: 16px;
+            transition: $transition;
+            text-decoration: none;
+
+            a:hover {
+                background-color: lighten($color-background, 30%);
+                color: lighten($color-titles, 25%);
+                transition: $transition;
+            }
+        }
+    }
+}
