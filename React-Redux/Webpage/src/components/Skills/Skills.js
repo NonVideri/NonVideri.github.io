@@ -23,10 +23,7 @@ export default function Skills() {
             <ul className="feature-description">
               <li>Mnemonics, mind maps</li>
               <li>Speed reading</li>
-              <li>
-                Time management (Eisenhower matrix, pomodoro, task
-                decomposition)
-              </li>
+              <li>Time management (Eisenhower matrix, pomodoro, task decomposition)</li>
               <li>Scrum, Trello</li>
               <li>Excel, Word, Wordpress</li>
               <li>Photoshop, Premiere Pro</li>

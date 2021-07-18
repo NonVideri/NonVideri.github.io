@@ -1,1 +1,15 @@
-@import "../variables";
+@import "src/variables";
+
+.page-footer {
+  background-color: $color-boxes;
+  font-size: 12px;
+  padding: 12px 0;
+
+  .container {
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+  }
+}

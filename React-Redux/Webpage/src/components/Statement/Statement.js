@@ -2,8 +2,8 @@ export default function Statement() {
   return (
     <section className="statement">
       <div className="container">
-        <article className="quote">
-          <blockquote className="blockquote">
+        <article>
+          <blockquote className="quote">
             <q>Your either grow or regress. Nothing stands still.</q>
           </blockquote>
         </article>
