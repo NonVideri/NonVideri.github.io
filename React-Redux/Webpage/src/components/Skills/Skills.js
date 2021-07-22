@@ -12,7 +12,7 @@ export default function Skills() {
               <li>JavaScript (ES6), TypeScript</li>
               <li>React, Redux</li>
               <li>Jest, RTL</li>
-              <li>REST, GraphQL</li>
+              <li>REST, SQL, GraphQL</li>
               <li>Python</li>
               <li>Git</li>
             </ul>
