@@ -1,6 +1,12 @@
 # Projects
 To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
+## Node Project
+
+### Express Course Project
+- A simple educational project for testing Express.
+- Allows the user to "authenticate", uses static data and all of the main REST methods.
+
 ## React & Redux Projects
 
 ### Notflix
