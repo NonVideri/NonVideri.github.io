@@ -1,7 +1,11 @@
 # Projects
 To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
-## Node Project
+## Node Projects
+
+### Task Manager API
+- API for a Task Manager App.
+- Uses Express.
 
 ### Express Course Project
 - A simple educational project for testing Express.
