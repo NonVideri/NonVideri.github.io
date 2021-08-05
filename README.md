@@ -5,7 +5,7 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
 ### Task Manager API
 - API for a Task Manager App.
-- Uses Express.
+- Uses Express and MongoDB with mongoose.
 
 ### Express Course Project
 - A simple educational project for testing Express.
