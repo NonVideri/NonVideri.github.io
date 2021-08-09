@@ -4,6 +4,3 @@ node_modules/
 
 # testing
 build/
-
-# ignore
-React-Redux/Webpage/public/content/
