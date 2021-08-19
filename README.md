@@ -11,6 +11,9 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 - A simple educational project for testing Express.
 - Allows the user to "authenticate", uses static data and all of the main REST methods.
 
+### Algorithms and Data Structures
+- Contains various algorithms and data structures written in Javascript for training purposes.
+
 ## React & Redux Projects
 
 ### Notflix
