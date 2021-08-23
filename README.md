@@ -11,6 +11,9 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 - A simple educational project for testing Express.
 - Allows the user to "authenticate", uses static data and all of the main REST methods.
 
+### Spices
+- A simple training API for performing CRUD on spices in various locations.
+
 ### EmojiAPI
 - A simple training API for performing CRUD actions on expression and animal emojis.
 
