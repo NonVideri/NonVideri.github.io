@@ -1,3 +1,4 @@
+// A training app using some basic Express methods to DRY the code
 const express = require("express");
 const app = express();
 
@@ -60,8 +61,8 @@ app.put("/spice-racks/:spiceRackId", (req, res, next) => {
   if (req.spiceRack.id !== updatedRack.id) {
     res.status(400).send("Cannot update Spice Rack Id");
   } else {
-    spiceRacks[req.spiceRackIndex] = updatedRack;
-    res.send(spiceRacks[req.spiceRackIndex]);
+    req.spiceRack = updatedRack;
+    res.send(req.spiceRack);
   }
 });
 

@@ -26,8 +26,18 @@ const spices = [
     spiceRackId: 2
   }
 ];
-
 let nextSpiceId = spices.length + 1;
+
+router.param("spiceId", (req, res, next, id) => {
+  const spiceId = Number(id);
+  const spiceIndex = spices.findIndex(spice => spice.id === spiceId);
+  if (spiceIndex !== -1) {
+    req.spiceIndex = spiceIndex;
+    next();
+  } else {
+    res.status(404).send("Spice not found.");
+  }
+});
 
 router.post("/", (req, res, next) => {
   const newSpice = req.body.spice;
@@ -42,35 +52,17 @@ router.post("/", (req, res, next) => {
 });
 
 router.get("/:spiceId", (req, res, next) => {
-  const spiceId = Number(req.params.id);
-  const spiceIndex = spices.findIndex(spice => spice.id === spiceId);
-  if (spiceIndex !== -1) {
-    res.send(spices[spiceIndex]);
-  } else {
-    res.status(404).send("Spice not found.");
-  }
+  res.send(spices[req.spiceIndex]);
 });
 
 router.put("/:spiceId", (req, res, next) => {
-  const spiceId = Number(req.params.id);
-  const spiceIndex = spices.findIndex(spice => spice.id === spiceId);
-  if (spiceIndex !== -1) {
-    spices[spiceIndex] = req.body.spice;
-    res.send(spices[spiceIndex]);
-  } else {
-    res.status(404).send("Spice not found.");
-  }
+  spices[req.spiceIndex] = req.body.spice;
+  res.send(spices[req.spiceIndex]);
 });
 
 router.delete("/:spiceId", (req, res, next) => {
-  const spiceId = Number(req.params.id);
-  const spiceIndex = spices.findIndex(spice => spice.id === spiceId);
-  if (spiceIndex !== -1) {
-    spices.splice(spiceIndex, 1);
-    res.status(204).send();
-  } else {
-    res.status(404).send("Spice not found.");
-  }
+  spices.splice(req.spiceIndex, 1);
+  res.status(204).send();
 });
 
 module.exports = router;
