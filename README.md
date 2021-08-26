@@ -1,7 +1,7 @@
 # Projects
 To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
-## Node Projects
+## Node & JS Projects
 
 ### Task Manager API
 - API for a Task Manager App.
@@ -16,6 +16,10 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
 ### EmojiAPI
 - A simple training API for performing CRUD actions on expression and animal emojis.
+
+### Message Mixer
+- A simple command-line app for encoding messages using a few simple ciphers.
+- single-encoder is used to encode using one method; enhanced-encoder is using all three of them.
 
 ### Algorithms and Data Structures
 - Contains various algorithms and data structures written in Javascript for training purposes.
