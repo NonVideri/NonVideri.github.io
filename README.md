@@ -21,6 +21,10 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 - A simple command-line app for encoding messages using a few simple ciphers.
 - single-encoder is used to encode using one method; enhanced-encoder is using all three of them.
 
+### Rock Paper Scissors
+- An educational project in JS — an enhanced version of Rock Paper Scissors.
+- Uses the traditional moves plus the "move value" system.
+
 ### Algorithms and Data Structures
 - Contains various algorithms and data structures written in Javascript for training purposes.
 
