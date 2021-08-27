@@ -92,32 +92,42 @@ const compareMoves = (moveOne, valueOne, moveTwo, valueTwo) => {
 };
 
 const getRoundWinner = roundNumber => {
-  if (!ROUND_NUMBERS.includes(roundNumber)) {
-    return null;
-  } else if (roundNumber === 1) {
+  if (!ROUND_NUMBERS.includes(roundNumber)) return null;
+  if (roundNumber === 1)
     return compareMoves(
       playerOneMoveOneType,
       playerOneMoveOneValue,
       playerTwoMoveOneType,
       playerTwoMoveOneValue
     );
-  } else if (roundNumber === 2) {
+  if (roundNumber === 2)
     return compareMoves(
       playerOneMoveTwoType,
       playerOneMoveTwoValue,
       playerTwoMoveTwoType,
       playerTwoMoveTwoValue
     );
-  } else {
+  if (roundNumber === 3)
     return compareMoves(
       playerOneMoveThreeType,
       playerOneMoveThreeValue,
       playerTwoMoveThreeType,
       playerTwoMoveThreeValue
     );
-  }
 };
 
-const getGameWinner = () => {};
+const getGameWinner = () => {
+  let playerOneScore = 0;
+  let playerTwoScore = 0;
+  for (let roundNumber of ROUND_NUMBERS) {
+    const roundWinner = getRoundWinner(roundNumber);
+    if (roundWinner === "Player One") playerOneScore++;
+    if (roundWinner === "Player Two") playerTwoScore++;
+    if (roundWinner === null) return null;
+  }
+  if (playerOneScore > playerTwoScore) return "Player One";
+  if (playerOneScore < playerTwoScore) return "Player Two";
+  if (playerOneScore === playerTwoScore) return "Tie";
+};
 
 const setComputerMoves = () => {};
