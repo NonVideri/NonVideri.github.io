@@ -13,9 +13,10 @@ let playerTwoMoveOneValue = undefined;
 let playerTwoMoveTwoValue = undefined;
 let playerTwoMoveThreeValue = undefined;
 
-const moveTypes = ["Rock", "Paper", "Scissors"];
-const playerTypes = ["Player One", "Player Two"];
-const checkNumber = num => {
+const MOVE_TYPES = ["rock", "paper", "scissors"];
+const PLAYER_TYPES = ["Player One", "Player Two"];
+const ROUND_NUMBERS = [1, 2, 3];
+const checkValue = num => {
   if (num >= 1 && num <= 99) {
     return true;
   } else {
@@ -35,14 +36,14 @@ const setPlayerMoves = (
   // Validate input
   if (
     !(
-      playerTypes.includes(player) &&
-      moveTypes.includes(moveOneType) &&
-      checkNumber(moveOneValue) &&
-      moveTypes.includes(moveTwoType) &&
-      checkNumber(moveTwoValue) &&
-      moveTypes.includes(moveThreeType) &&
-      checkNumber(moveThreeValue) &&
-      checkNumber(moveOneValue + moveTwoValue + moveThreeValue)
+      PLAYER_TYPES.includes(player) &&
+      MOVE_TYPES.includes(moveOneType) &&
+      checkValue(moveOneValue) &&
+      MOVE_TYPES.includes(moveTwoType) &&
+      checkValue(moveTwoValue) &&
+      MOVE_TYPES.includes(moveThreeType) &&
+      checkValue(moveThreeValue) &&
+      checkValue(moveOneValue + moveTwoValue + moveThreeValue)
     )
   ) {
     return;
@@ -55,8 +56,7 @@ const setPlayerMoves = (
     playerOneMoveOneValue = moveOneValue;
     playerOneMoveTwoValue = moveTwoValue;
     playerOneMoveThreeValue = moveThreeValue;
-  }
-  if (player === "Player Two") {
+  } else {
     playerTwoMoveOneType = moveOneType;
     playerTwoMoveTwoType = moveTwoType;
     playerTwoMoveThreeType = moveThreeType;
@@ -66,7 +66,57 @@ const setPlayerMoves = (
   }
 };
 
-const getRoundWinner = roundNumber => {};
+const compareMoves = (moveOne, valueOne, moveTwo, valueTwo) => {
+  if (!(moveOne && valueOne && moveTwo && valueTwo)) {
+    return null;
+  }
+  if (
+    (moveOne === "rock" && moveTwo === "scissors") ||
+    (moveOne === "scissors" && moveTwo === "paper") ||
+    (moveOne === "paper" && moveTwo === "rock")
+  ) {
+    return "Player One";
+  } else if (
+    (moveOne === "scissors" && moveTwo === "rock") ||
+    (moveOne === "paper" && moveTwo === "scissors") ||
+    (moveOne === "rock" && moveTwo === "paper")
+  ) {
+    return "Player Two";
+  } else if (valueOne > valueTwo) {
+    return "Player One";
+  } else if (valueOne < valueTwo) {
+    return "Player Two";
+  } else {
+    return "Tie";
+  }
+};
+
+const getRoundWinner = roundNumber => {
+  if (!ROUND_NUMBERS.includes(roundNumber)) {
+    return null;
+  } else if (roundNumber === 1) {
+    return compareMoves(
+      playerOneMoveOneType,
+      playerOneMoveOneValue,
+      playerTwoMoveOneType,
+      playerTwoMoveOneValue
+    );
+  } else if (roundNumber === 2) {
+    return compareMoves(
+      playerOneMoveTwoType,
+      playerOneMoveTwoValue,
+      playerTwoMoveTwoType,
+      playerTwoMoveTwoValue
+    );
+  } else {
+    return compareMoves(
+      playerOneMoveThreeType,
+      playerOneMoveThreeValue,
+      playerTwoMoveThreeType,
+      playerTwoMoveThreeValue
+    );
+  }
+};
 
 const getGameWinner = () => {};
 
