@@ -26,6 +26,9 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 - Uses the traditional moves plus the "move value" system.
 - Has an option of playing either with another player or with a bot.
 
+### CCC
+- A simple function returning correct media types depending on the resource requested.
+
 ### Algorithms and Data Structures
 - Contains various algorithms and data structures written in Javascript for training purposes.
 
