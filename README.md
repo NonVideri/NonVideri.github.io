@@ -24,6 +24,7 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 ### Rock Paper Scissors
 - An educational project in JS — an enhanced version of Rock Paper Scissors.
 - Uses the traditional moves plus the "move value" system.
+- Has an option of playing either with another player or with a bot.
 
 ### Algorithms and Data Structures
 - Contains various algorithms and data structures written in Javascript for training purposes.

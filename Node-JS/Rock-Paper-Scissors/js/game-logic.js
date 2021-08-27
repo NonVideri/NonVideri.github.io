@@ -130,4 +130,11 @@ const getGameWinner = () => {
   if (playerOneScore === playerTwoScore) return "Tie";
 };
 
-const setComputerMoves = () => {};
+const setComputerMoves = () => {
+  playerTwoMoveOneType = MOVE_TYPES[Math.floor(Math.random() * 3)];
+  playerTwoMoveTwoType = MOVE_TYPES[Math.floor(Math.random() * 3)];
+  playerTwoMoveThreeType = MOVE_TYPES[Math.floor(Math.random() * 3)];
+  playerTwoMoveOneValue = Math.ceil(Math.random() * 99);
+  playerTwoMoveTwoValue = Math.ceil(Math.random() * (99 - playerTwoMoveOneValue));
+  playerTwoMoveThreeValue = 99 - (playerTwoMoveOneValue + playerTwoMoveTwoValue);
+};
