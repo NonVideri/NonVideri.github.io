@@ -15,7 +15,7 @@ const selectDrum = drumName => {
     case "rideCymbals":
       return rideCymbals;
     default:
-      return;
+      return null;
   }
 };
 
@@ -23,4 +23,12 @@ const toggleDrum = (drumName, index) => {
   if (!(drumName && index >= 0 && index <= 16)) return;
   const drum = selectDrum(drumName);
   drum[index] = !drum[index];
+};
+
+const clear = drumName => {
+  const drum = selectDrum(drumName);
+  if (drum === null) {
+    return;
+  }
+  drum.fill(false);
 };
