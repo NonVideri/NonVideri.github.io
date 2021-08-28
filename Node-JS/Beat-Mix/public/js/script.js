@@ -32,3 +32,13 @@ const clear = drumName => {
   }
   drum.fill(false);
 };
+
+const invert = drumName => {
+  const drum = selectDrum(drumName);
+  if (drum === null) {
+    return;
+  }
+  drum.forEach((e, i, arr) => {
+    arr[i] = !e;
+  });
+};
