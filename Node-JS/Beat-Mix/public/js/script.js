@@ -42,3 +42,17 @@ const invert = drumName => {
     arr[i] = !e;
   });
 };
+
+const getNeighborPads = (x, y, size) => {
+  let neighbors = [];
+  if (x < 0 || y < 0 || x > size - 1 || y > size - 1) return neighbors;
+  const topY = y + 1;
+  const bottomY = y - 1;
+  const rightX = x + 1;
+  const leftX = x - 1;
+  if (!(topY > size - 1)) neighbors.push([x, topY]);
+  if (!(bottomY < 0)) neighbors.push([x, bottomY]);
+  if (!(rightX > size - 1)) neighbors.push([rightX, y]);
+  if (!(leftX < 0)) neighbors.push([leftX, y]);
+  return neighbors;
+};
