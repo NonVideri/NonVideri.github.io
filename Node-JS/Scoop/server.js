@@ -33,11 +33,31 @@ const routes = {
     POST: createComment
   },
   "/comments/:id": {
-    PUT: updateComment
+    PUT: updateComment,
+    DELETE: deleteComment
   },
   "/comments/:id/upvote": {},
   "/comments/:id/downvote": {}
 };
+
+function deleteComment(url, request) {
+  const id = Number(url.split("/").filter(segment => segment)[1]);
+  const savedComment = database.comments[id];
+  const response = {};
+
+  if (savedComment) {
+    database.comments[id] = null;
+    const articleCommentIds = database.articles[savedComment.articleId].commentIds;
+    articleCommentIds.splice(articleCommentIds.indexOf(id), 1);
+    const userCommentIds = database.users[savedComment.username].commentIds;
+    userCommentIds.splice(userCommentIds.indexOf(id), 1);
+    response.status = 204;
+  } else {
+    response.status = 404;
+  }
+
+  return response;
+}
 
 function updateComment(url, request) {
   const id = Number(url.split("/").filter(segment => segment)[1]);

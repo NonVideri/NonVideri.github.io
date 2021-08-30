@@ -5,6 +5,7 @@
 In this project, you will build all of the routing and database logic for an article submission web app called The Scoop.
 
 The Scoop allows users to:
+
 - Create and log in to custom username handles
 - Submit, edit, and delete articles containing a link and description
 - Upvote and downvote articles
@@ -35,7 +36,24 @@ To complete this project, you will need to add the database information and serv
 
 ### Database Properties
 
-* **comments** - an object with keys of IDs and values of the corresponding comments
+- user = {
+  username: username,
+  articleIds: [],
+  commentIds: []
+  };
+
+- article = {
+  id: database.nextArticleId++,
+  title: requestArticle.title,
+  url: requestArticle.url,
+  username: requestArticle.username,
+  commentIds: [],
+  upvotedBy: [],
+  downvotedBy: []
+  };
+
+- **comments** - an object with keys of IDs and values of the corresponding comments
+
   - id - Number, unique to each comment
   - body - String
   - username - String, the username of the author
@@ -43,18 +61,19 @@ To complete this project, you will need to add the database information and serv
   - upvotedBy - Array of usernames, corresponding to users who upvoted the comment
   - downvotedBy - Array of usernames, corresponding to users who downvoted the comment
 
-* **nextCommentId** - a number representing the ID of the next comment to create (to ensure all comments have unique IDs), initializes to `1`
-
+- **nextCommentId** - a number representing the ID of the next comment to create (to ensure all comments have unique IDs), initializes to `1`
 
 ### Route Paths and Functionality
 
 **/comments**
+
 - POST
   - Receives comment information from `comment` property of request body
   - Creates new comment and adds it to database, returns a 201 response with comment on `comment` property of response body
   - If body isn't supplied, user with supplied username doesn't exist, or article with supplied article ID doesn't exist, returns a 400 response
 
 **/comments/:id**
+
 - PUT
   - Receives comment ID from URL parameter and updated comment from `comment` property of request body
   - Updates body of corresponding comment in database, returns a 200 response with the updated comment on `comment` property of the response body
@@ -66,12 +85,14 @@ To complete this project, you will need to add the database information and serv
   - If no ID is supplied or comment with supplied ID doesn't exist, returns 400 response
 
 **/comments/:id/upvote**
+
 - PUT
   - Receives comment ID from URL parameter and username from `username` property of request body
   - Adds supplied username to `upvotedBy` of corresponding comment if user hasn't already upvoted the comment, removes username from `downvotedBy` if that user had previously downvoted the comment, returns 200 response with comment on `comment` property of response body
   - If no ID is supplied, comment with supplied ID doesn't exist, or user with supplied username doesn't exist, returns 400 response
 
 **/comments/:id/downvote**
+
 - PUT
   - Receives comment ID from URL parameter and username from `username` property of request body
   - Adds supplied username to `downvotedBy` of corresponding comment if user hasn't already downvoted the comment, remove username from `upvotedBy` if that user had previously upvoted the comment, returns 200 response with comment on `comment` property of response body
