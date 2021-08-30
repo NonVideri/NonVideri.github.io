@@ -1,22 +1,21 @@
 // All code should be written in this file.
-let playerOneMoveOneType = undefined;
-let playerOneMoveTwoType = undefined;
-let playerOneMoveThreeType = undefined;
-let playerTwoMoveOneType = undefined;
-let playerTwoMoveTwoType = undefined;
-let playerTwoMoveThreeType = undefined;
-
-let playerOneMoveOneValue = undefined;
-let playerOneMoveTwoValue = undefined;
-let playerOneMoveThreeValue = undefined;
-let playerTwoMoveOneValue = undefined;
-let playerTwoMoveTwoValue = undefined;
-let playerTwoMoveThreeValue = undefined;
+let playerOneMoveOneType,
+  playerOneMoveTwoType,
+  playerOneMoveThreeType,
+  playerTwoMoveTwoType,
+  playerTwoMoveOneType,
+  playerTwoMoveThreeType,
+  playerOneMoveOneValue,
+  playerOneMoveTwoValue,
+  playerOneMoveThreeValue,
+  playerTwoMoveOneValue,
+  playerTwoMoveTwoValue,
+  playerTwoMoveThreeValue;
 
 const MOVE_TYPES = ["rock", "paper", "scissors"];
 const PLAYER_TYPES = ["Player One", "Player Two"];
 const ROUND_NUMBERS = [1, 2, 3];
-const checkValue = num => {
+const isValidMoveValue = num => {
   if (num >= 1 && num <= 99) {
     return true;
   } else {
@@ -35,16 +34,14 @@ const setPlayerMoves = (
 ) => {
   // Validate input
   if (
-    !(
-      PLAYER_TYPES.includes(player) &&
-      MOVE_TYPES.includes(moveOneType) &&
-      checkValue(moveOneValue) &&
-      MOVE_TYPES.includes(moveTwoType) &&
-      checkValue(moveTwoValue) &&
-      MOVE_TYPES.includes(moveThreeType) &&
-      checkValue(moveThreeValue) &&
-      checkValue(moveOneValue + moveTwoValue + moveThreeValue)
-    )
+    !PLAYER_TYPES.includes(player) ||
+    !MOVE_TYPES.includes(moveOneType) ||
+    !isValidMoveValue(moveOneValue) ||
+    !MOVE_TYPES.includes(moveTwoType) ||
+    !isValidMoveValue(moveTwoValue) ||
+    !MOVE_TYPES.includes(moveThreeType) ||
+    !isValidMoveValue(moveThreeValue) ||
+    !isValidMoveValue(moveOneValue + moveTwoValue + moveThreeValue)
   ) {
     return;
   }
@@ -67,53 +64,59 @@ const setPlayerMoves = (
 };
 
 const compareMoves = (moveOne, valueOne, moveTwo, valueTwo) => {
-  if (!(moveOne && valueOne && moveTwo && valueTwo)) {
+  if (!moveOne || !valueOne || !moveTwo || !valueTwo) {
     return null;
   }
-  if (
-    (moveOne === "rock" && moveTwo === "scissors") ||
-    (moveOne === "scissors" && moveTwo === "paper") ||
-    (moveOne === "paper" && moveTwo === "rock")
-  ) {
-    return "Player One";
-  } else if (
-    (moveOne === "scissors" && moveTwo === "rock") ||
-    (moveOne === "paper" && moveTwo === "scissors") ||
-    (moveOne === "rock" && moveTwo === "paper")
-  ) {
-    return "Player Two";
-  } else if (valueOne > valueTwo) {
-    return "Player One";
-  } else if (valueOne < valueTwo) {
-    return "Player Two";
-  } else {
-    return "Tie";
+
+  if (moveOne === moveTwo) {
+    if (valueOne > valueTwo) {
+      return "Player One";
+    } else if (valueOne < valueTwo) {
+      return "Player Two";
+    } else {
+      return "Tie";
+    }
+  }
+
+  if (moveOne === "rock") {
+    if (moveTwo === "scissors") return "Player One";
+    else return "Player Two";
+  }
+  if (moveOne === "scissors") {
+    if (moveTwo === "paper") return "Player One";
+    else return "Player Two";
+  }
+  if (moveOne === "paper") {
+    if (moveTwo === "rock") return "Player One";
+    else return "Player Two";
   }
 };
 
 const getRoundWinner = roundNumber => {
   if (!ROUND_NUMBERS.includes(roundNumber)) return null;
-  if (roundNumber === 1)
-    return compareMoves(
-      playerOneMoveOneType,
-      playerOneMoveOneValue,
-      playerTwoMoveOneType,
-      playerTwoMoveOneValue
-    );
-  if (roundNumber === 2)
-    return compareMoves(
-      playerOneMoveTwoType,
-      playerOneMoveTwoValue,
-      playerTwoMoveTwoType,
-      playerTwoMoveTwoValue
-    );
-  if (roundNumber === 3)
-    return compareMoves(
-      playerOneMoveThreeType,
-      playerOneMoveThreeValue,
-      playerTwoMoveThreeType,
-      playerTwoMoveThreeValue
-    );
+  switch (roundNumber) {
+    case 1:
+      return compareMoves(
+        playerOneMoveOneType,
+        playerOneMoveOneValue,
+        playerTwoMoveOneType,
+        playerTwoMoveOneValue
+      );
+    case 2:
+      return compareMoves(
+        playerOneMoveTwoType,
+        playerOneMoveTwoValue,
+        playerTwoMoveTwoType,
+        playerTwoMoveTwoValue
+      );
+    case 3:
+      return compareMoves(
+        playerOneMoveThreeType,
+        playerOneMoveThreeValue,
+        playerTwoMoveThreeType,
+        playerTwoMoveThreeValue
+      );
+  }
 };
 
 const getGameWinner = () => {
