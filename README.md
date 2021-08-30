@@ -27,6 +27,10 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 ### EmojiAPI
 - A simple training API for performing CRUD actions on expression and animal emojis.
 
+### Beat Mix
+- A simple app for mixing sound beats and using simple sound synthetizer.
+- A user can save his beats as presets.
+
 ### Message Mixer
 - A simple command-line app for encoding messages using a few simple ciphers.
 - single-encoder is used to encode using one method; enhanced-encoder is using all three of them.
