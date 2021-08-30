@@ -3,6 +3,16 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
 ## Node & JS Projects
 
+### Scoop
+- An article submission web app in Node.
+- Allows users to:
+	- Create and log in to custom username handles
+	- Submit, edit, and delete articles containing a link and description
+	- Upvote and downvote articles
+	- Create, edit, and delete comments on articles
+	- Upvote and downvote comments
+	- View all of a user’s articles and comments.
+
 ### Task Manager API
 - API for a Task Manager App.
 - Uses Express and MongoDB with mongoose.
