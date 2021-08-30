@@ -36,9 +36,29 @@ const routes = {
     PUT: updateComment,
     DELETE: deleteComment
   },
-  "/comments/:id/upvote": {},
+  "/comments/:id/upvote": {
+    PUT: upvoteComment
+  },
   "/comments/:id/downvote": {}
 };
+
+function upvoteComment(url, request) {
+  const id = Number(url.split("/").filter(segment => segment)[1]);
+  const username = request.body && request.body.username;
+  let savedComment = database.comments[id];
+  const response = {};
+
+  if (savedComment && database.users[username]) {
+    savedComment = upvote(savedComment, username);
+
+    response.body = { comment: savedComment };
+    response.status = 200;
+  } else {
+    response.status = 400;
+  }
+
+  return response;
+}
 
 function deleteComment(url, request) {
   const id = Number(url.split("/").filter(segment => segment)[1]);
