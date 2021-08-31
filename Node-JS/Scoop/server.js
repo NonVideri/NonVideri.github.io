@@ -1,3 +1,16 @@
+const Figg = require("figg");
+const yamlDatabase = new Figg({
+  name: "database"
+});
+
+function loadDatabase() {
+  return yamlDatabase.load();
+}
+
+function saveDatabase() {
+  yamlDatabase.save();
+}
+
 // database is let instead of const to allow us to modify it in test.js
 let database = {
   users: {},
@@ -414,6 +427,7 @@ const requestHandler = (request, response) => {
         body = JSON.parse(Buffer.concat(body).toString());
         const jsonRequest = { body: body };
         const methodResponse = routes[route][method].call(null, url, jsonRequest);
+        yamlDatabase.set(database);
         !isTestMode && typeof saveDatabase === "function" && saveDatabase();
 
         response.statusCode = methodResponse.status;
