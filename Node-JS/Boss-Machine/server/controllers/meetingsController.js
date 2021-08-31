@@ -15,4 +15,10 @@ const getAllMeetings = (req, res) => {
   else res.sendStatus(404);
 };
 
-module.exports = { getAllMeetings };
+const planMeeting = (req, res) => {
+  const meeting = createMeeting();
+  const addedMeeting = addToDatabase("meetings", meeting);
+  res.status(201).send(addedMeeting);
+};
+
+module.exports = { getAllMeetings, planMeeting };

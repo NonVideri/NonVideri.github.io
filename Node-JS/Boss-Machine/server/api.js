@@ -15,7 +15,7 @@ const {
   deleteIdea
 } = require("./controllers/ideasController");
 const checkMillionDollarIdea = require("./checkMillionDollarIdea");
-const { getAllMeetings } = require("./controllers/meetingsController");
+const { getAllMeetings, planMeeting } = require("./controllers/meetingsController");
 
 apiRouter.route("/minions").get(getAllMinions).post(createMinion);
 apiRouter.route("/minions/:minionId").get(getMinion).put(updateMinion).delete(deleteMinion);
@@ -23,6 +23,6 @@ apiRouter.route("/minions/:minionId").get(getMinion).put(updateMinion).delete(de
 apiRouter.route("/ideas").get(getAllIdeas).post(checkMillionDollarIdea, createIdea);
 apiRouter.route("/ideas/:ideaId").get(getIdea).put(updateIdea).delete(deleteIdea);
 
-apiRouter.route("/meetings").get(getAllMeetings);
+apiRouter.route("/meetings").get(getAllMeetings).post(planMeeting);
 
 module.exports = apiRouter;
