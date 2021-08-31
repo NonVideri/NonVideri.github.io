@@ -3,6 +3,9 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
 ## Node & JS Projects
 
+### Boss Machine
+- An API in Node/Express to manage workers and meetings.
+
 ### Scoop
 - An article submission web app in Node.
 - Allows users to:
