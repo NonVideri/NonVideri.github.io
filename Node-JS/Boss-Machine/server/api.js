@@ -1,8 +1,13 @@
 const express = require("express");
 const apiRouter = express.Router();
-const { getMinions, createMinion, getOneMinion } = require("./controllers/minionsController");
+const {
+  getAllMinions,
+  createMinion,
+  getMinion,
+  updateMinion
+} = require("./controllers/minionsController");
 
-apiRouter.route("/minions").get(getMinions).post(createMinion);
-apiRouter.route("/minions/:minionId").get(getOneMinion);
+apiRouter.route("/minions").get(getAllMinions).post(createMinion);
+apiRouter.route("/minions/:minionId").get(getMinion).put(updateMinion);
 
 module.exports = apiRouter;
