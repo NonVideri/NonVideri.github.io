@@ -11,4 +11,6 @@ const {
 apiRouter.route("/minions").get(getAllMinions).post(createMinion);
 apiRouter.route("/minions/:minionId").get(getMinion).put(updateMinion).delete(deleteMinion);
 
+apiRouter.route("/ideas");
+
 module.exports = apiRouter;

@@ -1,11 +1,9 @@
 const {
-  createMeeting,
   getAllFromDatabase,
   getFromDatabaseById,
   addToDatabase,
   updateInstanceInDatabase,
-  deleteFromDatabasebyId,
-  deleteAllFromDatabase
+  deleteFromDatabasebyId
 } = require("../db");
 
 const isNumeric = value => {
