@@ -12,6 +12,7 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 	- Create, edit, and delete comments on articles
 	- Upvote and downvote comments
 	- View all of a user’s articles and comments.
+- Uses a Yaml database.
 
 ### Task Manager API
 - API for a Task Manager App.
