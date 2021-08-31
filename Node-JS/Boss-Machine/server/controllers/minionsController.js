@@ -3,12 +3,9 @@ const {
   getFromDatabaseById,
   addToDatabase,
   updateInstanceInDatabase,
-  deleteFromDatabasebyId
+  deleteFromDatabasebyId,
+  isNumeric
 } = require("../db");
-
-const isNumeric = value => {
-  return /^\d+$/.test(value);
-};
 
 const getAllMinions = (req, res) => {
   const minions = getAllFromDatabase("minions");
