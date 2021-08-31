@@ -1,12 +1,8 @@
 const {
   createMeeting,
   getAllFromDatabase,
-  getFromDatabaseById,
   addToDatabase,
-  updateInstanceInDatabase,
-  deleteFromDatabasebyId,
-  deleteAllFromDatabase,
-  isNumeric
+  deleteAllFromDatabase
 } = require("../db");
 
 const getAllMeetings = (req, res) => {
@@ -21,4 +17,9 @@ const planMeeting = (req, res) => {
   res.status(201).send(addedMeeting);
 };
 
-module.exports = { getAllMeetings, planMeeting };
+const deleteAllMeetings = (req, res) => {
+  const cleanSchedule = deleteAllFromDatabase("meetings");
+  res.status(204).send(cleanSchedule);
+};
+
+module.exports = { getAllMeetings, planMeeting, deleteAllMeetings };
