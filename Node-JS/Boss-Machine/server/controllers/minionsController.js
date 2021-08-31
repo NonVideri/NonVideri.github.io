@@ -27,7 +27,16 @@ const createMinion = (req, res) => {
   }
 };
 
+const getOneMinion = (req, res) => {
+  const id = req.params.minionId;
+  if (!typeof id === "number") return res.sendStatus(404);
+  const minion = getFromDatabaseById("minions", id);
+  if (minion) return res.status(200).send(minion);
+  res.sendStatus(404);
+};
+
 module.exports = {
   getMinions,
-  createMinion
+  createMinion,
+  getOneMinion
 };
