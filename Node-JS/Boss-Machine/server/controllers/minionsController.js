@@ -8,6 +8,10 @@ const {
   deleteAllFromDatabase
 } = require("../db");
 
+const isNumeric = value => {
+  return /^\d+$/.test(value);
+};
+
 const getAllMinions = (req, res) => {
   const minions = getAllFromDatabase("minions");
   if (minions) return res.status(200).send(minions);
@@ -46,9 +50,20 @@ const updateMinion = (req, res) => {
   res.sendStatus(404);
 };
 
+const deleteMinion = (req, res) => {
+  const id = req.params.minionId;
+  let result = false;
+  if (isNumeric(id)) result = deleteFromDatabasebyId("minions", id);
+  if (result) {
+    return res.sendStatus(204);
+  }
+  res.sendStatus(404);
+};
+
 module.exports = {
   getAllMinions,
   createMinion,
   getMinion,
-  updateMinion
+  updateMinion,
+  deleteMinion
 };
