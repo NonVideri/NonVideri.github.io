@@ -1,5 +1,6 @@
 const express = require("express");
 const apiRouter = express.Router();
+const workRouter = express.Router({ mergeParams: true });
 const {
   getAllMinions,
   createMinion,
@@ -20,6 +21,7 @@ const {
   planMeeting,
   deleteAllMeetings
 } = require("./controllers/meetingsController");
+const { getWork } = require("./controllers/workController");
 
 apiRouter.route("/minions").get(getAllMinions).post(createMinion);
 apiRouter.route("/minions/:minionId").get(getMinion).put(updateMinion).delete(deleteMinion);
@@ -28,5 +30,9 @@ apiRouter.route("/ideas").get(getAllIdeas).post(checkMillionDollarIdea, createId
 apiRouter.route("/ideas/:ideaId").get(getIdea).put(updateIdea).delete(deleteIdea);
 
 apiRouter.route("/meetings").get(getAllMeetings).post(planMeeting).delete(deleteAllMeetings);
+
+apiRouter.use("/minions/:minionId/work", workRouter);
+
+workRouter.route("/").get(getWork);
 
 module.exports = apiRouter;
