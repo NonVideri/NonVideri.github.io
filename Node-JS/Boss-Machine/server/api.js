@@ -1,6 +1,7 @@
 const express = require("express");
 const apiRouter = express.Router();
 const workRouter = express.Router({ mergeParams: true });
+const isNumeric = require("./isNumeric");
 const {
   getAllMinions,
   createMinion,
@@ -29,9 +30,11 @@ const {
   deleteWork
 } = require("./controllers/workController");
 
+//apiRouter.param("minionId", isNumeric);
 apiRouter.route("/minions").get(getAllMinions).post(createMinion);
 apiRouter.route("/minions/:minionId").get(getMinion).put(updateMinion).delete(deleteMinion);
 
+//apiRouter.param("ideaId", isNumeric);
 apiRouter.route("/ideas").get(getAllIdeas).post(checkMillionDollarIdea, createIdea);
 apiRouter.route("/ideas/:ideaId").get(getIdea).put(updateIdea).delete(deleteIdea);
 
@@ -39,6 +42,7 @@ apiRouter.route("/meetings").get(getAllMeetings).post(planMeeting).delete(delete
 
 apiRouter.use("/minions/:minionId/work", workRouter);
 
+//workRouter.param("workId", isNumeric);
 workRouter.param("workId", checkWork);
 workRouter.route("/").get(getWork).post(createWork);
 workRouter.route("/:workId").put(updateWork).delete(deleteWork);

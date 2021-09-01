@@ -3,19 +3,16 @@ const {
   getFromDatabaseById,
   addToDatabase,
   updateInstanceInDatabase,
-  deleteFromDatabasebyId,
-  isNumeric
+  deleteFromDatabasebyId
 } = require("../db");
 
 const minionExists = minionId => {
-  if (!isNumeric(minionId)) return false;
   const minion = getFromDatabaseById("minions", minionId);
   if (minion) return true;
   return false;
 };
 
 const checkWork = (req, res, next, id) => {
-  if (!isNumeric(id)) return res.sendStatus(404);
   const work = getFromDatabaseById("work", id);
   if (!work) return res.sendStatus(404);
   next();
@@ -26,7 +23,7 @@ const getWork = (req, res) => {
   const work = getAllFromDatabase("work");
   const minionWork = work.filter(i => i.minionId === req.params.minionId);
   if (minionWork) return res.status(200).send(minionWork);
-  return res.sendStatus(404);
+  res.sendStatus(404);
 };
 
 const createWork = (req, res) => {
@@ -37,8 +34,8 @@ const createWork = (req, res) => {
     typeof work.hours === "number" &&
     typeof work.minionId === "string"
   ) {
-    addToDatabase("work", work);
-    res.status(201).send(work);
+    const newWork = addToDatabase("work", work);
+    res.status(201).send(newWork);
   }
 };
 
@@ -54,14 +51,14 @@ const updateWork = (req, res) => {
     typeof work.minionId === "string"
   ) {
     const updatedWork = updateInstanceInDatabase("work", work);
-    console.log(updatedWork);
-    return res.status(201).send(updatedWork);
+    res.status(201).send(updatedWork);
   }
 };
 
 const deleteWork = (req, res) => {
-  const result = deleteFromDatabasebyId("work", req.params.workId);
-  if (result) return res.sendStatus(204);
+  const deleted = deleteFromDatabasebyId("work", req.params.workId);
+  if (deleted) return res.sendStatus(204);
+  res.sendStatus(404);
 };
 
 module.exports = { checkWork, getWork, createWork, updateWork, deleteWork };

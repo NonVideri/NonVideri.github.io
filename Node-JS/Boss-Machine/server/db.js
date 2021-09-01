@@ -2,10 +2,6 @@ const faker = require("faker");
 
 let minionIdCounter = 1;
 
-const isNumeric = value => {
-  return /^\d+$/.test(value);
-};
-
 const createMinion = () => {
   const weaknesses =
     new Array(3)
@@ -274,6 +270,5 @@ module.exports = {
   addToDatabase,
   updateInstanceInDatabase,
   deleteFromDatabasebyId,
-  deleteAllFromDatabase,
-  isNumeric
+  deleteAllFromDatabase
 };
