@@ -21,7 +21,13 @@ const {
   planMeeting,
   deleteAllMeetings
 } = require("./controllers/meetingsController");
-const { checkWork, getWork, createWork, updateWork } = require("./controllers/workController");
+const {
+  checkWork,
+  getWork,
+  createWork,
+  updateWork,
+  deleteWork
+} = require("./controllers/workController");
 
 apiRouter.route("/minions").get(getAllMinions).post(createMinion);
 apiRouter.route("/minions/:minionId").get(getMinion).put(updateMinion).delete(deleteMinion);
@@ -35,6 +41,6 @@ apiRouter.use("/minions/:minionId/work", workRouter);
 
 workRouter.param("workId", checkWork);
 workRouter.route("/").get(getWork).post(createWork);
-workRouter.route("/:workId").put(updateWork);
+workRouter.route("/:workId").put(updateWork).delete(deleteWork);
 
 module.exports = apiRouter;

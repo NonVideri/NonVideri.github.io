@@ -59,4 +59,9 @@ const updateWork = (req, res) => {
   }
 };
 
-module.exports = { checkWork, getWork, createWork, updateWork };
+const deleteWork = (req, res) => {
+  const result = deleteFromDatabasebyId("work", req.params.workId);
+  if (result) return res.sendStatus(204);
+};
+
+module.exports = { checkWork, getWork, createWork, updateWork, deleteWork };
