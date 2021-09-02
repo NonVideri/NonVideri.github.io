@@ -3,8 +3,24 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
 ## Node & JS Projects
 
+### Gold Medal Metrics
+- An Olympic metrics reporting web application.
+- Allows users to:
+	- View countries in a list with their population, GDP, and number of Olympic gold medals.
+	- Sort the list of countries by any of these attributes, as well as alphabetically by name.
+	- View a detailed description of a country, with statistics on their Olympic wins.
+	- View a list of every Olympic win a country has with the year, season, winner name, city, and event.
+	- Sort the list of Olympic wins by any of these attributes.
+- Uses React, Node/Express and an SQLite database.
+
 ### Boss Machine
-- An API in Node/Express to manage workers and meetings.
+- An API in Node/Express for managing workers and meetings.
+- Allows to execute different CRUD actions on:
+	- Minions (workers)
+	- Profitable ideas
+	- Meetings
+	- Work.
+- Uses a faker "database" with utility functions to access it.
 
 ### Scoop
 - An article submission web app in Node.
