@@ -1,12 +1,16 @@
-var sqlite3 = require('sqlite3');
-var db = new sqlite3.Database('./gold_medals.sqlite');
+var sqlite3 = require("sqlite3");
+var db = new sqlite3.Database("./gold_medals.sqlite");
 
 /*
 Returns a SQL query string that will create the Country table with four columns: name (required), code (required), gdp, and population.
 */
 
 const createCountryTable = () => {
-  return;
+  return `CREATE TABLE Country (
+    name text NOT NULL,
+    code text NOT NULL,
+    gdp integer,
+    population integer);`;
 };
 
 /*
@@ -22,7 +26,7 @@ Returns a SQL query string that will find the number of gold medals for the give
 */
 
 const goldMedalNumber = country => {
-    return;
+  return;
 };
 
 /*
