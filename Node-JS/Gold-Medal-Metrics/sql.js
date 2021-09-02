@@ -1,6 +1,19 @@
 var sqlite3 = require("sqlite3");
 var db = new sqlite3.Database("./gold_medals.sqlite");
 
+const mostWinsInSeason = (country, season) => {
+  const seasons = ["Summer", "Winter"];
+  if (seasons.includes(season))
+    return `SELECT year, COUNT(*) AS count
+    FROM GoldMedal
+    WHERE country = '${country}'
+    AND season = '${season}'
+    GROUP BY 1
+    ORDER BY 2 DESC
+    LIMIT 1;`;
+  return null;
+};
+
 /*
 Returns a SQL query string that will create the Country table with four columns: name (required), code (required), gdp, and population.
 */
@@ -18,14 +31,6 @@ Returns a SQL query string that will create the GoldMedal table with ten columns
 */
 
 const createGoldMedalTable = () => {
-  return;
-};
-
-/*
-Returns a SQL query string that will find the number of gold medals for the given country.
-*/
-
-const goldMedalNumber = country => {
   return `CREATE TABLE GoldMedal (
     id integer PRIMARY KEY,
     year integer NOT NULL,
@@ -40,14 +45,22 @@ const goldMedalNumber = country => {
 };
 
 /*
+Returns a SQL query string that will find the number of gold medals for the given country.
+*/
+
+const goldMedalNumber = country => {
+  return `SELECT COUNT(*)
+  FROM GoldMedal
+  WHERE country = "${country}";`;
+};
+
+/*
 Returns a SQL query string that will find the year where the given country 
 won the most summer medals, along with the number of medals aliased to 'count'.
 */
 
 const mostSummerWins = country => {
-  return `SELECT COUNT(*)
-  FROM GoldMedal
-  WHERE country = "${country}";`;
+  return mostWinsInSeason(country, "Summer");
 };
 
 /*
@@ -56,7 +69,7 @@ won the most winter medals, along with the number of medals aliased to 'count'.
 */
 
 const mostWinterWins = country => {
-  return;
+  return mostWinsInSeason(country, "Winter");
 };
 
 /*
