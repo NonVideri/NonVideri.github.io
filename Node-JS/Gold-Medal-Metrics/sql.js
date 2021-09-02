@@ -25,6 +25,16 @@ const mostWinsByMetric = (country, metric) => {
   return null;
 };
 
+const medalistsByGender = (country, gender) => {
+  const genders = ["Men", "Women"];
+  if (genders.includes(gender))
+    return `SELECT COUNT(DISTINCT name) AS count
+  FROM GoldMedal
+  WHERE country = '${country}'
+  AND gender = '${gender}'`;
+  return null;
+};
+
 /*
 Returns a SQL query string that will create the Country table with four columns: name (required), code (required), gdp, and population.
 */
@@ -124,7 +134,7 @@ Returns a SQL query string that will find the number of male medalists.
 */
 
 const numberMenMedalists = country => {
-  return;
+  return medalistsByGender(country, "Men");
 };
 
 /*
@@ -132,7 +142,7 @@ Returns a SQL query string that will find the number of female medalists.
 */
 
 const numberWomenMedalists = country => {
-  return;
+  return medalistsByGender(country, "Women");
 };
 
 /*
