@@ -26,7 +26,17 @@ Returns a SQL query string that will find the number of gold medals for the give
 */
 
 const goldMedalNumber = country => {
-  return;
+  return `CREATE TABLE GoldMedal (
+    id integer PRIMARY KEY,
+    year integer NOT NULL,
+    city text NOT NULL,
+    season text NOT NULL,
+    name text NOT NULL,
+    country text NOT NULL,
+    gender text NOT NULL,
+    sport text NOT NULL,
+    discipline text NOT NULL,
+    event text NOT NULL);`;
 };
 
 /*
