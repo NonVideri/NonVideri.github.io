@@ -14,6 +14,17 @@ const mostWinsInSeason = (country, season) => {
   return null;
 };
 
+const mostWinsByMetric = (country, metric) => {
+  if (metric)
+    return `SELECT ${metric}, COUNT(*) AS count
+  FROM GoldMedal
+  WHERE country = '${country}'
+  GROUP BY 1
+  ORDER BY 2 DESC
+  LIMIT 1;`;
+  return null;
+};
+
 /*
 Returns a SQL query string that will create the Country table with four columns: name (required), code (required), gdp, and population.
 */
@@ -78,12 +89,7 @@ won the most medals, along with the number of medals aliased to 'count'.
 */
 
 const bestYear = country => {
-  return `SELECT year, COUNT(*) AS count
-  FROM GoldMedal
-  WHERE country = '${country}'
-  GROUP BY 1
-  ORDER BY 2 DESC
-  LIMIT 1;`;
+  return mostWinsByMetric(country, "year");
 };
 
 /*
@@ -92,7 +98,7 @@ won the most medals, along with the number of medals aliased to 'count'.
 */
 
 const bestDiscipline = country => {
-  return;
+  return mostWinsByMetric(country, "discipline");
 };
 
 /*
@@ -101,7 +107,7 @@ won the most medals, along with the number of medals aliased to 'count'.
 */
 
 const bestSport = country => {
-  return;
+  return mostWinsByMetric(country, "sport");
 };
 
 /*
@@ -110,7 +116,7 @@ won the most medals, along with the number of medals aliased to 'count'.
 */
 
 const bestEvent = country => {
-  return;
+  return mostWinsByMetric(country, "event");
 };
 
 /*
