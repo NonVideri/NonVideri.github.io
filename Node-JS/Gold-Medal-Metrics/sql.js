@@ -45,7 +45,9 @@ won the most summer medals, along with the number of medals aliased to 'count'.
 */
 
 const mostSummerWins = country => {
-  return;
+  return `SELECT COUNT(*)
+  FROM GoldMedal
+  WHERE country = "${country}";`;
 };
 
 /*
