@@ -35,6 +35,14 @@ const medalistsByGender = (country, gender) => {
   return null;
 };
 
+const setOrder = (field, sortAscending) => {
+  if (field) {
+    if (sortAscending) return `ORDER BY ${field} ASC`;
+    else return `ORDER BY ${field} DESC`;
+  }
+  return "";
+};
+
 /*
 Returns a SQL query string that will create the Country table with four columns: name (required), code (required), gdp, and population.
 */
@@ -164,11 +172,10 @@ optionally ordered by the given field in the specified direction.
 */
 
 const orderedMedals = (country, field, sortAscending) => {
-  const order = !field ? "" : sortAscending ? `ORDER BY ${field} ASC` : `ORDER BY ${field} DESC`;
   return `SELECT *
   FROM GoldMedal
   WHERE country = '${country}'
-  ${order};`;
+  ${setOrder(field, sortAscending)};`;
 };
 
 /*
@@ -179,7 +186,12 @@ aliased as 'percent'. Optionally ordered by the given field in the specified dir
 */
 
 const orderedSports = (country, field, sortAscending) => {
-  return;
+  return `SELECT sport, COUNT(*) AS count,
+  (100 * COUNT(sport) / (SELECT COUNT(*) FROM GoldMedal WHERE country = '${country}')) AS percent
+  FROM GoldMedal
+  WHERE country = '${country}'
+  GROUP BY 1
+  ${setOrder(field, sortAscending)};`;
 };
 
 module.exports = {
