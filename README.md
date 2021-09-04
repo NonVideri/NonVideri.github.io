@@ -3,6 +3,11 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
 ## Node & JS Projects
 
+### Codestrips
+- A small application to allow users to create and save small one-pane comic strips.
+- You can select a head, body, background location, thought/speech bubble type, thought/speech bubble text, and caption for a strip.
+- Uses Node/Express and an SQLite database.
+
 ### Gold Medal Metrics
 - An Olympic metrics reporting web application.
 - Allows users to:
