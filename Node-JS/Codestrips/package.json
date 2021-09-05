@@ -12,7 +12,14 @@
   "author": "codecademy",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "morgan": "^1.10.0",
     "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1",
+    "structured": "^0.1.2",
+    "supertest": "^6.1.6"
   }
 }
