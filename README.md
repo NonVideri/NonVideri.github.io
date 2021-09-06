@@ -3,6 +3,14 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
 ## Node & JS Projects
 
+### X-Press Publishing
+- An internal tool for a comic book publishing company.
+- Allows users to:
+	- Create, view, and update artists
+	- Create, view, update, and delete comic book series
+	- Create, view, update, and delete issues of a specific comic book series
+- Uses React, Node/Express and an SQLite database.
+
 ### Codestrips
 - A small application to allow users to create and save small one-pane comic strips.
 - You can select a head, body, background location, thought/speech bubble type, thought/speech bubble text, and caption for a strip.
