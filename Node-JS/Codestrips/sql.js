@@ -1,12 +1,15 @@
 const sqlite3 = require("sqlite3");
 const db = new sqlite3.Database("./db.sqlite");
 
-db.run(`CREATE TABLE Strip (
-  id integer PRIMARY KEY,
-  head text NOT NULL,
-  body text NOT NULL,
-  background text NOT NULL,
-  bubble_type text NOT NULL,
-  bubble_text text NOT NULL DEFAULT "",
-  caption text NOT NULL DEFAULT ""
-)`);
+db.serialize(() => {
+  db.run(`DROP TABLE IF EXISTS Strip`);
+  db.run(`CREATE TABLE Strip(
+    id INTEGER PRIMARY KEY,
+    head TEXT NOT NULL,
+    body TEXT NOT NULL,
+    background TEXT NOT NULL,
+    bubble_type TEXT NOT NULL,
+    bubble_text TEXT NOT NULL DEFAULT "",
+    caption TEXT NOT NULL DEFAULT ""
+  );`);
+});

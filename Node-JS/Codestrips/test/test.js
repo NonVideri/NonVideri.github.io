@@ -347,7 +347,7 @@ describe("POST /strips route", function () {
     return request(app).post("/strips").send({ strip: invalidStrip }).expect(400);
   });
 
-  it("should return a 500 status code it a SQLite error occurs", function (done) {
+  it("should return a 500 status code if a SQLite error occurs", function (done) {
     invalidStrip = {
       head: "angry",
       body: "plus",
