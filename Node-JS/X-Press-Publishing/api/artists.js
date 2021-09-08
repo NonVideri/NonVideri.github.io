@@ -3,6 +3,12 @@ const artistsRouter = express.Router();
 const sqlite3 = require("sqlite3");
 const db = new sqlite3.Database(process.env.TEST_DATABASE || "./database.sqlite");
 
+const validateArtist = (req, res, next) => {
+  const newArtist = req.body.artist;
+  if (!newArtist.name || !newArtist.dateOfBirth || !newArtist.biography) return res.sendStatus(400);
+  else next();
+};
+
 artistsRouter.param("artistId", (req, res, next, artistId) => {
   db.get(`SELECT * FROM Artist WHERE Artist.id = ${artistId}`, (err, artist) => {
     if (err) return next(err);
@@ -11,12 +17,6 @@ artistsRouter.param("artistId", (req, res, next, artistId) => {
     next();
   });
 });
-
-const validateArtist = (req, res, next) => {
-  const newArtist = req.body.artist;
-  if (!newArtist.name || !newArtist.dateOfBirth || !newArtist.biography) return res.sendStatus(400);
-  else next();
-};
 
 artistsRouter.get("/", (req, res, next) => {
   db.all("SELECT * FROM Artist WHERE Artist.is_currently_employed = 1", (err, artists) => {
