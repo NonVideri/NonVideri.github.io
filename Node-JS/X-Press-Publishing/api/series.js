@@ -32,7 +32,7 @@ seriesRouter.get("/:seriesId", (req, res) => {
   res.status(200).json({ series: req.series });
 });
 
-seriesRouter.post("/", validateSeries, (req, res) => {
+seriesRouter.post("/", validateSeries, (req, res, next) => {
   const newSeries = req.body.series;
   db.run(
     `INSERT INTO Series (name, description)
@@ -50,7 +50,7 @@ seriesRouter.post("/", validateSeries, (req, res) => {
   );
 });
 
-seriesRouter.put("/:seriesId", validateSeries, (req, res) => {
+seriesRouter.put("/:seriesId", validateSeries, (req, res, next) => {
   const series = req.body.series;
   db.run(
     `UPDATE Series SET
@@ -71,13 +71,14 @@ seriesRouter.put("/:seriesId", validateSeries, (req, res) => {
   );
 });
 
-seriesRouter.delete("/:seriesId", (req, res) => {
+seriesRouter.delete("/:seriesId", (req, res, next) => {
   db.get(
     `SELECT * FROM Issue WHERE Issue.series_id = $seriesId`,
     {
       $seriesId: req.params.seriesId
     },
     (err, issue) => {
+      if (err) return next(err);
       if (issue) return res.sendStatus(400);
       db.run(
         `DELETE FROM Series WHERE Series.id = $seriesId`,

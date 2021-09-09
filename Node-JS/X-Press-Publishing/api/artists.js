@@ -29,7 +29,7 @@ artistsRouter.get("/:artistId", (req, res) => {
   res.status(200).json({ artist: req.artist });
 });
 
-artistsRouter.post("/", validateArtist, (req, res) => {
+artistsRouter.post("/", validateArtist, (req, res, next) => {
   const newArtist = req.body.artist;
   if (newArtist.isCurrentlyEmployed !== 0) newArtist.isCurrentlyEmployed = 1;
   db.run(
@@ -50,7 +50,7 @@ artistsRouter.post("/", validateArtist, (req, res) => {
   );
 });
 
-artistsRouter.put("/:artistId", validateArtist, (req, res) => {
+artistsRouter.put("/:artistId", validateArtist, (req, res, next) => {
   const artist = req.body.artist;
   db.run(
     `UPDATE Artist SET
@@ -75,7 +75,7 @@ artistsRouter.put("/:artistId", validateArtist, (req, res) => {
   );
 });
 
-artistsRouter.delete("/:artistId", (req, res) => {
+artistsRouter.delete("/:artistId", (req, res, next) => {
   db.run(
     `UPDATE Artist SET
   is_currently_employed = 0
