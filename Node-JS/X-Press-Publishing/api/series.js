@@ -4,8 +4,6 @@ const sqlite3 = require("sqlite3");
 const db = new sqlite3.Database(process.env.TEST_DATABASE || "./database.sqlite");
 const issuesRouter = require("./issues");
 
-seriesRouter.use("/:seriesId/issues", issuesRouter);
-
 const validateSeries = (req, res, next) => {
   const newSeries = req.body.series;
   if (!newSeries.name || !newSeries.description) return res.sendStatus(400);
@@ -20,6 +18,8 @@ seriesRouter.param("seriesId", (req, res, next, seriesId) => {
     next();
   });
 });
+
+seriesRouter.use("/:seriesId/issues", issuesRouter);
 
 seriesRouter.get("/", (req, res, next) => {
   db.all("SELECT * FROM Series", (err, series) => {

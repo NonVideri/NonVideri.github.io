@@ -19,4 +19,6 @@ db.run(`CREATE TABLE IF NOT EXISTS Issue (
   issue_number INTEGER NOT NULL,
   publication_date TEXT NOT NULL,
   artist_id INTEGER NOT NULL,
-  series_id INTEGER NOT NULL)`);
+  series_id INTEGER NOT NULL,
+  FOREIGN KEY(artist_id) REFERENCES Artist(id),
+  FOREIGN KEY(series_id) REFERENCES Series(id))`);

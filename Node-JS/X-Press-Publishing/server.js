@@ -6,6 +6,8 @@ const app = express();
 const PORT = process.env.PORT || 4001;
 const apiRouter = require("./api/api");
 
+app.use(express.static("public"));
+app.use(express.static("src"));
 app.use(express.json());
 app.use(errorHandler());
 app.use(cors());
