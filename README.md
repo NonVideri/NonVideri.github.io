@@ -3,6 +3,10 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
 ## Node & JS Projects
 
+### Nest Products
+- A small dummy API for getting products for an e-commerce website.
+- Built with NestJS.
+
 ### X-Press Publishing
 - An internal tool for a comic book publishing company.
 - Allows users to:
