@@ -12,7 +12,7 @@ export class ProductsService {
     return [product, productIndex];
   }
 
-  insertProduct(title: string, desc: string, price: number) {
+  createProduct(title: string, desc: string, price: number) {
     const prodId = new Date().toString();
     const newProduct = new Product(prodId, title, desc, price);
     this.products.push(newProduct);
@@ -31,9 +31,15 @@ export class ProductsService {
   updateProduct(productId: string, title: string, desc: string, price: number) {
     const [product, index] = this.findProduct(productId);
     const updatedProduct = { ...product };
+    // Check for null values to avoid overwriting with them
     if (title) updatedProduct.title = title;
     if (desc) updatedProduct.description = desc;
     if (price) updatedProduct.price = price;
     this.products[index] = updatedProduct;
+  }
+
+  deleteProduct(productId: string) {
+    const index = this.findProduct(productId)[1];
+    this.products.splice(index, 1);
   }
 }
