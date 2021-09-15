@@ -3,8 +3,18 @@ To see them in action, visit my personal website: http://nonvideri.ct8.pl
 
 ## Node & JS Projects
 
+### Expresso
+- An internal tool for a coffee shop called Expresso.
+- Allows users to:
+	- Create, view, update, and delete menus
+	- Create, view, update, and delete menu items
+	- Create, view, update, and delete employees
+	- Create, view, update, and delete employee’s timesheets
+- Uses React, Node/Express and an SQLite database.
+
 ### Nest Products
-- A small dummy API for getting products for an e-commerce website.
+- A dummy API for the products part of an e-commerce website.
+- Allows the user to use the standard CRUD actions with the products.
 - Built with NestJS.
 
 ### X-Press Publishing
