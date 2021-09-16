@@ -7,11 +7,11 @@ export default function Skills() {
           <article className="col-sm-4">
             <h3 className="feature-title">Coding</h3>
             <ul className="feature-description">
-              <li>Node.js, Express, mongoose</li>
+              <li>Node.js, Express, NestJS, mongoose</li>
               <li>React, Redux</li>
               <li>JavaScript (ES6), TypeScript</li>
               <li>Jest, RTL</li>
-              <li>REST, SQL, MongoDB, GraphQL</li>
+              <li>SQL (PostgreSQL, SQLite), MongoDB</li>
               <li>HTML5, CSS3, Bootstrap, Sass</li>
               <li>Python</li>
               <li>Git</li>
@@ -21,10 +21,10 @@ export default function Skills() {
           <article className="col-sm-4">
             <h3 className="feature-title">Other</h3>
             <ul className="feature-description">
-              <li>Mnemonics, mind maps</li>
+              <li>Mnemonics, mind maps, fast learning</li>
               <li>Speed reading</li>
               <li>Time management (Eisenhower matrix, pomodoro)</li>
-              <li>Scrum, Trello</li>
+              <li>Scrum (Trello)</li>
               <li>MS Office, Photoshop, Premiere Pro</li>
             </ul>
           </article>
@@ -35,7 +35,7 @@ export default function Skills() {
               <li>Wordpress</li>
               <li>Specialized interpretation, translation</li>
               <li>Project team management (15 people)</li>
-              <li>Public speaking, training</li>
+              <li>Public speaking, training, mentoring</li>
               <li>Customer contact</li>
               <li>NGO external relations</li>
             </ul>
