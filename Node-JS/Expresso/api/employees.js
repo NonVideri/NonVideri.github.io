@@ -11,7 +11,7 @@ const validateEmployee = (req, res, next) => {
 };
 
 employeesRouter.param('id', (req, res, next, id) => {
-  db.get(`SELECT * FROM Employee WHERE Employee.id = ${id}`, (err, employee) => {
+  db.get(`SELECT * FROM Employee WHERE id = ${id}`, (err, employee) => {
     if (err) return next(err);
     if (!employee) return res.sendStatus(404);
     req.employee = employee;
@@ -44,7 +44,7 @@ employeesRouter.post('/', validateEmployee, (req, res, next) => {
     },
     function (err) {
       if (err) return next(err);
-      db.get(`SELECT * FROM Employee WHERE Employee.id = ${this.lastID}`, (err, employee) => {
+      db.get(`SELECT * FROM Employee WHERE id = ${this.lastID}`, (err, employee) => {
         res.status(201).json({ employee });
       });
     }
@@ -55,7 +55,7 @@ employeesRouter.put('/:id', validateEmployee, (req, res, next) => {
   const newEmployee = req.body.employee;
   db.run(
     `UPDATE Employee SET name = $name, position = $position, wage = $wage
-    WHERE Employee.id = $id`,
+    WHERE id = $id`,
     {
       $name: newEmployee.name,
       $position: newEmployee.position,
@@ -64,7 +64,7 @@ employeesRouter.put('/:id', validateEmployee, (req, res, next) => {
     },
     function (err) {
       if (err) return next(err);
-      db.get(`SELECT * FROM Employee WHERE Employee.id = ${req.params.id}`, (err, employee) => {
+      db.get(`SELECT * FROM Employee WHERE id = ${req.params.id}`, (err, employee) => {
         res.status(200).json({ employee });
       });
     }
@@ -75,7 +75,7 @@ employeesRouter.delete('/:id', (req, res, next) => {
   db.run(
     `UPDATE Employee
     SET is_current_employee = 0
-    WHERE Employee.id = ${req.params.id}`,
+    WHERE id = ${req.params.id}`,
     function (err) {
       if (err) return next(err);
       req.employee.is_current_employee = 0;
