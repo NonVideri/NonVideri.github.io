@@ -5,7 +5,7 @@ const db = new sqlite3.Database(process.env.TEST_DATABASE || './database.sqlite'
 
 const validateMenu = (req, res, next) => {
   const newMenu = req.body.menu;
-  if (!newMenu.text) return res.sendStatus(400);
+  if (!newMenu.title) return res.sendStatus(400);
   next();
 };
 
@@ -32,16 +32,18 @@ menusRouter.get('/:id', (req, res, next) => {
 menusRouter.post('/', validateMenu, (req, res, next) => {
   const newMenu = req.body.menu;
   db.run(
-    `INSERT INTO Menu (text)
-    VALUES ($text)`,
+    `INSERT INTO Menu (title)
+    VALUES ($title)`,
     {
-      $text: newMenu.text
+      $title: newMenu.title
     },
     function (err) {
       if (err) return next(err);
-      db.get(`SELECT * FROM Menu WHERE id = ${this.lastID}`, (err, menu) => {
-        res.status(201).json({ menu });
-      });
+      const menu = {
+        id: this.lastID,
+        title: newMenu.title
+      };
+      res.status(201).json({ menu });
     }
   );
 });
