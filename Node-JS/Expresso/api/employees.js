@@ -68,4 +68,17 @@ employeesRouter.put('/:id', validateEmployee, (req, res, next) => {
   );
 });
 
+employeesRouter.delete('/:id', (req, res, next) => {
+  db.run(
+    `UPDATE Employee
+    SET is_current_employee = 0
+    WHERE Employee.id = ${req.params.id}`,
+    function (err) {
+      if (err) return next(err);
+      req.employee.is_current_employee = 0;
+      res.status(200).json({ employee: req.employee });
+    }
+  );
+});
+
 module.exports = employeesRouter;
