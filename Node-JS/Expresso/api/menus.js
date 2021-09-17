@@ -62,4 +62,15 @@ menusRouter.put('/:id', validateMenu, (req, res, next) => {
   );
 });
 
+menusRouter.delete('/:id', (req, res, next) => {
+  db.get(`SELECT * FROM MenuItem WHERE menu_id = ${req.params.id}`, (err, menuItem) => {
+    if (err) return next(err);
+    if (menuItem) return res.sendStatus(400);
+    db.run(`DELETE FROM Menu WHERE id = ${req.params.id}`, (err) => {
+      if (err) return next(err);
+      res.sendStatus(204);
+    });
+  });
+});
+
 module.exports = menusRouter;
