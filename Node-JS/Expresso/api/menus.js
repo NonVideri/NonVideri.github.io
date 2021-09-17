@@ -48,4 +48,18 @@ menusRouter.post('/', validateMenu, (req, res, next) => {
   );
 });
 
+menusRouter.put('/:id', validateMenu, (req, res, next) => {
+  const newMenu = req.body.menu;
+  db.run(
+    `UPDATE Menu SET title = $title
+    WHERE id = ${req.params.id}`,
+    { $title: newMenu.title },
+    (err) => {
+      if (err) return next(err);
+      req.menu.title = newMenu.title;
+      res.status(200).json({ menu: req.menu });
+    }
+  );
+});
+
 module.exports = menusRouter;
