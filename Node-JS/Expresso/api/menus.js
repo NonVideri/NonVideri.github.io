@@ -9,11 +9,24 @@ const validateMenu = (req, res, next) => {
   next();
 };
 
+menusRouter.param('id', (req, res, next, id) => {
+  db.get(`SELECT * FROM Menu WHERE id = ${id}`, (err, menu) => {
+    if (err) return next(err);
+    if (!menu) return res.sendStatus(404);
+    req.menu = menu;
+    next();
+  });
+});
+
 menusRouter.get('/', (req, res, next) => {
   db.all(`SELECT * FROM Menu`, (err, menus) => {
     if (err) return next(err);
     res.status(200).json({ menus });
   });
+});
+
+menusRouter.get('/:id', (req, res, next) => {
+  res.status(200).json({ menu: req.menu });
 });
 
 menusRouter.post('/', validateMenu, (req, res, next) => {
