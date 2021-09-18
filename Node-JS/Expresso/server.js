@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const cors = require('cors');
 const errorHandler = require('errorhandler');
 const helmet = require('helmet');
 const sqlite3 = require('sqlite3');
@@ -10,6 +11,7 @@ const apiRouter = require('./api/api');
 app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(cors());
 app.use(errorHandler());
 app.use(helmet());
 
