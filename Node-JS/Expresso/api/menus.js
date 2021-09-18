@@ -1,6 +1,6 @@
 const express = require('express');
 const sqlite3 = require('sqlite3');
-const menuItemsRouter = require('./menu-items');
+const itemsRouter = require('./menu-items');
 const menusRouter = express.Router();
 const db = new sqlite3.Database(process.env.TEST_DATABASE || './database.sqlite');
 
@@ -19,7 +19,7 @@ menusRouter.param('id', (req, res, next, id) => {
   });
 });
 
-menusRouter.use('/:id/menu-items', menuItemsRouter);
+menusRouter.use('/:id/menu-items', itemsRouter);
 
 menusRouter.get('/', (req, res, next) => {
   db.all(`SELECT * FROM Menu`, (err, menus) => {
