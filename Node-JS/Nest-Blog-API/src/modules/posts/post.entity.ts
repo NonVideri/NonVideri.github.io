@@ -9,7 +9,7 @@ import {
 import { User } from '../users/user.entity';
 
 @Table
-export class Post extends Model<Post> {
+export class Post extends Model {
   @Column({
     type: DataType.STRING,
     allowNull: false,
