@@ -5,12 +5,17 @@
 
 ## Node & JS Projects
 
+### Nest Task Manager
+
+- Task Manager API built with NestJS.
+
 ### Nest Blog API
 
 - A Mini Blog that's a Web RESTful API Application.
 - Uses Sequelize and Postgres Database.
 - Has authentication with Passport, validates user input and has routes protected with JWT.
 - Allows the user to perform standard CRUD actions with blog posts.
+- Built using NestJS.
 
 ### Expresso
 
