@@ -4,8 +4,6 @@ const morgan = require('morgan');
 const cors = require('cors');
 const errorHandler = require('errorhandler');
 const helmet = require('helmet');
-const sqlite3 = require('sqlite3');
-const db = new sqlite3.Database(process.env.TEST_DATABASE || './database.sqlite');
 const apiRouter = require('./api/api');
 
 app.use(express.static('public'));
