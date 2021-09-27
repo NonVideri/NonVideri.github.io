@@ -7,12 +7,12 @@ class Node {
 
   setNextNode(node) {
     if (node instanceof Node || node === null) return (this.next = node);
-    throw new Error("Next node must be a member of the Node class");
+    throw new Error('Next node must be a member of the Node class');
   }
 
   setPreviousNode(node) {
     if (node instanceof Node || node === null) return (this.previous = node);
-    throw new Error("Previous node must be a member of the Node class");
+    throw new Error('Previous node must be a member of the Node class');
   }
 
   getNextNode() {
