@@ -129,6 +129,11 @@
 
 - See the second repository.
 
+### React Course App
+
+- A To-Do App created as a part of a React course.
+- Connects with a local API to do CRUD actions on tasks.
+
 ### Comments
 
 - Displays a list of fake comments fetched from JSONPlaceholder server.
