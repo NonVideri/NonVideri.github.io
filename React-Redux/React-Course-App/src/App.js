@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+
+function ToDoList(props) {
+  const [tasks, setTasks] = useState(props.tasks);
+  const [input, setInput] = useState('');
+
+  const updateInput = (e) => {
+    setInput(e.target.value);
+  };
+
+  return (
+    <>
+      <h1>{props.title}</h1>
+      {props.tasks.map((task) => (
+        <div>
+          <p>{task}</p>
+        </div>
+      ))}
+      <input type="text" onChange={updateInput} />
+      <button>Add task</button>
+    </>
+  );
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const myTasks = ['Record a ReactJS Video', 'Go for a walk'];
+
+  return <ToDoList title="My stuff" tasks={myTasks} />;
 }
 
 export default App;
