@@ -8,16 +8,21 @@ function ToDoList(props) {
     setInput(e.target.value);
   };
 
+  const addTask = () => {
+    setTasks([...tasks, input]);
+    setInput('');
+  };
+
   return (
     <>
       <h1>{props.title}</h1>
-      {props.tasks.map((task) => (
+      {tasks.map((task) => (
         <div>
           <p>{task}</p>
         </div>
       ))}
-      <input type="text" onChange={updateInput} />
-      <button>Add task</button>
+      <input type="text" onChange={updateInput} value={input} />
+      <button onClick={addTask}>Add task</button>
     </>
   );
 }
