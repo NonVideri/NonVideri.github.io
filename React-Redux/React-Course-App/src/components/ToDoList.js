@@ -26,12 +26,13 @@ const DestroyButton = styled.button`
 `;
 
 export default function ToDoList(props) {
-  const [tasks, setTasks] = useState(['Record a ReactJS Video', 'Go for a walk']);
+  const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState('');
 
   useEffect(async () => {
     const response = await fetch('http://localhost:5000/todo');
     const json = await response.json();
+    setTasks(json);
   });
 
   const updateInput = (e) => {
@@ -52,7 +53,7 @@ export default function ToDoList(props) {
       <Header>My stuff</Header>
       <DestroyButton onClick={removeAll}>Remove all</DestroyButton>
       {tasks.map((task) => (
-        <ToDoItem task={task} />
+        <ToDoItem id={task.id} key={task.key} text={task.text} done={task.done} />
       ))}
       <ToDoForm onSubmit={addTask} onChange={updateInput} input={input} />
     </Container>
