@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ToDoForm from './ToDoForm';
 import ToDoItem from './ToDoItem';
+import * as itemsApi from '../helpers/itemsApi';
 
 const Container = styled.div`
   background: #2b2e39;
@@ -30,10 +31,15 @@ export default function ToDoList(props) {
   const [input, setInput] = useState('');
 
   useEffect(async () => {
+    const tasks = await itemsApi.getAll();
+    setTasks(tasks);
+  }, []);
+
+  useEffect(async () => {
     const response = await fetch('http://localhost:5000/todo');
     const json = await response.json();
     setTasks(json);
-  });
+  }, []);
 
   const updateInput = (e) => {
     setInput(e.target.value);
