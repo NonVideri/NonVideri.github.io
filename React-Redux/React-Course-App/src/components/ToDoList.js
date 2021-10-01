@@ -45,8 +45,10 @@ export default function ToDoList(props) {
     setInput(e.target.value);
   };
 
-  const addTask = () => {
-    setTasks([...tasks, input]);
+  const addTask = async () => {
+    const newTask = await itemsApi.create({ text: input });
+
+    setTasks([...tasks, newTask]);
     setInput('');
   };
 
