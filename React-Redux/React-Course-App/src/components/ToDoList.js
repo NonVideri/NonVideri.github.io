@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ToDoForm from './ToDoForm';
 import ToDoItem from './ToDoItem';
-import * as itemsApi from '../helpers/itemsApi';
+import * as tasksApi from '../helpers/tasksApi';
 
 const Container = styled.div`
   background: #2b2e39;
@@ -31,7 +31,7 @@ export default function ToDoList(props) {
   const [input, setInput] = useState('');
 
   useEffect(async () => {
-    const tasks = await itemsApi.getAll();
+    const tasks = await tasksApi.getAll();
     setTasks(tasks);
   }, []);
 
@@ -46,13 +46,24 @@ export default function ToDoList(props) {
   };
 
   const addTask = async () => {
-    const newTask = await itemsApi.create({ text: input });
+    const newTask = await tasksApi.create({ text: input });
 
     setTasks([...tasks, newTask]);
     setInput('');
   };
 
-  const removeAll = () => {
+  const findById = (id, arr) => {
+    const index = arr.findIndex((task) => task.id === id);
+    return [index, arr[index]];
+  };
+
+  const destroy = async (id) => {
+    await tasksApi.destroy(id);
+    const [index] = findById(id, tasks);
+    setTasks(tasks.slice(0, index).concat(tasks.slice(index + 1)));
+  };
+
+  const destroyAll = () => {
     setTasks([]);
   };
 
@@ -61,7 +72,7 @@ export default function ToDoList(props) {
       <Header>My stuff</Header>
       <DestroyButton onClick={removeAll}>Remove all</DestroyButton>
       {tasks.map((task) => (
-        <ToDoItem id={task.id} key={task.key} text={task.text} done={task.done} />
+        <ToDoItem id={task.id} key={task.key} text={task.text} done={task.done} destroy={destroy} />
       ))}
       <ToDoForm onSubmit={addTask} onChange={updateInput} input={input} />
     </Container>

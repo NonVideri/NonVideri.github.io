@@ -23,3 +23,16 @@ export const call = (url, method, body, resolve, reject) =>
 
 export const post = (url, body) =>
   new Promise((resolve, reject) => call(url, 'POST', body, resolve, reject));
+
+export const destroy = (url) =>
+  new Promise((resolve, reject) => {
+    fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+      }
+    }).then((response) => {
+      if (response.ok) resolve(response);
+      else reject(response);
+    });
+  });
