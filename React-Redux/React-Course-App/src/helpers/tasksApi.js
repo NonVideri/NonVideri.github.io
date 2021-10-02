@@ -7,3 +7,5 @@ export const getAll = () => api.get(tasksApiUrl());
 export const create = (params) => api.post(tasksApiUrl(), { task: { ...params } });
 
 export const destroy = (id) => api.destroy(tasksApiUrl(id));
+
+export const update = (id, params) => api.put(tasksApiUrl(id), { task: { ...params } });

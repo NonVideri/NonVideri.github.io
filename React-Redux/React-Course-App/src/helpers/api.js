@@ -24,6 +24,9 @@ export const call = (url, method, body, resolve, reject) =>
 export const post = (url, body) =>
   new Promise((resolve, reject) => call(url, 'POST', body, resolve, reject));
 
+export const put = (url, body) =>
+  new Promise((resolve, reject) => call(url, 'PUT', body, resolve, reject));
+
 export const destroy = (url) =>
   new Promise((resolve, reject) => {
     fetch(url, {

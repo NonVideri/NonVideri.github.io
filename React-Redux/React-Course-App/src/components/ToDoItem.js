@@ -10,28 +10,19 @@ const Item = styled.div`
   text-decoration: ${(props) => (props.done ? 'line-through' : 'auto')};
 `;
 
-export default function ToDoItem({ text, id, destroy }) {
-  const [done, setDone] = useState(false);
-
+export default function ToDoItem(props) {
   const removeTask = () => {
-    destroy(id);
+    props.removeTask(props.id);
   };
 
-  const toggleDone = async () => {
-    const response = await fetch(`http://localhost:5000/todo/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json; charset=utf-8' },
-      body: JSON.stringify({
-        item: { done: !done }
-      })
-    });
-    if (response.ok) setDone(!done);
+  const toggleDone = () => {
+    props.toggleDone(props.id);
   };
 
   return (
-    <Item done={done}>
-      <p>{text}</p>
-      <button onClick={destroy}>x</button>
+    <Item done={props.done}>
+      <p onClick={toggleDone}>{props.text}</p>
+      <button onClick={removeTask}>x</button>
     </Item>
   );
 }

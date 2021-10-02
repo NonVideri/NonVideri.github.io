@@ -57,22 +57,41 @@ export default function ToDoList(props) {
     return [index, arr[index]];
   };
 
-  const destroy = async (id) => {
+  const toggleDone = async (id) => {
+    const [index, task] = findById(id, tasks);
+    const response = await tasksApi.update(id, { done: !task.done });
+    setTasks(
+      tasks
+        .slice(0, index)
+        .concat([response])
+        .concat(tasks.slice(index + 1))
+    );
+  };
+
+  const removeTask = async (id) => {
     await tasksApi.destroy(id);
     const [index] = findById(id, tasks);
     setTasks(tasks.slice(0, index).concat(tasks.slice(index + 1)));
   };
 
-  const destroyAll = () => {
+  const destroyAll = async () => {
+    for (let task of tasks) await tasks.Api.destroy(task.id);
     setTasks([]);
   };
 
   return (
     <Container>
       <Header>My stuff</Header>
-      <DestroyButton onClick={removeAll}>Remove all</DestroyButton>
+      <DestroyButton onClick={destroyAll}>Remove all</DestroyButton>
       {tasks.map((task) => (
-        <ToDoItem id={task.id} key={task.key} text={task.text} done={task.done} destroy={destroy} />
+        <ToDoItem
+          id={task.id}
+          key={task.key}
+          text={task.text}
+          done={task.done}
+          toggleDone={toggleDone}
+          removeTask={removeTask}
+        />
       ))}
       <ToDoForm onSubmit={addTask} onChange={updateInput} input={input} />
     </Container>
