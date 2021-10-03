@@ -19,7 +19,9 @@ class Queue {
     if (this.hasRoom()) {
       this.queue.addToTail(data);
       this.size++;
-    } else throw new Error('Queue is full!');
+      return;
+    }
+    throw new Error('Queue is full!');
   }
 
   dequeue() {
@@ -27,7 +29,8 @@ class Queue {
       const data = this.queue.removeHead();
       this.size--;
       return data;
-    } else throw new Error('Queue is empty!');
+    }
+    throw new Error('Queue is empty!');
   }
 }
 
