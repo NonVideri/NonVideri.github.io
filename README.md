@@ -17,6 +17,10 @@
 - Allows the user to perform standard CRUD actions with blog posts.
 - Built using NestJS.
 
+### Sequelize Project
+
+- A simple educational project using Sequelize and Postgres Database.
+
 ### Expresso
 
 - An internal tool for a coffee shop called Expresso.
