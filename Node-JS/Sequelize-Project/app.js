@@ -19,6 +19,6 @@ app.post('/users', async (req, res) => {
 
 app.listen(PORT, async () => {
   console.log(`Server up on http://localhost:${PORT}.`);
-  await sequelize.sync({ force: true });
-  console.log('Database synced.');
+  await sequelize.authenticate();
+  console.log('Database connected!');
 });
