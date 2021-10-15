@@ -142,6 +142,7 @@
 
 - A simple tech article website app.
 - Supports viewing different tech articles and looking up authors.
+- The user can also search through articles.
 - Allows the user to "log in" and change his username.
 - Uses React Router.
 
