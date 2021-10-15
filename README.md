@@ -141,7 +141,9 @@
 ### React Router
 
 - A simple tech article website app.
-- Uses react-router.
+- Supports viewing different tech articles and looking up authors.
+- Allows the user to "log in" and change his username.
+- Uses React Router.
 
 ### Comments
 
