@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -14,11 +15,11 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <Router>
       <Header />
-      <main>{/* Add Routes here! */}</main>
+      <main></main>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
