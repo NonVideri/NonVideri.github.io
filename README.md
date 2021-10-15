@@ -138,6 +138,10 @@
 - A To-Do App created as a part of a React course.
 - Connects with a local API to do CRUD actions on tasks.
 
+### React Router
+
+- An educational app for learning react-router.
+
 ### Comments
 
 - Displays a list of fake comments fetched from JSONPlaceholder server.
