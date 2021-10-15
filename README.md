@@ -140,7 +140,8 @@
 
 ### React Router
 
-- An educational app for learning react-router.
+- A simple tech article website app.
+- Uses react-router.
 
 ### Comments
 

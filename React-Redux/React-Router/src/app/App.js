@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -18,33 +18,35 @@ function App() {
     <Router>
       <Header />
       <main>
-        <Route path="/about">
-          <About />
-        </Route>
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
 
-        <Route path="/sign-up">
-          <SignUp />
-        </Route>
+          <Route path="/sign-up">
+            <SignUp />
+          </Route>
 
-        <Route path="/articles">
-          <Articles />
-        </Route>
+          <Route exact path="/articles">
+            <Articles />
+          </Route>
 
-        <Route path="/categories">
-          <Categories />
-        </Route>
+          <Route path="/articles/:title?">
+            <Article />
+          </Route>
 
-        <Route path="/profile">
-          <Profile />
-        </Route>
+          <Route path="/categories">
+            <Categories />
+          </Route>
 
-        <Route path="/articles/:title?">
-          <Article />
-        </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
 
-        <Route path="/authors/:name">
-          <Author />
-        </Route>
+          <Route path="/authors/:name">
+            <Author />
+          </Route>
+        </Switch>
       </main>
       <Footer />
     </Router>
