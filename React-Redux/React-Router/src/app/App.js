@@ -37,6 +37,14 @@ function App() {
         <Route path="/profile">
           <Profile />
         </Route>
+
+        <Route path="/articles/:title?">
+          <Article />
+        </Route>
+
+        <Route path="/authors/:name">
+          <Author />
+        </Route>
       </main>
       <Footer />
     </Router>
