@@ -5,6 +5,16 @@ const PORT = 5000;
 
 app.use(express.json());
 
+app.get('/users', async (req, res) => {
+  try {
+    const users = await User.findAll();
+    return res.json(users);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ error: 'Something went wrong.' });
+  }
+});
+
 app.post('/users', async (req, res) => {
   const { name, email, role } = req.body;
 
