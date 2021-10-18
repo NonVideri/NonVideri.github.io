@@ -10,7 +10,7 @@ module.exports = {
       updatedAt: { type: DataTypes.DATE, allowNull: false }
     });
   },
-  down: async (queryInterface, Sequelize) => {
+  down: async (queryInterface, DataTypes) => {
     await queryInterface.dropTable('posts');
   }
 };
