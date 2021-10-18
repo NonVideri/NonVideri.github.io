@@ -38,6 +38,16 @@ app.post('/users', async (req, res) => {
   }
 });
 
+app.get('/posts', async (req, res) => {
+  try {
+    const posts = await Post.findAll({ include: 'user' });
+    return res.json(posts);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json(err);
+  }
+});
+
 app.post('/posts', async (req, res) => {
   const { userUuid, body } = req.body;
   try {
