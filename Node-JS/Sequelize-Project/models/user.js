@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ Post }) {
-      this.hasMany(Post, { foreignKey: 'userId' });
+      this.hasMany(Post, { foreignKey: 'userId', as: 'posts' });
     }
     // Hide normal (non-uuid) ID
     toJSON() {
