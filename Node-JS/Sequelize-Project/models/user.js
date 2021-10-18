@@ -18,9 +18,31 @@ module.exports = (sequelize, DataTypes) => {
   User.init(
     {
       uuid: { type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4 },
-      name: { type: DataTypes.STRING, allowNull: false },
-      email: { type: DataTypes.STRING, allowNull: false },
-      role: { type: DataTypes.STRING, allowNull: false }
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: { msg: 'The value must exist.' },
+          notEmpty: { msg: 'The value must not be empty.' }
+        }
+      },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: { msg: 'The value must exist.' },
+          notEmpty: { msg: 'The value must not be empty.' },
+          isEmail: { msg: 'Must be a valid email.' }
+        }
+      },
+      role: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notNull: { msg: 'The value must exist.' },
+          notEmpty: { msg: 'The value must not be empty.' }
+        }
+      }
     },
     {
       sequelize,
