@@ -12,7 +12,7 @@
 ### Nest Blog API
 
 - A Mini Blog that's a Web RESTful API Application.
-- Uses Sequelize and Postgres Database.
+- Uses sequelize-typescript and Postgres Database.
 - Has authentication with Passport, validates user input and has routes protected with JWT.
 - Allows the user to perform standard CRUD actions with blog posts.
 - Built using NestJS.
@@ -20,6 +20,8 @@
 ### Sequelize Project
 
 - A simple educational project using Sequelize and Postgres Database.
+- A basic forum API with users and posts.
+- Allow basic CRUD actions, does basic verification.
 
 ### Expresso
 
