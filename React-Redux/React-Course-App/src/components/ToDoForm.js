@@ -23,20 +23,11 @@ const TextInput = styled.input`
   appearance: none;
 `;
 
-const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  border: 2px solid #343744;
-  background: #232632;
-  border-radius: 10px;
-  padding: 5px;
-`;
-
 export default function ToDoForm({ onChange, onSubmit, input }) {
   return (
-    <Container>
+    <>
       <TextInput type="text" onChange={onChange} value={input} />
       <Button onClick={onSubmit}>Add task</Button>
-    </Container>
+    </>
   );
 }

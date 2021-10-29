@@ -8,7 +8,7 @@ export const get = (url) =>
       .then((json) => resolve(json));
   });
 
-// POST/PUT calls
+// POST/PUT/DELETE calls
 export const call = (url, method, body, resolve, reject) =>
   fetch(url, {
     method,

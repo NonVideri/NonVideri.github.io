@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Item = styled.div`
@@ -10,19 +11,32 @@ const Item = styled.div`
   text-decoration: ${(props) => (props.done ? 'line-through' : 'auto')};
 `;
 
+const StyledLink = styled(Link)`
+  color: palevioletred;
+  text-decoration: none;
+  margin-left: 5px;
+
+  &:hover {
+    color: white;
+  }
+`;
+
 export default function ToDoItem(props) {
+  const { id, done, text } = props;
+
   const removeTask = () => {
-    props.removeTask(props.id);
+    props.removeTask(id);
   };
 
   const toggleDone = () => {
-    props.toggleDone(props.id);
+    props.toggleDone(id);
   };
 
   return (
-    <Item done={props.done}>
-      <p onClick={toggleDone}>{props.text}</p>
+    <Item done={done}>
+      <p onClick={toggleDone}>{text}</p>
       <button onClick={removeTask}>x</button>
+      <StyledLink to={`/items/${id}`}>Edit</StyledLink>
     </Item>
   );
 }
