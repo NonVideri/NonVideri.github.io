@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import ToDoForm from './ToDoForm';
+import ToDoCreateForm from './ToDoCreateForm';
 import ToDoItem from './ToDoItem';
 import * as tasksApi from '../helpers/tasksApi';
 
@@ -93,7 +93,7 @@ export default function ToDoList(props) {
           removeTask={removeTask}
         />
       ))}
-      <ToDoForm onSubmit={addTask} onChange={updateInput} input={input} />
+      <ToDoCreateForm onSubmit={addTask} onChange={updateInput} input={input} />
     </Container>
   );
 }

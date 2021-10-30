@@ -23,7 +23,7 @@ const TextInput = styled.input`
   appearance: none;
 `;
 
-export default function ToDoForm({ onChange, onSubmit, input }) {
+export default function ToDoCreateForm({ onChange, onSubmit, input }) {
   return (
     <>
       <TextInput type="text" onChange={onChange} value={input} />
