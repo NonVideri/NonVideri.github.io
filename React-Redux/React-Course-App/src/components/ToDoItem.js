@@ -22,7 +22,7 @@ const StyledLink = styled(Link)`
 `;
 
 export default function ToDoItem(props) {
-  const { id, done, text } = props;
+  const { id, done, content } = props;
 
   const removeTask = () => {
     props.removeTask(id);
@@ -34,7 +34,7 @@ export default function ToDoItem(props) {
 
   return (
     <Item done={done}>
-      <p onClick={toggleDone}>{text}</p>
+      <p onClick={toggleDone}>{content}</p>
       <button onClick={removeTask}>x</button>
       <StyledLink to={`/items/${id}`}>Edit</StyledLink>
     </Item>

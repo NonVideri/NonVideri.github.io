@@ -46,7 +46,7 @@ export default function ToDoList(props) {
   };
 
   const addTask = async () => {
-    const newTask = await tasksApi.create({ text: input });
+    const newTask = await tasksApi.create({ content: input });
 
     setTasks([...tasks, newTask]);
     setInput('');
@@ -87,7 +87,7 @@ export default function ToDoList(props) {
         <ToDoItem
           id={task.id}
           key={task.key}
-          text={task.text}
+          content={task.content}
           done={task.done}
           toggleDone={toggleDone}
           removeTask={removeTask}
