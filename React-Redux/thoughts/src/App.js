@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './App.css'
+import './App.css';
 
 import { AddThoughtForm } from './components/AddThoughtForm';
 import { Thought } from './components/Thought';
@@ -11,22 +11,22 @@ export default function App() {
     {
       id: generateId(),
       text: 'This is a place for your negative thoughts.',
-      expiresAt: getNewExpirationTime(),
+      expiresAt: getNewExpirationTime()
     },
     {
       id: generateId(),
-      text: "They will disappear forever after 15 seconds.",
-      expiresAt: getNewExpirationTime(),
-    },
+      text: 'They will disappear forever after 15 seconds.',
+      expiresAt: getNewExpirationTime()
+    }
   ]);
 
-  const addThought = (thought)=>{
-    setThoughts(thoughts => [thought,...thoughts])
-  }
+  const addThought = (thought) => {
+    setThoughts((thoughts) => [thought, ...thoughts]);
+  };
 
-  const removeThought = (thoughtIdToRemove)=>{
-    setThoughts(thoughts=>thoughts.filter(thought => thought.id!==thoughtIdToRemove))
-  }
+  const removeThought = (thoughtIdToRemove) => {
+    setThoughts((thoughts) => thoughts.filter((thought) => thought.id !== thoughtIdToRemove));
+  };
 
   return (
     <div className="App">
