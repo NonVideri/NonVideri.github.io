@@ -1,6 +1,7 @@
 import { Formik } from 'formik';
 import { useEffect, useState } from 'react';
 import { get, update } from '../helpers/tasksApi';
+import { SubmitButton, TextInput, Label, Select } from '../helpers/theme';
 
 export default function ToDoEditForm(props) {
   const [fetched, setFetched] = useState(false);
@@ -24,9 +25,12 @@ export default function ToDoEditForm(props) {
           }}>
           {({ values, errors, touched, handleBlur, handleChange, handleSubmit, isSubmitting }) => (
             <form onSubmit={handleSubmit}>
-              <input name="content" onChange={handleChange} value={values.content} />
+              <Label>
+                <TextInput name="content" onChange={handleChange} value={values.content} />
+              </Label>
+
               <br />
-              <button type="submit">Update</button>
+              <SubmitButton type="submit">Update</SubmitButton>
             </form>
           )}
         </Formik>
