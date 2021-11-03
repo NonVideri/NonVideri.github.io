@@ -1,17 +1,20 @@
 import { Formik } from 'formik';
 import { useEffect, useState } from 'react';
+import { withRouter } from 'react-router';
 import { get, update } from '../helpers/tasksApi';
 import { SubmitButton, TextInput, Label, Select, ErrorMsg } from '../helpers/theme';
 
-export default function ToDoEditForm(props) {
+function ToDoEditForm(props) {
   const [fetched, setFetched] = useState(false);
   const [item, setItem] = useState(null);
   const itemId = props.match.params.itemId;
 
-  useEffect(async () => {
-    const editedItem = await get(itemId);
-    setItem(editedItem);
-    setFetched(true);
+  useEffect(() => {
+    (async function () {
+      const editedItem = await get(itemId);
+      setItem(editedItem);
+      setFetched(true);
+    })();
   }, []);
 
   return (
@@ -20,8 +23,9 @@ export default function ToDoEditForm(props) {
       {fetched ? (
         <Formik
           initialValues={{ ...item }}
-          onSubmit={(values) => {
-            update(itemId, { ...values });
+          onSubmit={async (values) => {
+            await update(itemId, { ...values });
+            props.history.push('/');
           }}
           validate={(values) => {
             let errors = {};
@@ -65,3 +69,5 @@ export default function ToDoEditForm(props) {
     </div>
   );
 }
+
+export default withRouter(ToDoEditForm);

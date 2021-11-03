@@ -30,16 +30,20 @@ export default function ToDoList(props) {
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState('');
 
-  useEffect(async () => {
-    const tasks = await tasksApi.getAll();
-    setTasks(tasks);
+  useEffect(() => {
+    (async function () {
+      const tasks = await tasksApi.getAll();
+      setTasks(tasks);
+    })();
   }, []);
 
-  useEffect(async () => {
-    const response = await fetch('http://localhost:5000/todo');
-    const json = await response.json();
-    setTasks(json);
-  }, []);
+  // useEffect(() => {
+  //   (async function () {
+  //     const response = await fetch('http://localhost:5000/todo');
+  //     const json = await response.json();
+  //     setTasks(json);
+  //   })();
+  // }, []);
 
   const updateInput = (e) => {
     setInput(e.target.value);
