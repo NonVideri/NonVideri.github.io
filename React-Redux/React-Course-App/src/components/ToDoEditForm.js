@@ -35,7 +35,25 @@ export default function ToDoEditForm(props) {
                 Content *<ErrorMsg>{errors.content}</ErrorMsg>
                 <TextInput name="content" onChange={handleChange} value={values.content} />
               </Label>
+              <Label>
+                Priority
+                <Select name="priority" onChange={handleChange} value={values.priority}>
+                  <option value="low">Low</option>
+                  <option value="high">High</option>
+                  <option value="urgent">Urgent</option>
+                </Select>
+              </Label>
 
+              <Label>
+                Done?{' '}
+                <input
+                  type="checkbox"
+                  name="done"
+                  value={values.done}
+                  checked={values.done}
+                  onChange={handleChange}
+                />
+              </Label>
               <br />
               <SubmitButton type="submit">Update</SubmitButton>
             </form>
