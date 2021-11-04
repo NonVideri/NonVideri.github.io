@@ -6,6 +6,7 @@ import { SubmitButton, TextInput, Label, Select, ErrorMsg } from '../helpers/the
 
 function ToDoEditForm(props) {
   const [fetched, setFetched] = useState(false);
+  const [disabled, setDisabled] = useState(false);
   const [item, setItem] = useState(null);
   const itemId = props.match.params.itemId;
 
@@ -31,6 +32,9 @@ function ToDoEditForm(props) {
             let errors = {};
             if (!values.content) errors.content = 'Required.';
             else if (values.content.length < 3) errors.content = 'Too short. Minimum 3 characters.';
+
+            if (!errors) setDisabled(false);
+            else setDisabled(true);
             return errors;
           }}>
           {({ values, errors, touched, handleBlur, handleChange, handleSubmit, isSubmitting }) => (
@@ -59,7 +63,9 @@ function ToDoEditForm(props) {
                 />
               </Label>
               <br />
-              <SubmitButton type="submit">Update</SubmitButton>
+              <SubmitButton type="submit" disabled={disabled}>
+                Update
+              </SubmitButton>
             </form>
           )}
         </Formik>
