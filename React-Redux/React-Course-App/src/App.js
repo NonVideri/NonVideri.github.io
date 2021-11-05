@@ -5,6 +5,7 @@ import './App.css';
 import NotFound from './components/NotFound';
 import ToDoList from './components/ToDoList';
 import ToDoEditForm from './components/ToDoEditForm';
+import Login from './components/Login';
 
 const Container = styled.div`
   display: flex;
@@ -22,6 +23,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={ToDoList} />
           <Route path="/items/:itemId" component={ToDoEditForm} />
+          <Route exact path="/login" component={Login} />
           <Route component={NotFound} />
         </Switch>
       </Container>

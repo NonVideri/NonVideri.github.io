@@ -33,7 +33,7 @@ function ToDoEditForm(props) {
             if (!values.content) errors.content = 'Required.';
             else if (values.content.length < 3) errors.content = 'Too short. Minimum 3 characters.';
 
-            if (!errors) setDisabled(false);
+            if (!errors.content) setDisabled(false);
             else setDisabled(true);
             return errors;
           }}>
