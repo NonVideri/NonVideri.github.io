@@ -16,13 +16,26 @@ const Container = styled.div`
   padding: 5px;
 `;
 
+const PrivateRoute = (Component, ...rest) => {
+  <Route>
+    {...rest}
+    {(props) =>
+      isLogged ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to={{ pathname: 'login', state: { from: props.location } }} />
+      )
+    }
+  </Route>;
+};
+
 function App() {
   return (
     <Router>
       <Container>
         <Switch>
           <Route exact path="/" component={ToDoList} />
-          <Route path="/items/:itemId" component={ToDoEditForm} />
+          <PrivateRoute path="/items/:itemId" component={ToDoEditForm} />
           <Route exact path="/login" component={Login} />
           <Route component={NotFound} />
         </Switch>
