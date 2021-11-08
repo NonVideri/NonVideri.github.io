@@ -20,7 +20,7 @@ const PrivateRoute = (Component, ...rest) => {
   <Route>
     {...rest}
     {(props) =>
-      isLogged ? (
+      sessionStorage.getItem('currentUser') ? (
         <Component {...props} />
       ) : (
         <Redirect to={{ pathname: 'login', state: { from: props.location } }} />
