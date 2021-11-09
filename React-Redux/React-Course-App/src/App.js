@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import './App.css';
 
@@ -18,7 +18,6 @@ const Container = styled.div`
 
 const PrivateRoute = (Component, ...rest) => {
   <Route>
-    {...rest}
     {(props) =>
       sessionStorage.getItem('currentUser') ? (
         <Component {...props} />

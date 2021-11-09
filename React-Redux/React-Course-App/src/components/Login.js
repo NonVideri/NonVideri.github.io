@@ -1,3 +1,4 @@
+import { Redirect } from 'react-router';
 import { useState } from 'react/cjs/react.development';
 import { SubmitButton } from '../helpers/theme';
 
@@ -22,6 +23,7 @@ export default function Login(props) {
 
   const { from } = props.location.state || { from: { pathname: '/' } };
 
+  if (finished) return <Redirect to={from} />;
   return (
     <div>
       {currentUser ? (
