@@ -6,6 +6,7 @@ import NotFound from './components/NotFound';
 import ToDoList from './components/ToDoList';
 import ToDoEditForm from './components/ToDoEditForm';
 import Login from './components/Login';
+import Navbar from './components/Navbar';
 
 const Container = styled.div`
   display: flex;
@@ -32,6 +33,7 @@ function App() {
   return (
     <Router>
       <Container>
+        <Navbar />
         <Switch>
           <Route exact path="/" component={ToDoList} />
           <PrivateRoute path="/items/:itemId" component={ToDoEditForm} />
