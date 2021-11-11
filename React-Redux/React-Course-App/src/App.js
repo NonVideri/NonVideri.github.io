@@ -7,6 +7,7 @@ import ToDoList from './components/ToDoList';
 import ToDoEditForm from './components/ToDoEditForm';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
+import { CurrentUserProvider } from './context/CurrentUser';
 
 const Container = styled.div`
   display: flex;
@@ -32,15 +33,17 @@ const PrivateRoute = (Component, ...rest) => {
 function App() {
   return (
     <Router>
-      <Container>
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={ToDoList} />
-          <PrivateRoute path="/items/:itemId" component={ToDoEditForm} />
-          <Route exact path="/login" component={Login} />
-          <Route component={NotFound} />
-        </Switch>
-      </Container>
+      <CurrentUserProvider>
+        <Container>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={ToDoList} />
+            <PrivateRoute path="/items/:itemId" component={ToDoEditForm} />
+            <Route exact path="/login" component={Login} />
+            <Route component={NotFound} />
+          </Switch>
+        </Container>
+      </CurrentUserProvider>
     </Router>
   );
 }
