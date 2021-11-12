@@ -3,6 +3,12 @@
 - To see some small projects in action, visit my personal website: http://nonvideri.ct8.pl
 - Newer/bigger projects are higher up on the lists, so if you want to see my skills, start from the top.
 
+## Docker & Kubernetes Projects
+
+### Docker Course
+
+- A small educational Docker project.
+
 ## Node & JS Projects
 
 ### Nest Task Manager
@@ -139,6 +145,8 @@
 
 - A To-Do App created as a part of a React course.
 - Connects with a local API to do CRUD actions on tasks.
+- Supports login with Facebook.
+- Uses React Router, Context, Formik, Styled Components and other technologies.
 
 ### React Router
 
