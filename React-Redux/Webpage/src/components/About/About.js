@@ -15,10 +15,10 @@ export default function About() {
               </p>
               <p>
                 I love to learn new things and continuously find new ways to challenge myself.
-                Currently my main professional interests lie in creating working applications in
-                React. I am developing my skills with the same passion and strife for perfection I
-                have for every other system-related activity — from board games to Japanese tea
-                ceremony.
+                Currently my main professional interests lie in creating working backends in Node.js
+                and learning about blockchain. I am developing my skills with the same passion and
+                strife for perfection I have for every other system-related activity — from board
+                games to Japanese tea ceremony.
               </p>
               <p>
                 Pursuing self-mastery is one of the main themes of my life. My friends often
@@ -28,7 +28,7 @@ export default function About() {
               </p>
               <p>
                 Below you will find a short list of my skills, as well as some small projects I have
-                been working on. If you are interested in my services, feel free to{" "}
+                been working on. If you are interested in my services, feel free to{' '}
                 <a href="#contact">contact me</a>.
               </p>
               <p>
