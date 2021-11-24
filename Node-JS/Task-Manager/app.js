@@ -1,18 +1,18 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const connectDB = require("./db/connect");
-require("dotenv").config();
+const connectDB = require('./db/connect');
+require('dotenv').config();
 
-const notFound = require("./middleware/not-found");
-const errorHandler = require("./middleware/error-handler");
-const tasks = require("./routes/tasks");
+const notFound = require('./middleware/not-found');
+const errorHandler = require('./middleware/error-handler');
+const tasks = require('./routes/tasks');
 
 // Middleware
-app.use(express.static("./public"));
+app.use(express.static('./public'));
 app.use(express.json());
 
 // Routes
-app.use("/api/v1/tasks", tasks);
+app.use('/api/v1/tasks', tasks);
 app.use(notFound); // Default used if another route is used
 app.use(errorHandler);
 
