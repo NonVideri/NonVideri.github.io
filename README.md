@@ -11,6 +11,11 @@
 
 ## Node & JS Projects
 
+### Store API
+
+- A Store API in Express.
+- Uses MongoDB.
+
 ### Nest Task Manager
 
 - Task Manager API built with NestJS.
