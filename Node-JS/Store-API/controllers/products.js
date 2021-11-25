@@ -1,10 +1,21 @@
+const { Product, productSchema } = require('../models/product');
+
 const getAllProductsStatic = async (req, res) => {
-  throw new Error('Testing async errors');
-  res.status(200).json({ msg: 'products testing route' });
+  const products = await Product.find({ featured: true });
+  res.status(200).json({ products, nbHits: products.length });
 };
 
 const getAllProducts = async (req, res) => {
-  res.status(200).json({ msg: 'products route' });
+  const queryObject = {};
+  for (prop in productSchema) {
+    if (prop in req.query) {
+      queryObject[prop] = req.query[prop];
+    }
+  }
+
+  console.log(queryObject);
+  const products = await Product.find(queryObject);
+  res.status(200).json({ products, nbHits: products.length });
 };
 
 module.exports = { getAllProductsStatic, getAllProducts };

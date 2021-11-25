@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const productSchema = new mongoose.Schema({
+const productSchema = {
   name: {
     type: String,
     required: [true, 'Product name must be provided.']
@@ -28,7 +28,7 @@ const productSchema = new mongoose.Schema({
       message: '{VALUE} is not supported.'
     }
   }
-});
+};
 
-const Product = mongoose.model('Product', productSchema);
-module.exports = Product;
+const Product = mongoose.model('Product', new mongoose.Schema(productSchema));
+module.exports = { Product, productSchema };
