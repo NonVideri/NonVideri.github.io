@@ -9,7 +9,9 @@ const getAllProducts = async (req, res) => {
   const queryObject = {};
   for (prop in productSchema) {
     if (prop in req.query) {
-      queryObject[prop] = req.query[prop];
+      if (productSchema[prop].type === String)
+        queryObject[prop] = { $regex: req.query[prop], $options: 'i' };
+      else queryObject[prop] = req.query[prop];
     }
   }
 
