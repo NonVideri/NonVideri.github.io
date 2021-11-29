@@ -15,6 +15,11 @@
 
 - A Store API in Express.
 - Uses MongoDB.
+- Utilizes:
+  - Filtering by fields (including regex for strings and numeric filters)
+  - Sorting
+  - Choosing fields to be sent
+  - Pagination and limiting results.
 
 ### Nest Task Manager
 
