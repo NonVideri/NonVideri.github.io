@@ -5,29 +5,29 @@ menu = """-- Calculator Menu --
 3. Multiply two numbers
 4. Divide two numbers"""
 
-selection = None
+selected = None
 
-while selection != 0:
+while selected != 0:
     print(menu)
-    selection = int(input("Select an option: "))
+    selected = int(input("Select an option: "))
     
-    if selection not in range(5):
-        print("Invalid option: %d" % selection)
+    if selected not in range(5):
+        print("Invalid option: %d" % selected)
         continue
 
-    if selection == 0:
+    if selected == 0:
         continue
 
     a = float(input("Please enter the first number: "))
     b = float(input("Please enter the second number: "))
 
-    if selection == 1:
+    if selected == 1:
         result = a + b
-    elif selection == 2:
+    elif selected == 2:
         result = a - b
-    elif selection == 3:
+    elif selected == 3:
         result = a * b
-    elif selection == 4:
+    elif selected == 4:
         result = a / b
 
     print("The result is %g." % result)
