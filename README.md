@@ -11,16 +11,6 @@
 
 ## Node & JS Projects
 
-### Store API
-
-- A Store API in Express.
-- Uses MongoDB.
-- Utilizes:
-  - Filtering by fields (including regex for strings and numeric filters)
-  - Sorting
-  - Choosing fields to be sent
-  - Pagination and limiting results.
-
 ### Nest Task Manager
 
 - Task Manager API built with NestJS.
@@ -32,6 +22,22 @@
 - Has authentication with Passport, validates user input and has routes protected with JWT.
 - Allows the user to perform standard CRUD actions with blog posts.
 - Built using NestJS.
+
+### JWT Project
+
+- An educational project on JWT, which is an Express API.
+- Implements standard CRUD actions.
+- Implements mock user registration and authentication using JWT.
+
+### Store API
+
+- A Store API in Express.
+- Uses MongoDB.
+- Utilizes:
+  - Filtering by fields (including regex for strings and numeric filters)
+  - Sorting
+  - Choosing fields to be sent
+  - Pagination and limiting results.
 
 ### Sequelize Project
 
