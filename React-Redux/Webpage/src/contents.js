@@ -106,7 +106,7 @@ export const ProgrammerSkillsContent = (
 export const StatementContent = (
   <article>
     <blockquote className="quote">
-      <q>Your either grow or regress. Nothing stands still.</q>
+      <q>You either grow or regress. Nothing stands still.</q>
     </blockquote>
   </article>
 );
@@ -114,9 +114,9 @@ export const StatementContent = (
 export const GalleryContent = (
   <div className="gallery-wrapper">
     <figure className="gallery-item">
-      <img src="img/teaching.jpg" alt="Teaching Economics to high schoolers is a lot of fun!" />
+      <img src="img/teaching.jpg" alt="Teaching economics to high schoolers is a lot of fun!" />
       <figcaption>
-        Teaching Economics to high schoolers
+        Teaching economics to high schoolers
         <br /> is a lot of fun!
       </figcaption>
     </figure>
@@ -140,10 +140,10 @@ export const GalleryContent = (
     <figure className="gallery-item">
       <img
         src="img/training.jpg"
-        alt="Training future Economics teachers in educational psychology"
+        alt="Training future economics teachers in educational psychology"
       />
       <figcaption>
-        Training future Economics teachers
+        Training future economics teachers
         <br /> in educational psychology
       </figcaption>
     </figure>

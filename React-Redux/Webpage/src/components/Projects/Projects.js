@@ -1,16 +1,15 @@
-import Randomizer from "./Randomizer/Randomizer";
-import Clock from "./Clock/Clock";
-import ToDoApp from "./ToDoApp/ToDoApp";
+import Randomizer from './Randomizer/Randomizer';
+import Clock from './Clock/Clock';
+import ToDoApp from './ToDoApp/ToDoApp';
 
 export default function Projects() {
+  // if (location.pathname !== '/translator')
   return (
     <section className="projects" id="projects">
       <div className="container">
         <h2 className="section-title">Projects</h2>
         <div className="section-intro">
-          <a href="https://github.com/NonVideri">
-            Click here to see my GitHub repository.
-          </a>
+          <a href="https://github.com/NonVideri">Click here to see my GitHub repository.</a>
         </div>
         <h4 className="project">React-Redux Randomizer</h4>
         {/*<div className="feature-description">
@@ -28,4 +27,6 @@ export default function Projects() {
       </div>
     </section>
   );
+
+  // return null;
 }
