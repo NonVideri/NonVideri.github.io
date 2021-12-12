@@ -1,5 +1,4 @@
 // import styled from 'styled-components';
-import { StatementContent } from '../../contents';
 
 // const StyledStatement = styled.section`
 //   background-image: url('https://i.imgur.com/Iie96jJ.jpg');
@@ -24,7 +23,13 @@ import { StatementContent } from '../../contents';
 export default function Statement() {
   return (
     <section className="statement">
-      <div className="container">{StatementContent}</div>
+      <div className="container">
+        <article>
+          <blockquote className="quote">
+            <q>You either grow or regress. Nothing stands still.</q>
+          </blockquote>
+        </article>
+      </div>
     </section>
   );
 }
