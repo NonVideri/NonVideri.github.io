@@ -38,7 +38,7 @@ export default function Navigation() {
           </li>
           <li>•</li>
           <li>
-            <a href="#skills">Experience</a>
+            <a href="#services">Services</a>
           </li>
           <li>•</li>
           <li>

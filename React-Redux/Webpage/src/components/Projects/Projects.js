@@ -3,7 +3,7 @@ import Clock from './Clock/Clock';
 import ToDoApp from './ToDoApp/ToDoApp';
 
 export default function Projects() {
-  // if (location.pathname !== '/translator')
+  // if /
   return (
     <section className="projects" id="projects">
       <div className="container">
@@ -28,5 +28,6 @@ export default function Projects() {
     </section>
   );
 
-  // return null;
+  // if /translator
+  return null;
 }

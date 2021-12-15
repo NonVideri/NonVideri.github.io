@@ -17,7 +17,7 @@ export default function Splash() {
     <section className="splash">
       <div className="page-intro">
         <h1 className="main-title">Krzysztof Moszyński</h1>
-        <h2 className="main-subtitle">Professional Japanese Translator</h2>
+        <h2 className="main-subtitle">Japanese-English-Polish Translator and Interpreter</h2>
         <a className="btn btn-solid main-btn" href="#contact">
           Contact me
         </a>

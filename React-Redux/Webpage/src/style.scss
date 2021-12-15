@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla&family=Spectral&display=swap");
-@import "./variables";
-@import "./components/About/about";
-@import "./components/Contact/contact";
-@import "./components/Footer/footer";
-@import "./components/Gallery/gallery";
-@import "./components/Navigation/navigation";
-@import "./components/Projects/projects";
-@import "./components/Skills/skills";
-@import "./components/Splash/splash";
-@import "./components/Statement/statement";
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Spectral&display=swap');
+@import './variables';
+@import './components/About/about';
+@import './components/Contact/contact';
+@import './components/Footer/footer';
+@import './components/Gallery/gallery';
+@import './components/Navigation/navigation';
+@import './components/Projects/projects';
+@import './components/Skills/skills';
+@import './components/Splash/splash';
+@import './components/Statement/statement';
 
 * {
   box-sizing: border-box;
@@ -64,7 +64,7 @@ section {
   &:after {
     position: absolute;
     display: block;
-    content: " ";
+    content: ' ';
     width: 200px;
     height: 5px;
     background: $color-main;
@@ -88,4 +88,13 @@ section {
 
 .btn {
   margin: 12px 12px 16px 0px;
+}
+
+.feature-title {
+  margin: 24px 0;
+  font-family: $font-main;
+}
+
+.feature-description {
+  padding: 0 24px;
 }

@@ -1,10 +1,8 @@
 export default function Skills() {
+  // if /
   return (
     <section className="skills" id="skills">
       <div className="container">
-        {
-          // if /
-        }
         <h2 className="section-title">Skills</h2>
         <div className="row">
           <article className="col-sm-4">
@@ -41,11 +39,10 @@ export default function Skills() {
               <li>NGO external relations</li>
             </ul>
           </article>
-          {
-            // if /translator...
-          }
         </div>
       </div>
     </section>
   );
+  // if /translator
+  return null;
 }

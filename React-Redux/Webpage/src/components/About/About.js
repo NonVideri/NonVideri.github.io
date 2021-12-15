@@ -11,13 +11,13 @@ export default function About() {
             }
             <article>
               <p>
-                Since childhood, I have always been fascinated by systems. It started with
+                Since childhood, I have always been fascinated with systems. It started with
                 languages, and extended to psychology, economics and philosophy. Now I am
                 challenging my mind with some of the most practical and precise systems known to man
                 — programming languages.
               </p>
               <p>
-                I love to learn new things and continuously find new ways to challenge myself.
+                I love to learn new things and constantly find new ways to challenge myself.
                 Currently my main professional interests lie in creating working backends in Node.js
                 and learning more about blockchain, DApps and Web3 paradigms. I am developing my
                 skills with the same passion and strife for perfection I have for every other
@@ -43,19 +43,22 @@ export default function About() {
             }
             <article>
               <p>
-                Since childhood, I have always been fascinated by systems. It started with languages
-                and extended to psychology, economics and philosophy. Today, when I translate, I do
-                it with the same passion for perfection, always striving to deliver the highest
-                quality work.
+                Since childhood, I have always been fascinated with systems. It started with
+                languages and extended to psychology, economics and philosophy. Today, when I
+                translate, I do it with the same passion for perfection, always striving to deliver
+                the highest quality work.
               </p>
               <p>
                 My customers have been companies, NGOs and individuals alike. I have interpreted
                 during company-to-company negotiations with Japanese clients, visits of Japanese
-                engineers, live interviews and a surgery with Japanese neurosurgeons. I have also
-                translated legal agreements, technical specifications, philosophical literature and
-                many more exciting and challenging items. I love to learn new things and
-                continuously find new ways to challenge myself, developing my skills with the same
-                passion and strife for perfection I have for traditional Japanese arts.
+                engineers, live interviews with VIPs and a surgery with Japanese neurosurgeons. I
+                have translated legal agreements, technical specifications, philosophical literature
+                and many more exciting and challenging pieces.
+              </p>
+              <p>
+                I love to learn new things and constantly find new ways to challenge myself,
+                developing my skills with the same passion and strife for perfection I have for
+                traditional Japanese arts.
               </p>
               <p>
                 If you took interest in my services, feel free to <a href="#contact">contact me</a>.
