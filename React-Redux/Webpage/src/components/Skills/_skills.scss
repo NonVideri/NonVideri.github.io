@@ -1,15 +1,6 @@
-@import "src/variables";
+@import 'src/variables';
 
 .skills {
   padding: 60px 0 80px;
   background-color: $color-boxes;
-}
-
-.feature-title {
-  margin: 24px 0;
-  font-family: $font-main;
-}
-
-.feature-description {
-  padding: 0 24px;
 }

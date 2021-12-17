@@ -147,6 +147,12 @@
 
 - A simple function returning correct media types depending on the resource requested.
 
+### Add Filename Headers
+
+- A simple script created to add Markdown headers to all .md files in a directory.
+- Headers are based on the file names.
+- Adds headers into the second line (after tags).
+
 ### Algorithms and Data Structures
 
 - Contains various algorithms and data structures written in Javascript for training purposes.
