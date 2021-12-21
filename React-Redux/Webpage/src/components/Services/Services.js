@@ -3,14 +3,14 @@ import { useTable } from 'react-table';
 
 const data = React.useMemo(() => [
   {
-    service: 'Written Japanese translations',
+    service: 'Written Japanese translation',
     unit: '1 standard page*',
     pricePLN: '100 PLN',
     priceUSD: '25 USD',
     priceBTC: 'multi'
   },
   {
-    service: 'Written Polish-English translations',
+    service: 'Written Polish-English translation',
     unit: '1 standard page*',
     pricePLN: '50 PLN',
     priceUSD: '12.5 USD',
