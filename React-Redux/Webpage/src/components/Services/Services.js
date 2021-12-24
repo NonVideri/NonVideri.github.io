@@ -75,7 +75,14 @@ export default function Services() {
               return (
                 <tr {...row.getRowProps()}>
                   {row.cells.map(cell => {
-                    return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+                    return (
+                      <td
+                        {...cell.getCellProps()}
+                        rowSpan={`${cell.rowSpan ?? 1}`}
+                        style={cell.displayNone ? { display: 'none' } : {}}>
+                        {cell.render('Cell')}
+                      </td>
+                    );
                   })}
                 </tr>
               );
@@ -95,4 +102,25 @@ export default function Services() {
   );
   // if /
   return null;
+}
+
+{
+  /* <thead>
+            <tr>
+              <th>Service</th>
+              <th>Billing unit</th>
+              <th>Price in PLN</th>
+              <th>Price in USD</th>
+              <th>Price in BTC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Written Japanese translation</td>
+              <td>1 standard page</td>
+              <td>100 PLN</td>
+              <td>25 USD</td>
+              <td rowSpan={4}>Price in USD exchanged to BTC, at the mutually agreed rate from the day when the translation order is accepted.</td>
+            </tr>
+          </tbody> */
 }
