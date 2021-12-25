@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken');
-const CustomAPIError = require('../errors/custom-error');
+const { UnauthenticatedError } = require('../errors');
 
 const authMiddleware = async (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith('Bearer '))
-    throw new CustomAPIError('You need to provide a valid token.', 401);
+    throw new UnauthenticatedError('You need to provide a valid token.');
 
   const token = authHeader.split(' ')[1];
 
@@ -15,7 +15,7 @@ const authMiddleware = async (req, res, next) => {
     req.user = { id, username };
     next();
   } catch (error) {
-    throw new CustomAPIError('Invalid token.', 401);
+    throw new UnauthenticatedError('Invalid token.');
   }
 };
 
