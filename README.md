@@ -23,9 +23,16 @@
 
 - Task Manager API built with NestJS.
 
+### Jobs API
+
+- An educational project in Express for logging in and managing job search.
+- Contains both authentication and CRUD actions.
+- Also implements cloud hosting — deployed on Heroku.
+- Contains documentation with Swagger UI.
+
 ### JWT Project
 
-- An educational project on JWT, which is an Express API.
+- An educational project on JWT — an Express API.
 - Implements standard CRUD actions.
 - Implements mock user registration and authentication using JWT.
 
