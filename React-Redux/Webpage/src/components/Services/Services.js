@@ -120,7 +120,7 @@ export default function Services() {
               <td>1 standard page</td>
               <td>100 PLN</td>
               <td>25 USD</td>
-              <td rowSpan={4}>Price in USD exchanged to BTC, at the mutually agreed rate from the day when the translation order is accepted.</td>
+              <td rowSpan="4">Price in USD exchanged to BTC, at the mutually agreed rate from the day when the translation order is accepted.</td>
             </tr>
           </tbody> */
 }
