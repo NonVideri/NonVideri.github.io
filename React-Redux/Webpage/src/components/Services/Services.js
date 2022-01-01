@@ -101,26 +101,48 @@ export default function Services() {
     </section>
   );
   // if /
-  return null;
-}
 
-{
-  /* <thead>
-            <tr>
-              <th>Service</th>
-              <th>Billing unit</th>
-              <th>Price in PLN</th>
-              <th>Price in USD</th>
-              <th>Price in BTC</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Written Japanese translation</td>
-              <td>1 standard page</td>
-              <td>100 PLN</td>
-              <td>25 USD</td>
-              <td rowSpan="4">Price in USD exchanged to BTC, at the mutually agreed rate from the day when the translation order is accepted.</td>
-            </tr>
-          </tbody> */
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Billing unit</th>
+          <th>Price in PLN</th>
+          <th>Price in USD</th>
+          <th>Price in BTC</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Written Japanese translation</td>
+          <td>1 standard page</td>
+          <td>100 PLN</td>
+          <td>25 USD</td>
+          <td rowSpan="4">
+            Price in USD exchanged to BTC, at the mutually agreed rate from the day when the
+            translation order is accepted.
+          </td>
+        </tr>
+        <tr>
+          <td>Written Polish-English translation</td>
+          <td>1 standard page</td>
+          <td>50 PLN</td>
+          <td>12.5 USD</td>
+        </tr>
+        <tr>
+          <td>Japanese interpretation**</td>
+          <td>4 hours</td>
+          <td>750 PLN</td>
+          <td>187 USD</td>
+        </tr>
+        <tr>
+          <td>Polish-English interpretation**</td>
+          <td>4 hours</td>
+          <td>500 PLN</td>
+          <td>125 USD</td>
+        </tr>
+      </tbody>
+    </table>
+  );
 }
