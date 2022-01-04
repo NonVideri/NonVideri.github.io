@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+
+import { GlobalStyle, theme } from './style';
 
 import './style.scss';
+
 import reportWebVitals from './reportWebVitals';
 
 import Navigation from './containers/Navigation/Navigation';
@@ -14,33 +18,23 @@ import Projects from './containers/Projects/Projects';
 import Gallery from './containers/Gallery/Gallery';
 import Contact from './containers/Contact/Contact';
 import Footer from './containers/Footer/Footer';
-import { ThemeProvider } from 'styled-components';
-
-const theme = {
-  colorMain: `hsl(180, 6%, 87%)`,
-  colorBackground: `hsl(0, 0%, 0%)`,
-  colorBoxes: `hsl(0, 0%, 7%)`,
-  colorTitles: `hsl(120, 100%, 20%)`,
-  colorMuted: `hsl(0, 0%, 42%)`,
-  fontMain: `"Spectral", serif`,
-  fontText: `"Karla", sans-serif`,
-  transition: `all 0.5s`
-};
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Navigation />
-        <Splash />
-        <About />
-        <Statement />
-        <Skills />
-        <Projects />
-        <Gallery />
-        <Contact />
-        <Footer />
-      </BrowserRouter>
+      <GlobalStyle>
+        <BrowserRouter>
+          <Navigation />
+          <Splash />
+          <About />
+          <Statement />
+          <Skills />
+          <Projects />
+          <Gallery />
+          <Contact />
+          <Footer />
+        </BrowserRouter>
+      </GlobalStyle>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

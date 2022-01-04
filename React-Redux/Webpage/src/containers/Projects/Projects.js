@@ -12,7 +12,7 @@ export default function Projects() {
           <a href="https://github.com/NonVideri">Click here to see my GitHub repository.</a>
         </div>
         <h4 className="project">React-Redux Randomizer</h4>
-        {/*<div className="feature-description">
+        {/*<div className="description">
           I love board games. Out of this love was born the Randomizer — an app
           created to serve as an aid for picking random items from a list. Its
           biggest use is in picking random cards from a list, although you can

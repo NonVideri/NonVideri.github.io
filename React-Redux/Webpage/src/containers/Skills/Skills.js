@@ -6,7 +6,7 @@ export default function Skills() {
         <h2 className="section-title">Skills</h2>
         <div className="row">
           <article className="col-sm-4">
-            <ul className="feature-description">
+            <ul className="description">
               <li>Node.js, Express, NestJS</li>
               <li>mongoose, sqlite3, Sequelize, Passport</li>
               <li>SQL (PostgreSQL, SQLite), MongoDB</li>
@@ -18,7 +18,7 @@ export default function Skills() {
           </article>
           <div className="divider"></div>
           <article className="col-sm-4">
-            <ul className="feature-description">
+            <ul className="description">
               <li>HTML5, CSS3, Bootstrap, Sass</li>
               <li>Python</li>
               <li>Git</li>
@@ -30,7 +30,7 @@ export default function Skills() {
           </article>
           <div className="divider"></div>
           <article className="col-sm-4">
-            <ul className="feature-description">
+            <ul className="description">
               <li>Application Testing</li>
               <li>Wordpress Webpage Management, Improvement</li>
               <li>Project team management (15 people)</li>
