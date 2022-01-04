@@ -5,41 +5,43 @@ import { BrowserRouter } from 'react-router-dom';
 import './style.scss';
 import reportWebVitals from './reportWebVitals';
 
-import Navigation from './components/Navigation/Navigation';
-import Splash from './components/Splash/Splash';
-import About from './components/About/About';
-import Statement from './components/Statement/Statement';
-import Skills from './components/Skills/Skills';
-import Projects from './components/Projects/Projects';
-import Gallery from './components/Gallery/Gallery';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
-// import { ThemeProvider } from 'styled-components';
+import Navigation from './containers/Navigation/Navigation';
+import Splash from './containers/Splash/Splash';
+import About from './containers/About/About';
+import Statement from './containers/Statement/Statement';
+import Skills from './containers/Skills/Skills';
+import Projects from './containers/Projects/Projects';
+import Gallery from './containers/Gallery/Gallery';
+import Contact from './containers/Contact/Contact';
+import Footer from './containers/Footer/Footer';
+import { ThemeProvider } from 'styled-components';
 
-// const theme = {
-//   colorMain: `hsl(180, 6%, 87%)`,
-//   colorBackground: `hsl(0, 0%, 0%)`,
-//   colorBoxes: `hsl(0, 0%, 7%)`,
-//   colorTitles: `hsl(120, 100%, 20%)`,
-//   colorMuted: `hsl(0, 0%, 42%)`,
-//   fontMain: `"Spectral", serif`,
-//   fontText: `"Karla", sans-serif`,
-//   transition: `all 0.5s`
-// };
+const theme = {
+  colorMain: `hsl(180, 6%, 87%)`,
+  colorBackground: `hsl(0, 0%, 0%)`,
+  colorBoxes: `hsl(0, 0%, 7%)`,
+  colorTitles: `hsl(120, 100%, 20%)`,
+  colorMuted: `hsl(0, 0%, 42%)`,
+  fontMain: `"Spectral", serif`,
+  fontText: `"Karla", sans-serif`,
+  transition: `all 0.5s`
+};
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Navigation />
-      <Splash />
-      <About />
-      <Statement />
-      <Skills />
-      <Projects />
-      <Gallery />
-      <Contact />
-      <Footer />
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Navigation />
+        <Splash />
+        <About />
+        <Statement />
+        <Skills />
+        <Projects />
+        <Gallery />
+        <Contact />
+        <Footer />
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
