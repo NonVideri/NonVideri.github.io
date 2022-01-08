@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import { GlobalStyle, theme } from './style';
+import { FontsStyle, GlobalStyle, theme } from './style';
 
 import './style.scss';
 
@@ -21,6 +21,7 @@ import Footer from './containers/Footer/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
+    <FontsStyle />
     <ThemeProvider theme={theme}>
       <GlobalStyle>
         <BrowserRouter>

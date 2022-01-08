@@ -10,12 +10,12 @@ export const theme = {
   colorBoxes: `hsl(0, 0%, 7%)`,
   colorTitles: `hsl(120, 100%, 20%)`,
   colorMuted: `hsl(0, 0%, 42%)`,
-  fontMain: `"Spectral", serif`,
+  fontTitles: `"Spectral", serif`,
   fontText: `"Karla", sans-serif`,
   transition: `all 0.5s`
 };
 
-export const GlobalStyle = createGlobalStyle`
+export const FontsStyle = createGlobalStyle`
 @font-face {
   font-family: 'Karla';
   src: local('Karla'),
@@ -33,7 +33,9 @@ export const GlobalStyle = createGlobalStyle`
   font-weight: 300;
   font-style: normal;
 }
+`;
 
+export const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
 
@@ -82,7 +84,7 @@ section {
   margin: 0 0 60px 0;
   text-align: center;
   color: ${props => props.theme.colorTitles};
-  font-family: ${props => props.theme.fontMain};
+  font-family: ${props => props.theme.fontTitles};
   font-weight: bold;
 
   &:after {
