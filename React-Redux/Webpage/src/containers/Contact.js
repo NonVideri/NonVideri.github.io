@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SectionTitle from '../../components/SectionTitle';
+import SectionTitle from '../components/SectionTitle';
 
 const ContactSection = styled.section`
   text-align: center;

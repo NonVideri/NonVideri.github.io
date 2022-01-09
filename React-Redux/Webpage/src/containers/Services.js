@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTable } from 'react-table';
-import SectionIntro from '../../components/SectionIntro';
-import SectionTitle from '../../components/SectionTitle';
+import SectionIntro from '../components/SectionIntro';
+import SectionTitle from '../components/SectionTitle';
 
 const data = React.useMemo(() => [
   {

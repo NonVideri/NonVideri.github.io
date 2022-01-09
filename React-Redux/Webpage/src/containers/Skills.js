@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SectionTitle from '../../components/SectionTitle';
+import SectionTitle from '../components/SectionTitle';
 
 const SkillsSection = styled.section`
   padding: 60px 0 80px;
@@ -13,7 +13,7 @@ const SkillsList = styled.ul`
 export default function Skills() {
   // if /
   return (
-    <SkillsSection>
+    <SkillsSection id="skills">
       <div className="container">
         <SectionTitle>Skills</SectionTitle>
         <div className="row">
