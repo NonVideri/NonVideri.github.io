@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTable } from 'react-table';
+import SectionIntro from '../../components/SectionIntro';
+import SectionTitle from '../../components/SectionTitle';
 
 const data = React.useMemo(() => [
   {
@@ -47,14 +49,14 @@ export default function Services() {
   });
   // if /translator
   return (
-    <section className="services" id="services">
+    <section id="services">
       <div className="container">
-        <h2 className="section-title">My services</h2>
-        <div className="section-intro">
+        <SectionTitle>My services</SectionTitle>
+        <SectionIntro>
           Below you will find some of my services and fees. I deliver quality translations all over
           the world, accepting payments in PLN, USD and Bitcoin. In most cases, I don't raise the
           prices just for dealing with specialized terminology, as I enjoy the challenge.
-        </div>
+        </SectionIntro>
         {
           // Tu React Table?
           // arkusz 1800 znaków w angielskim/polskim — 100 PLN / 25 USD / Price in USD exchanged with current rate
@@ -89,14 +91,14 @@ export default function Services() {
             })}
           </tbody>
         </table>
-        <div className="section-intro">
+        <SectionIntro>
           * A standard page is 1800 characters in either English or Polish, depending on the
           language used, including spaces.
-        </div>
-        <div className="section-intro">
+        </SectionIntro>
+        <SectionIntro>
           ** In case of interpretation, the Customer is expected to cover possible travel (from
           Warsaw) and lodging expenses.
-        </div>
+        </SectionIntro>
       </div>
     </section>
   );

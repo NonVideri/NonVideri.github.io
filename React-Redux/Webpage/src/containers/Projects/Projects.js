@@ -1,17 +1,26 @@
 import Randomizer from './Randomizer/Randomizer';
 import Clock from './Clock/Clock';
 import ToDoApp from './ToDoApp/ToDoApp';
+import styled from 'styled-components';
+import SectionTitle from '../../components/SectionTitle';
+import SectionIntro from '../../components/SectionIntro';
+
+const ProjectTitle = styled.h4`
+  margin: 14px 0;
+  padding: 14px 0;
+  font-family: ${props => props.theme.fontTitles};
+`;
 
 export default function Projects() {
   // if /
   return (
-    <section className="projects" id="projects">
+    <section id="projects">
       <div className="container">
-        <h2 className="section-title">Projects</h2>
-        <div className="section-intro">
+        <SectionTitle>Projects</SectionTitle>
+        <SectionIntro>
           <a href="https://github.com/NonVideri">Click here to see my GitHub repository.</a>
-        </div>
-        <h4 className="project">React-Redux Randomizer</h4>
+        </SectionIntro>
+        <ProjectTitle>React-Redux Randomizer</ProjectTitle>
         {/*<div className="description">
           I love board games. Out of this love was born the Randomizer — an app
           created to serve as an aid for picking random items from a list. Its
@@ -20,9 +29,9 @@ export default function Projects() {
           components when you have the Randomizer?
           </div>*/}
         <Randomizer />
-        <h4 className="project">React Clock</h4>
+        <ProjectTitle>React Clock</ProjectTitle>
         <Clock />
-        <h4 className="project">React Programmer's To-Do</h4>
+        <ProjectTitle>React Programmer's To-Do</ProjectTitle>
         <ToDoApp />
       </div>
     </section>

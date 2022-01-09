@@ -79,33 +79,6 @@ section {
   margin: 10px;
 }
 
-.section-title {
-  position: relative;
-  margin: 0 0 60px 0;
-  text-align: center;
-  color: ${props => props.theme.colorTitles};
-  font-family: ${props => props.theme.fontTitles};
-  font-weight: bold;
-
-  &:after {
-    position: absolute;
-    display: block;
-    content: ' ';
-    width: 200px;
-    height: 5px;
-    background: ${props => props.theme.colorMain};
-    left: 50%;
-    bottom: -16px;
-    margin-left: -100px;
-  }
-}
-
-.section-intro {
-  margin: 0 0 40px;
-  text-align: center;
-  color: ${props => props.theme.colorTitles};
-}
-
 .container {
   max-width: 980px;
   margin: 0 auto;
@@ -114,9 +87,5 @@ section {
 
 .btn {
   margin: 12px 12px 16px 0px;
-}
-
-.description {
-  padding: 0 24px;
 }
 `;

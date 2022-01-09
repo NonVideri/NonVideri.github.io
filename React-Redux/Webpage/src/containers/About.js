@@ -1,11 +1,35 @@
+import styled from 'styled-components';
+import SectionTitle from `../../components/SectionTitle`
+
+const AboutSection = styled.section`
+  background-color: ${props => props.theme.colorBoxes};
+  padding: 0;
+`;
+
+const AboutImage = styled.img`
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+
+  @media (min-width: 768px) {
+    padding-right: 15px;
+`;
+
+const AboutText = styled.div`
+  margin: 0 auto;
+  display: block;
+  text-align: justify;
+  padding: 50px;
+`;
+
 export default function About() {
   return (
-    <section className="about" id="about">
+    <AboutSection id="about">
       <div className="container-fluid">
         <div className="row">
-          <img className="col-sm-5 about-img" src="img/KM-webpage.jpg" alt="" />
-          <div className="col-sm-7 about-text">
-            <h2 className="section-title">About me</h2>
+          <AboutImage className="col-sm-5" src="img/KM-webpage.jpg" alt="" />
+          <AboutText className="col-sm-7">
+            <SectionTitle>About me</SectionTitle>
             {
               // if /
             }
@@ -64,9 +88,9 @@ export default function About() {
                 If you took interest in my services, feel free to <a href="#contact">contact me</a>.
               </p>
             </article>
-          </div>
+          </AboutText>
         </div>
       </div>
-    </section>
+    </AboutSection>
   );
 }

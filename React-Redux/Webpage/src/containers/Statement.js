@@ -7,13 +7,13 @@ const StyledStatement = styled.section`
   background-position: bottom 25% center;
   background-attachment: fixed;
   padding: 20px 0;
-  color: $color-muted;
+  color: ${props => props.theme.colorMuted};
 `;
 
 const StyledQuote = styled.blockquote`
   padding: 12px 20px;
   margin: 0;
-  font-family: $font-main;
+  font-family: ${props => props.theme.fontTitles};
   font-weight: 500;
   font-size: 22px;
   text-align: center;
@@ -22,10 +22,10 @@ const StyledQuote = styled.blockquote`
 
 export default function Statement() {
   return (
-    <StyledStatement className="statement">
+    <StyledStatement>
       <div className="container">
         <article>
-          <StyledQuote className="quote">
+          <StyledQuote>
             <q>You either grow or regress. Nothing stands still.</q>
           </StyledQuote>
         </article>

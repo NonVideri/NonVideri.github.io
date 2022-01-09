@@ -5,19 +5,17 @@ import { ThemeProvider } from 'styled-components';
 
 import { FontsStyle, GlobalStyle, theme } from './style';
 
-import './style.scss';
-
 import reportWebVitals from './reportWebVitals';
 
-import Navigation from './containers/Navigation/Navigation';
-import Splash from './containers/Splash/Splash';
-import About from './containers/About/About';
-import Statement from './containers/Statement/Statement';
-import Skills from './containers/Skills/Skills';
+import Navigation from './containers/Navigation';
+import Splash from './containers/Splash';
+import About from './containers/About';
+import Statement from './containers/Statement';
+import Skills from './containers/Skills';
 import Projects from './containers/Projects/Projects';
-import Gallery from './containers/Gallery/Gallery';
-import Contact from './containers/Contact/Contact';
-import Footer from './containers/Footer/Footer';
+import Gallery from './containers/Gallery';
+import Contact from './containers/Contact';
+import Footer from './containers/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
