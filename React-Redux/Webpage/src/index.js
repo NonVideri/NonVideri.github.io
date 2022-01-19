@@ -21,19 +21,18 @@ ReactDOM.render(
   <React.StrictMode>
     <FontsStyle />
     <ThemeProvider theme={theme}>
-      <GlobalStyle>
-        <BrowserRouter>
-          <Navigation />
-          <Splash />
-          <About />
-          <Statement />
-          <Skills />
-          <Projects />
-          <Gallery />
-          <Contact />
-          <Footer />
-        </BrowserRouter>
-      </GlobalStyle>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Navigation />
+        <Splash />
+        <About />
+        <Statement />
+        <Skills />
+        <Projects />
+        <Gallery />
+        <Contact />
+        <Footer />
+      </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

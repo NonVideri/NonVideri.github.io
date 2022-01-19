@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SectionTitle from `../../components/SectionTitle`
+import SectionTitle from '../components/SectionTitle';
 
 const AboutSection = styled.section`
   background-color: ${props => props.theme.colorBoxes};

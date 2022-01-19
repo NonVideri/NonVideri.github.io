@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SectionTitle from `../components/SectionTitle`
+import SectionTitle from '../components/SectionTitle';
 
 const GallerySection = styled.section`
   padding: 60px 0 10px 0;
