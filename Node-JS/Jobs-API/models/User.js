@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const UserSchema = new mongoose.Schema({
   name: { type: String, required: [true, 'Name must be provided.'], minLength: 3, maxLength: 50 },
@@ -21,10 +22,18 @@ const UserSchema = new mongoose.Schema({
 });
 
 // Hash password mongoose middleware
+// Use function keyword so that the scope points to the document
 UserSchema.pre('save', async function () {
   const salt = await bcrypt.genSalt(10);
   // 'this' points at the document schema
   this.password = await bcrypt.hash(this.password, salt);
+  // No need for next() as it is automatically added
 });
+
+// User instance method, useful to declutter the controllers
+UserSchema.methods.createJWT = function () {
+  // Never place the secret here
+  return jwt.sign({ userId: this._id, name: this.name }, 'jwtSecret', { expiresIn: '30d' });
+};
 
 module.exports = mongoose.model('User', UserSchema);
