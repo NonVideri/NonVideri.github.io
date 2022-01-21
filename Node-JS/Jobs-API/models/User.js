@@ -33,7 +33,9 @@ UserSchema.pre('save', async function () {
 // User instance method, useful to declutter the controllers
 UserSchema.methods.createJWT = function () {
   // Never place the secret here
-  return jwt.sign({ userId: this._id, name: this.name }, 'jwtSecret', { expiresIn: '30d' });
+  return jwt.sign({ userId: this._id, name: this.name }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_LIFETIME
+  });
 };
 
 module.exports = mongoose.model('User', UserSchema);
