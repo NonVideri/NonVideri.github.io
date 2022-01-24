@@ -7,18 +7,19 @@ const jobsRouter = require('./routes/jobs');
 const connectDB = require('./db/connect');
 
 // error handlers
-const notFoundMiddleware = require('./middleware/not-found');
-const errorHandlerMiddleware = require('./middleware/error-handler');
+const notFoundMW = require('./middleware/not-found');
+const errorHandlerMW = require('./middleware/error-handler');
+const authenticationMW = require('./middleware/authentication');
 
 app.use(express.json());
 // extra packages
 
 // routes
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/jobs', jobsRouter);
+app.use('/api/v1/jobs', authenticationMW, jobsRouter);
 
-app.use(notFoundMiddleware);
-app.use(errorHandlerMiddleware);
+app.use(notFoundMW);
+app.use(errorHandlerMW);
 
 const port = process.env.PORT || 3000;
 

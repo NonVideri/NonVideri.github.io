@@ -5,9 +5,17 @@
 
 ## Docker & Kubernetes Projects
 
+### Kubernetes Declarations
+
+- Various Kubernetes object declarations.
+
+### AWS & EKS Templates
+
+- Templates for connecting with AWS and Amazon EKS.
+
 ### Docker Course
 
-- A small educational Docker project.
+- An educational Docker project.
 
 ## Node & JS Projects
 

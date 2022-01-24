@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+spec:
+# Number of Pods to run
+  replicas: 3
+# Selects the pods to be managed by ReplicaSet
+  selector:
+	# Here it matches the label
+	matchLabels:
+      app: frontend
+# Put a Pod declaration here:
+  template: 
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: "nginx:1.17.3"
