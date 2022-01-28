@@ -176,7 +176,10 @@
 
 ### Notflix
 
-- See the second repository.
+- A Netflix clone demo built using React.
+- Uses GraphQL to load movie data, using pagination to limit the requests.
+- Has multiple copies of placeholder movies in a database (for testing).
+- See the second repository for project itself.
 
 ### React Course App
 
