@@ -1,0 +1,17 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hello-world
+  labels:
+    name: hello-world
+spec:
+  # Run every fifth hour
+  schedule: '0 */5 * * *'
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: hello-world
+              image: hello-world
+          restartPolicy: OnFailure
