@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: zennote-config
+data:
+  initial_screen: 'screens.new_note'
+  ui_properties_file_name: 'user-interface.properties'
+  keyboard_properties: |
+    keyboard.type=us
+    keyboard.shortcuts-file=shortcuts.yaml
+  user-interface.properties: |
+    color.background=black
+    color.text=purple
+    font=Arial
