@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useRouteMatch } from 'react-router-dom';
 
 const SplashSection = styled.section`
   display: flex;
@@ -51,30 +52,32 @@ const MainButton = styled.a`
   }
 `;
 
-export default function Splash() {
-  // if /
-  return (
-    <SplashSection>
-      <PageIntro>
-        <MainTitle>Krzysztof Moszyński</MainTitle>
-        <MainSubtitle>Javascript Developer</MainSubtitle>
-        <MainButton className="btn btn-solid" href="#projects">
-          See my work
-        </MainButton>
-      </PageIntro>
-    </SplashSection>
-  );
-
-  // if /translator
-  return (
-    <SplashSection>
-      <PageIntro>
-        <MainTitle>Krzysztof Moszyński</MainTitle>
-        <MainSubtitle>Japanese-English-Polish Translator and Interpreter</MainSubtitle>
-        <MainButton className="btn btn-solid" href="#contact">
-          Contact me
-        </MainButton>
-      </PageIntro>
-    </SplashSection>
-  );
+export default function Splash({ mode = 'default' }) {
+  let match = useRouteMatch();
+  if (mode === 'translator' || match.url.includes('translator2')) {
+    return (
+      <SplashSection>
+        <PageIntro>
+          <MainTitle>Krzysztof Moszyński</MainTitle>
+          <MainSubtitle>Japanese-English-Polish Translator and Interpreter</MainSubtitle>
+          <MainButton className="btn btn-solid" href="#contact">
+            Contact me
+          </MainButton>
+        </PageIntro>
+      </SplashSection>
+    );
+  }
+  if (mode === 'default') {
+    return (
+      <SplashSection>
+        <PageIntro>
+          <MainTitle>Krzysztof Moszyński</MainTitle>
+          <MainSubtitle>Javascript Developer</MainSubtitle>
+          <MainButton className="btn btn-solid" href="#projects">
+            See my work
+          </MainButton>
+        </PageIntro>
+      </SplashSection>
+    );
+  }
 }
