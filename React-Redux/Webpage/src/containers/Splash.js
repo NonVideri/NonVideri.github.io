@@ -24,31 +24,31 @@ const MainTitle = styled.h1`
   font-weight: normal;
   color: $color-main;
   font-size: 60px;
-  font-family: ${props => props.theme.fontTitles};
+  font-family: ${(props) => props.theme.fontTitles};
 `;
 
 const MainSubtitle = styled.h2`
   margin: 12px 0 60px 0;
   font-weight: normal;
-  color: ${props => props.theme.colorMain};
+  color: ${(props) => props.theme.colorMain};
   font-size: 28px;
   font-variant: small-caps;
   font-weight: bold;
   font-family: $font-main;
-  font-family: ${props => props.theme.fontTitles};
+  font-family: ${(props) => props.theme.fontTitles};
 `;
 
 const MainButton = styled.a`
   padding: 18px 24px 18px 24px;
   font-size: 14px;
   margin: 12px 12px 12px 0px;
-  background-color: ${props => props.theme.colorMain};
-  color: ${props => props.theme.colorBackground};
+  background-color: ${(props) => props.theme.colorMain};
+  color: ${(props) => props.theme.colorBackground};
   transition: all 0.5s;
 
   &:hover {
-    background-color: ${props => props.theme.colorBoxes};
-    color: ${props => props.theme.colorMain};
+    background-color: ${(props) => props.theme.colorBoxes};
+    color: ${(props) => props.theme.colorMain};
   }
 `;
 
