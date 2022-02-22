@@ -1,0 +1,57 @@
+#search {
+  width: 100%;
+  padding: 9px 25px 9px 40px;
+  border-radius: 16.5px;
+  border: solid 1px #141c3a;
+  background-color: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.Comments {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0 auto;
+  overflow-y: scroll;
+}
+
+[class^="comment-number"] {
+  margin: 1rem 0 1rem 10%;
+  color: #fff;
+  padding: 1rem;
+  background: linear-gradient(90deg, #2eaa8f, #54857d);
+  max-width: 60%;
+  border-radius: 10px;
+}
+
+.comment-number-one {
+  margin: 1rem 0;
+  background: linear-gradient(90deg, #2eaa8f, #54857d);
+}
+
+.comment-header {
+  font-weight: 550;
+  font-size: 16px;
+  margin-bottom: 0.8rem;
+}
+
+.comment-header::after {
+  position: relative;
+  display: block;
+  content: "";
+  max-width: 100%;
+  height: 0.2rem;
+  background: linear-gradient(90deg, #1e7260, #35534e);
+  left: 50%;
+  bottom: -8px;
+  margin-left: -50%;
+}
+
+@media (min-width: 576px) {
+  .Comments {
+    max-width: 70%;
+  }
+}
