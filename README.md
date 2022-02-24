@@ -19,6 +19,14 @@
 
 ## Node & JS Projects
 
+### Nest-Bikeramp
+
+- An API for a bike courier app.
+- Built in NestJS.
+- Uses sequelize-typescript and Postgres Database.
+- Accesses Google Maps Distance Matrix to calculate distances.
+- Allows to add trips and view stats in different units.
+
 ### Nest Blog API
 
 - A Mini Blog that's a Web RESTful API Application.
