@@ -12,7 +12,7 @@ export class StatsController {
   }
 
   @Get('monthly')
-  public getMonthlyStats() {
-    return this.statsService.getMonthlyStats();
+  public getMonthlyStats(@Query() getStatsDto: GetStatsDto) {
+    return this.statsService.getMonthlyStats(getStatsDto);
   }
 }

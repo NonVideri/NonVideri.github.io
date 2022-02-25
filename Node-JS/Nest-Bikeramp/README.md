@@ -12,7 +12,7 @@ This endpoint logs the trip and automatically calculates the distance between st
 
 `POST http://example.com/api/trips`
 
-[Body Parameters](https://www.notion.so/df486f89e08b4452b9ab1f3861f850d0)
+[Body Parameters]
 
 - start_address — start address in format: "Plac Europejski 2, Warszawa, Polska"
 - destination_address — destination address in format as above.
@@ -26,6 +26,11 @@ This endpoint logs the trip and automatically calculates the distance between st
 ### HTTP Request
 
 `GET http://example.com/api/stats/weekly`
+
+[Query Parameters]
+
+- dist_unit — distance unit as a string. Supported: "km", "mi."
+- price_unit — price unit as a string. Supported: "PLN"
 
 ### Response
 
@@ -43,6 +48,11 @@ This endpoint retrieves how many kilometers did the courier ride during current 
 ### HTTP Request
 
 `GET http://example.com/api/stats/monthly`
+
+[Query Parameters]
+
+- dist_unit — distance unit as a string. Supported: "km", "mi."
+- price_unit — price unit as a string. Supported: "PLN"
 
 ### Response
 

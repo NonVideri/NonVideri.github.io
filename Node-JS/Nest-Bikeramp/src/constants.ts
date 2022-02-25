@@ -32,5 +32,3 @@ export enum PriceUnits {
 }
 
 export const DATE_FORMAT = 'MMMM, do'; // Supported: see date-fns format() (version from package.json)
-export const DIST_UNIT = DistUnits.kilometers; // Supported: km, mi.
-export const PRICE_UNIT = PriceUnits.PLN; // Supported: PLN
