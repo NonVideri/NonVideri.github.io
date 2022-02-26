@@ -28,5 +28,5 @@ const toMiles = (value: number) => {
 
 // price converters
 const toPLN = (value: number) => {
-  return concatUnit(value / 100, PriceUnits.PLN);
+  return concatUnit(value, PriceUnits.PLN);
 };

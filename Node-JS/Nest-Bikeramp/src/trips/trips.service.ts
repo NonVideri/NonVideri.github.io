@@ -6,7 +6,7 @@ import { CreateTripDto } from './trips.dtos';
 import { Trip } from '../database/trip.model';
 import { ConfigService } from '@nestjs/config';
 import { DistanceMatrixResponse } from './trips.interfaces';
-import { TRIP_REPOSITORY } from '../database/database.constants';
+import { TRIP_REPOSITORY } from '../constants';
 const { Client } = require('@googlemaps/google-maps-services-js');
 const mapsClient = new Client({});
 
@@ -35,7 +35,6 @@ export class TripsService {
       const distance = response.rows[0].elements[0].distance.value;
       return await this.tripRepository.create<Trip>({
         ...createTripDto,
-        price: Math.round(createTripDto.price),
         id: uuid(),
         distance,
       });

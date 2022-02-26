@@ -22,7 +22,7 @@ export class Trip extends Model {
   @Column({ type: DataType.DATEONLY, allowNull: false })
   date: Date;
 
-  @Column({ type: DataType.DECIMAL, allowNull: false })
+  @Column({ type: DataType.DECIMAL(10, 2), allowNull: false })
   price: number;
 
   @Column({ type: DataType.INTEGER, allowNull: false })
