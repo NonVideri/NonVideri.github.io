@@ -35,7 +35,7 @@ export class TripsService {
       const distance = response.rows[0].elements[0].distance.value;
       return await this.tripRepository.create<Trip>({
         ...createTripDto,
-        price: Math.round(createTripDto.price * 100),
+        price: Math.round(createTripDto.price),
         id: uuid(),
         distance,
       });
