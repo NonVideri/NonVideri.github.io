@@ -29,8 +29,8 @@ This endpoint logs the trip and automatically calculates the distance between st
 
 [Query Parameters]
 
-- dist_unit — distance unit as a string. Supported: "km", "mi."
-- price_unit — price unit as a string. Supported: "PLN"
+- dist_unit — distance unit as a string. Supported: "km", "mi.". Default: "km".
+- price_unit — price unit as a string. Supported: "PLN". Default: "PLN".
 
 ### Response
 
@@ -51,8 +51,8 @@ This endpoint retrieves how many kilometers did the courier ride during current 
 
 [Query Parameters]
 
-- dist_unit — distance unit as a string. Supported: "km", "mi."
-- price_unit — price unit as a string. Supported: "PLN"
+- dist_unit? — distance unit as a string. Supported: "km", "mi."
+- price_unit? — price unit as a string. Supported: "PLN"
 
 ### Response
 

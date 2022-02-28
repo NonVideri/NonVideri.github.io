@@ -18,7 +18,7 @@ import { DailyStats, WeeklyStats } from './stats.interfaces';
 import { Op, fn, col } from 'sequelize';
 import { toUnit } from 'src/utils';
 import { TRIP_REPOSITORY } from '../constants';
-import { GetStatsDto as GetStatsDto } from './stats.dtos';
+import { GetStatsDto } from './stats.dtos';
 
 @Injectable()
 export class StatsService {

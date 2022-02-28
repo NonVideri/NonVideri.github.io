@@ -1,14 +1,12 @@
-import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
+import { IsEnum, IsString } from 'class-validator';
 import { DistUnits, PriceUnits } from '../constants';
 
 export class GetStatsDto {
-  @IsNotEmpty()
   @IsString()
   @IsEnum(DistUnits)
-  readonly dist_unit: DistUnits;
+  readonly dist_unit: DistUnits = DistUnits.kilometers;
 
-  @IsNotEmpty()
   @IsString()
   @IsEnum(PriceUnits)
-  readonly price_unit: PriceUnits;
+  readonly price_unit: PriceUnits = PriceUnits.PLN;
 }
