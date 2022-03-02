@@ -1,5 +1,6 @@
 import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
+import { UUIDV4 } from 'sequelize';
 import { v4 as uuid } from 'uuid';
 import { TripsController } from './trips.controller';
 import { CreateTripDto } from './trips.dtos';
@@ -49,8 +50,7 @@ describe('TripsController', () => {
 
     const mockResult = {
       ...mockDto,
-      id: expect.any(String),
-      price: Math.round(5 * 100),
+      id: expect.any(UUIDV4),
       distance: expect.any(Number),
     };
 
