@@ -1,6 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken } from '@nestjs/sequelize';
-import { v4 as uuid } from 'uuid';
 import { Trip } from '../database/trip.model';
 import { TripsService } from './trips.service';
 import { UUIDV4 } from 'sequelize';
