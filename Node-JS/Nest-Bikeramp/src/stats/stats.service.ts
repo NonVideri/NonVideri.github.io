@@ -16,7 +16,7 @@ import {
 } from 'date-fns';
 import { DailyStats, WeeklyStats } from './stats.interfaces';
 import { Op, fn, col } from 'sequelize';
-import { toUnit } from 'src/utils';
+import { toUnit } from '../utils';
 import { TRIP_REPOSITORY } from '../constants';
 import { GetStatsDto } from './stats.dtos';
 

@@ -1,6 +1,5 @@
 import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
-import { UUIDV4 } from 'sequelize';
 import { v4 as uuid } from 'uuid';
 import { TripsController } from './trips.controller';
 import { CreateTripDto } from './trips.dtos';
@@ -13,7 +12,6 @@ describe('TripsController', () => {
       return {
         ...dto,
         id: uuid(),
-        price: Math.round(dto.price * 100),
         distance: dto.start_address.len + dto.destination_address.len,
       };
     }),
@@ -44,13 +42,13 @@ describe('TripsController', () => {
     const mockDto = {
       start_address: 'Plac Europejski 2, Warszawa, Polska',
       destination_address: 'Plac Europejski 2, Warszawa, Polska',
-      price: '10,99',
+      price: 10.99,
       date: new Date(),
     };
 
     const mockResult = {
       ...mockDto,
-      id: expect.any(UUIDV4),
+      id: expect.any(String),
       distance: expect.any(Number),
     };
 
