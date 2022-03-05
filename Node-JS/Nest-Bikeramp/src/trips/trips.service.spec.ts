@@ -7,7 +7,7 @@ import { UUIDV4 } from 'sequelize';
 describe('TripsService', () => {
   let service: TripsService;
 
-  const mockRepository = {
+const mockRepository = {
     create: jest.fn().mockImplementation((dto) => dto),
   };
 
