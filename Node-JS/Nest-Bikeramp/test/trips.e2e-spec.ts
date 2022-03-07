@@ -45,4 +45,19 @@ describe('TripsController (e2e)', () => {
         });
       });
   });
+
+  it('handles an invalid /trips (POST) request', () => {
+    const body = {
+      start_address: 48329483948923,
+      destination_address: 'Plac Europejski 2, Warszawa, Polska',
+      price: 10.99,
+      date: new Date(),
+    };
+
+    return request(app.getHttpServer())
+      .post('/trips')
+      .send(body)
+      .expect('Content-Type', /json/)
+      .expect(400);
+  });
 });
