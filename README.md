@@ -3,7 +3,21 @@
 - To see some small projects in action, visit my personal website: http://nonvideri.ct8.pl
 - Newer/bigger projects are higher up on the lists, so if you want to see my skills, start from the top.
 
+## Rust Projects
+
+### Rust Demo
+
+- A very basic Rust app.
+
 ## Cloud Projects
+
+### Terraform Project
+
+- A basic project exploring the Terraform.
+
+### Serverless AWS Lambda
+
+- A basic Serverless Framework config for AWS Lambda.
 
 ### Kubernetes Declarations
 
@@ -268,6 +282,10 @@
 - A simple exercise app for displaying balance and withdrawing money from account.
 
 ## Python Projects
+
+### Flask Project
+
+- A basic web server in Flask.
 
 ### 100 Doors
 
