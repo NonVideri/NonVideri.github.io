@@ -3,9 +3,9 @@
 ##################################################################################
 
 provider "aws" {
-  access_key = "ACCESS_KEY"
-  secret_key = "SECRET_KEY"
-  region     = "us-east-1"
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
+  region     = var.aws_region
 }
 
 ##################################################################################
@@ -22,8 +22,8 @@ data "aws_ssm_parameter" "ami" {
 
 # NETWORKING #
 resource "aws_vpc" "vpc" {
-  cidr_block           = "10.0.0.0/16"
-  enable_dns_hostnames = true
+  cidr_block           = var.vpc_cidr_block
+  enable_dns_hostnames = var.enable_dns_hostnames
 
 }
 
@@ -33,9 +33,9 @@ resource "aws_internet_gateway" "igw" {
 }
 
 resource "aws_subnet" "subnet1" {
-  cidr_block              = "10.0.0.0/24"
+  cidr_block              = var.subnet1_cidr_block
   vpc_id                  = aws_vpc.vpc.id
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = var.map_public_ip_on_launch
 }
 
 # ROUTING #
@@ -79,7 +79,7 @@ resource "aws_security_group" "nginx-sg" {
 # INSTANCES #
 resource "aws_instance" "nginx1" {
   ami                    = nonsensitive(data.aws_ssm_parameter.ami.value)
-  instance_type          = "t2.micro"
+  instance_type          = var.instance_type
   subnet_id              = aws_subnet.subnet1.id
   vpc_security_group_ids = [aws_security_group.nginx-sg.id]
 
