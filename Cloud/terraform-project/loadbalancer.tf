@@ -1,5 +1,5 @@
 resource "aws_lb" "nginx" {
-  name               = "globo_web_alb"
+  name               = "globo-web-alb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb_sg.id]
