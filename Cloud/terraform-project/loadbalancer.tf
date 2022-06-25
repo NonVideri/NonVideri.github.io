@@ -1,3 +1,5 @@
+data "aws_elb_service_account" "main" {}
+
 resource "aws_lb" "nginx" {
   name               = "globo-web-alb"
   internal           = false
