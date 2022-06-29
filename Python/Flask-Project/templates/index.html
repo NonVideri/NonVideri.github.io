@@ -1,6 +1,5 @@
-{% extends "layout.html" %}
-{% block body %}
-<form action="/greet" method="get">
+{% extends "layout.html" %} {% block body %}
+<form action="/greet" method="post">
   <input required autocomplete="off" autofocus name="name" placeholder="Name" type="text" />
   <input type="submit" />
 </form>
