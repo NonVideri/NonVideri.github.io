@@ -1,6 +1,0 @@
-{
-  "prettier.arrowParens": "avoid",
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.quoteProps": "consistent"
-}
