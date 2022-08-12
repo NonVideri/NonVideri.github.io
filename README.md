@@ -31,7 +31,7 @@
 
 - An educational Docker project.
 
-## Node & JS Projects
+## Backend Projects
 
 ### Nest-Bikeramp
 
@@ -194,7 +194,7 @@
 
 - Contains various algorithms and data structures written in Javascript for training purposes.
 
-## React & Redux Projects
+## Frontend Projects
 
 ### Notflix
 
@@ -202,6 +202,10 @@
 - Uses GraphQL to load movie data, using pagination to limit the requests.
 - Has multiple copies of placeholder movies in a database (for testing).
 - See the second repository for project itself.
+
+### PWA
+
+- A very simple PWA implementation.
 
 ### React Course App
 
