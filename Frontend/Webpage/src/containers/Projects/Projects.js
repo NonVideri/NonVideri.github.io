@@ -8,11 +8,11 @@ import SectionIntro from '../../components/SectionIntro';
 const ProjectTitle = styled.h4`
   margin: 14px 0;
   padding: 14px 0;
-  font-family: ${props => props.theme.fontTitles};
+  font-family: ${(props) => props.theme.fontTitles};
 `;
 
-export default function Projects() {
-  // if /
+export default function Projects({ mode }) {
+  if (mode === 'translations') return null;
   return (
     <section id="projects">
       <div className="container">
@@ -36,7 +36,4 @@ export default function Projects() {
       </div>
     </section>
   );
-
-  // if /translator
-  return null;
 }

@@ -42,67 +42,67 @@ const columns = React.useMemo(() => [
   { Header: 'Price in BTC', accessor: 'priceBTC' }
 ]);
 
-export default function Services() {
+export default function Services({ mode }) {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({
     columns,
     data
   });
-  // if /translator
-  return (
-    <section id="services">
-      <div className="container">
-        <SectionTitle>My services</SectionTitle>
-        <SectionIntro>
-          Below you will find some of my services and fees. I deliver quality translations all over
-          the world, accepting payments in PLN, USD and Bitcoin. In most cases, I don't raise the
-          prices just for dealing with specialized terminology, as I enjoy the challenge.
-        </SectionIntro>
-        {
-          // Tu React Table?
-          // arkusz 1800 znaków w angielskim/polskim — 100 PLN / 25 USD / Price in USD exchanged with current rate
-        }
-        <table {...getTableProps()}>
-          <thead>
-            {headerGroups.map(headerGroup => (
-              <tr {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map(column => (
-                  <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-                ))}
-              </tr>
-            ))}
-          </thead>
-          <tbody {...getTableBodyProps()}>
-            {rows.map((row, i) => {
-              prepareRow(row);
-              return (
-                <tr {...row.getRowProps()}>
-                  {row.cells.map(cell => {
-                    return (
-                      <td
-                        {...cell.getCellProps()}
-                        rowSpan={`${cell.rowSpan ?? 1}`}
-                        style={cell.displayNone ? { display: 'none' } : {}}>
-                        {cell.render('Cell')}
-                      </td>
-                    );
-                  })}
+  if (mode === 'translations')
+    return (
+      <section id="services">
+        <div className="container">
+          <SectionTitle>My services</SectionTitle>
+          <SectionIntro>
+            Below you will find some of my services and fees. I deliver quality translations all
+            over the world, accepting payments in PLN, USD and Bitcoin. In most cases, I don't raise
+            the prices just for dealing with specialized terminology, as I enjoy the challenge.
+          </SectionIntro>
+          {
+            // Tu React Table?
+            // arkusz 1800 znaków w angielskim/polskim — 100 PLN / 25 USD / Price in USD exchanged with current rate
+          }
+          <table {...getTableProps()}>
+            <thead>
+              {headerGroups.map((headerGroup) => (
+                <tr {...headerGroup.getHeaderGroupProps()}>
+                  {headerGroup.headers.map((column) => (
+                    <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                  ))}
                 </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <SectionIntro>
-          * A standard page is 1800 characters in either English or Polish, depending on the
-          language used, including spaces.
-        </SectionIntro>
-        <SectionIntro>
-          ** In case of interpretation, the Customer is expected to cover possible travel (from
-          Warsaw) and lodging expenses.
-        </SectionIntro>
-      </div>
-    </section>
-  );
-  // if /
+              ))}
+            </thead>
+            <tbody {...getTableBodyProps()}>
+              {rows.map((row, i) => {
+                prepareRow(row);
+                return (
+                  <tr {...row.getRowProps()}>
+                    {row.cells.map((cell) => {
+                      return (
+                        <td
+                          {...cell.getCellProps()}
+                          rowSpan={`${cell.rowSpan ?? 1}`}
+                          style={cell.displayNone ? { display: 'none' } : {}}>
+                          {cell.render('Cell')}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          <SectionIntro>
+            * A standard page is 1800 characters in either English or Polish, depending on the
+            language used, including spaces.
+          </SectionIntro>
+          <SectionIntro>
+            ** In case of interpretation, the Customer is expected to cover possible travel (from
+            Warsaw) and lodging expenses.
+          </SectionIntro>
+        </div>
+      </section>
+    );
+  return null;
 
   return (
     <table>

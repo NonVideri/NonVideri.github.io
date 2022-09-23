@@ -10,8 +10,8 @@ const SkillsList = styled.ul`
   padding: 0 24px;
 `;
 
-export default function Skills() {
-  // if /
+export default function Skills({ mode }) {
+  if (mode === 'translations') return null;
   return (
     <SkillsSection id="skills">
       <div className="container">
@@ -55,6 +55,4 @@ export default function Skills() {
       </div>
     </SkillsSection>
   );
-  // if /translator
-  return null;
 }
