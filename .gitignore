@@ -10,6 +10,9 @@ dist/
 tmp/
 out-tsc/
 
+# testing
+coverage/
+
 # editors
 .vscode/
 /.idea
@@ -20,14 +23,16 @@ out-tsc/
 .settings/
 *.sublime-workspace
 
-# misc
+# env files
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-.DS_Store
-Thumbs.db
+
+# next.js
+/.next/
+/out/
 
 # logs
 npm-debug.log*
@@ -39,6 +44,10 @@ yarn-error.log*
 /libpeerconnection.log
 testem.log
 /typings
+
+# misc
+.DS_Store
+Thumbs.db
 
 # notes
 PROJECT.md

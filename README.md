@@ -203,6 +203,10 @@
 - Has multiple copies of placeholder movies in a database (for testing).
 - See the second repository for project itself.
 
+### Nextjs-Blog
+
+- A simple blog app created for learning Next.
+
 ### PWA
 
 - A very simple PWA implementation.
@@ -340,3 +344,9 @@
 
 - Takes 6 integers: a, b, c, d, e, f - the coordinates of the vertices of the triangle (a, b), (c, d) and (e, f).
 - Prints the triangle area.
+
+## Other Projects
+
+### Nx
+
+- A simple project for testing Nx possibilities.
