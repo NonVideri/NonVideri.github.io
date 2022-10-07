@@ -14,7 +14,7 @@ export default function Sidebar() {
   );
 }
 
-function SideBarIcon({ icon, text = 'tooltip' }: { icon: React.ReactNode; text: string }) {
+function SideBarIcon({ icon, text = 'tooltip' }: { icon: React.ReactNode; text?: string }) {
   return (
     <div className="sidebar-icon group">
       {icon}
