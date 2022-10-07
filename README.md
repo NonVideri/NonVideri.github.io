@@ -207,6 +207,10 @@
 
 - A simple blog app created for learning Next.
 
+### Tailwind
+
+- A simple project in Next for learning Tailwind.
+
 ### PWA
 
 - A very simple PWA implementation.
