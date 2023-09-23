@@ -203,6 +203,10 @@
 - Has multiple copies of placeholder movies in a database (for testing).
 - See the second repository for project itself.
 
+### Nextjs-Todo
+
+- A simple todo app created to learn new Next 13 features.
+
 ### Nextjs-Blog
 
 - A simple blog app created for learning Next.
