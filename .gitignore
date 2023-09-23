@@ -5,12 +5,16 @@ node_modules/
 .terraform/
 .venv/
 
-# production
+# builds
 build/
 dist/
 tmp/
 out-tsc/
 out/
+.next/
+
+# db
+dev.db*
 
 # testing
 coverage/
@@ -27,14 +31,7 @@ coverage/
 
 # env files
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# next.js
-.next/
-out/
+.env*.local
 
 # logs
 npm-debug.log*
@@ -46,6 +43,13 @@ coverage
 libpeerconnection.log
 testem.log
 typings
+
+# deployment
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
 
 # misc
 .DS_Store
