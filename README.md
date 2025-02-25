@@ -211,6 +211,10 @@
 
 - A simple blog app created for learning Next.
 
+### Expresso-React
+
+- A prototype CRM for a coffee shop.
+
 ### Tailwind
 
 - A simple project in Next for learning Tailwind.
@@ -255,35 +259,11 @@
 - Messages are displayed in the main view.
 - Allows user to enter and send messages.
 
-### Webpage
-
-- My personal webpage written entirely in React.
-- Uses Bootstrap and Sass for style.
-- Showcases some small React/Redux apps: Randomizer, Clock and ToDoApp.
-
-### Randomizer
-
-- Randomly picks from number ranges (Number Range Mode) or comma-separated sets of data (Custom Items Mode).
-- Has two sub-modes: Repeat or No-Repeat.
-- Allows the user to hide the list and toggle item picking sounds.
-- Designed to be used as a board game support app.
-- Uses Redux. (RandomizerOld is the simple version which uses only React.)
-
 ### Thoughts
 
 - A simple app in React used to write thoughts appearing in your head.
 - Thoughts disappear after 15 seconds, but can be deleted faster with a button.
 - Uses Jest and RTL for testing.
-
-### Clock
-
-- A simple React clock.
-- Has two modes: Normal and Precise.
-
-### ToDoApp
-
-- A simple todo app in React.
-- Allows to add tasks with descriptions and delete them.
 
 ### Contacts App
 
