@@ -1,6 +1,6 @@
 # Projects
 
-- To see some tiny projects in action, visit my personal website: http://nonvideri.ct8.pl
+- To see some tiny projects in action, visit my personal website: https://nonvideri.com
 - Newer/bigger projects are higher up on the lists, so if you want to see my current skills, start from the top.
 
 ## Rust Projects
